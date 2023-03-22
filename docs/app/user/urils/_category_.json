@@ -1,0 +1,8 @@
+{
+  "label": "工具库",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "用户模块工具"
+  }
+}
