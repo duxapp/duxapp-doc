@@ -1,12 +1,8 @@
 # 阴影(BoxShadow)
 
-## 组件说明
+`BoxShadow` 组件用于添加阴影效果，可以自定义阴影颜色、大小、圆角等。请勿使用css实现阴影效果，在React Native上不支持。
 
-`BoxShadow` 组件用于添加阴影效果，可以自定义阴影颜色、大小、圆角等。
-
-## 使用方法
-
-### 属性说明
+## 属性
 
 | 属性名 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
@@ -19,57 +15,3 @@
 | children | ReactNode | - | 子元素 |
 | style | CSSProperties | - | 自定义样式 |
 | ...props | any | - | 其他属性 |
-
-### 示例
-
-#### 添加阴影效果
-
-```jsx
-<BoxShadow>
-  子元素  
-</BoxShadow>
-```
-
-#### 自定义阴影颜色
-
-```jsx
-<BoxShadow color='#f7ba2a' />
-```
-
-#### 自定义阴影大小
-
-```jsx
-<BoxShadow border={20} />
-```
-
-#### 自定义圆角半径
-
-```jsx
-<BoxShadow radius={10} />
-```
-
-#### 自定义阴影透明度
-
-```jsx
-<BoxShadow opacity={0.5} />
-```
-
-#### 自定义水平偏移距离
-
-```jsx
-<BoxShadow x={10} />
-```
-
-#### 自定义垂直偏移距离
-
-```jsx
-<BoxShadow y={10} />
-```
-
-#### 自定义子元素
-
-```jsx
-<BoxShadow>
-  <Image src='...' />
-</BoxShadow>
-```
