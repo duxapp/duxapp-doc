@@ -98,7 +98,7 @@ const config = {
             items: [
               {
                 label: '教程',
-                to: '/docs/course/start',
+                to: '/docs/course/started/intro',
               },
               {
                 label: '模块',
