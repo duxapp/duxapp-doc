@@ -65,10 +65,10 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'DuxApp',
-        logo: {
-          alt: 'duxapp',
-          src: 'img/logo.svg',
-        },
+        // logo: {
+        //   alt: 'duxapp',
+        //   src: 'img/logo.svg',
+        // },
         items: [
           {
             type: 'doc',
@@ -82,9 +82,9 @@ const config = {
             position: 'left',
             label: '模块',
           },
-          {to: '/blog', label: '日志', position: 'left'},
+          // {to: '/blog', label: '日志', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/ShaoGongBra',
             label: 'GitHub',
             position: 'right',
           },
@@ -110,30 +110,26 @@ const config = {
             title: '连接',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: '官网地址',
+                href: 'https://www.dux.cn/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: '更多',
-            items: [
-              {
-                label: '日志',
-                to: '/blog',
+                label: '商店地址',
+                href: 'https://www.dux.cn/apps',
               }
             ],
           },
+          // {
+          //   title: '更多',
+          //   items: [
+          //     {
+          //       label: '日志',
+          //       to: '/blog',
+          //     }
+          //   ],
+          // },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
