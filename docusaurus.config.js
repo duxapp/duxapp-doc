@@ -82,9 +82,14 @@ const config = {
             position: 'left',
             label: '模块',
           },
+          {
+            href: 'https://www.dux.cn/apps',
+            label: '应用商店',
+            position: 'right'
+          },
           // {to: '/blog', label: '日志', position: 'left'},
           {
-            href: 'https://github.com/ShaoGongBra',
+            href: 'https://github.com/orgs/duxapp/repositories',
             label: 'GitHub',
             position: 'right',
           },
@@ -107,14 +112,14 @@ const config = {
             ],
           },
           {
-            title: '连接',
+            title: '入口',
             items: [
               {
-                label: '官网地址',
-                href: 'https://www.dux.cn/',
+                label: 'DuxCms官网',
+                href: 'https://www.dux.cn',
               },
               {
-                label: '商店地址',
+                label: '应用商店',
                 href: 'https://www.dux.cn/apps',
               }
             ],
