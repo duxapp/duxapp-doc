@@ -12,7 +12,7 @@
 | `url`        | -              | 头像图片地址                                                                          |
 | `icon`       | -              | 头像图标，可以是任何支持的 React 组件                                               |
 | `iconSize`   | -              | 头像图标尺寸                                                                          |
-| `className`  | -              | 添加类名                                                                               |
+| `className`  | -              | 添加名                                                                               |
 | `style`      | -              | 添加样式                                                                              |
 | `children`   | -              | 子元素    
 
