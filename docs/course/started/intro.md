@@ -81,8 +81,11 @@ const config = {
    */
   transfer: {},
 }
+
+module.exports = config
 ```
-配置保存之后，使用命令启动新模块
+配置保存之后，使用命令启动新模块  
+注意：请勿将此文件导出方式改为 `export default`
 
 ```bash
 # 运行小程序
@@ -311,6 +314,9 @@ const config = {
         textColor3: '#A1A6B6',
         textColor4: '#FFF',
       },
+    },
+    moduleName: {
+      custom: '模块自定义配置'
     }
   }
 }
@@ -318,9 +324,49 @@ const config = {
 export default config
 
 ```
+创建配置文件后重启运行命令，将会使用你新创建的配置执行，其中 `option` 字段下的配置是每个模块的配置，你也可以为你的模块创建一个字段  
+
+`duxapp` 配置下的 `theme` 就是全局主题颜色配置
+
+```bash
+# 运行小程序
+yarn dev:weapp --app=moduleName
+# 运行H5
+yarn dev:h5 --app=moduleName
+```
+
+上述配置中的模块的配置 `option.moduleName` 可以从模块入口文件 `src\moduleName\app.js` 中获得，如下
+
+```js
+export default {
+  option: option => {
+    // option对应着 option.moduleName
+    console.log(option.custom) // 输出 模块自定义配置
+  }
+}
+
+```
+
+也可以通过 `duxapp` 模块导出的 `userConfig` 变量获取整个配置的内容
+
+```js
+import { userConfig } from '@/duxapp'
+
+console.log(userConfig.option)
+```
 
 ## 完结
+
 
 恭喜，至此你已经入门了！  
 
 上面只提到了小程序和h5，如果你想继续了解ReactNative，请查看[ReactNative快速开始](/docs/course/rn/start)
+
+你还可以继续查看：
+- 模块路由
+- 模块配置文件
+- 使用全局样式
+- 入口文件
+- 出口文件
+- 模块主题
+- 模块npm依赖
