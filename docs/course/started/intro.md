@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 开始
+# 快速入门
 
 duxapp是一套基于Taro的模块化开发架构，每一个项目就是一个模块，且兼容多端开发，极大节省开发时间。
 
@@ -29,6 +29,8 @@ npx duxapp-cli create projectName
 
 ## 运行
 
+安装完成后，根据选择的不同模板，命令行将会提示不同的运行命令，下面的是运行基础模块的命令
+
 ```bash
 # 运行小程序
 yarn dev:weapp --app=duxapp
@@ -39,7 +41,7 @@ yarn dev:h5 --app=duxapp
 
 ## 快速使用已发布的模块
 
-如果需要安装其他模块执行下面的命令添加，例如安装`duxuiExample`模块，这个模块是UI库的示例代码。
+如果你上面初始化命令选择的是基础模板，则里面仅有duxapp模块，这个模块只有一些基础组件或者函数，并不是很好的示例，那么你，你可以安装`duxuiExample`模块，这个模块是UI库的示例代码。
 
 ```bash
 yarn duxapp app add duxuiExample
@@ -47,7 +49,9 @@ yarn duxapp app add duxuiExample
 
 安装后执行命令启动`duxuiExample` 这个模块  
 
-注意：首次执行此命令会要求登录，如果你没有账号，请前往[duxcms](https://www.dux.cn/)注册，登录仅用作模块的安装和发布
+:::info
+首次执行此命令会要求登录，如果你没有账号，请前往[duxcms](https://www.dux.cn/)注册，登录仅用作模块的安装和发布
+:::
 
 ```bash
 # 运行小程序
