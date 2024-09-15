@@ -1,0 +1,268 @@
+---
+sidebar_position: 2
+---
+
+# 结构
+
+模块目录结构通常是下面这个样子的
+
+```
+├── duxapp                      模块名称
+│   ├── components              模块组件库 （可选）
+│   │   ├── ComponentName       组件
+│   │   │   └── index.jsx
+│   │   └── index.js            导出需要导出的组件
+│   ├── config                  配置目录
+│   │   ├── route.js            路由配置文件
+│   │   ├── theme.js            主题配置文件（可选）
+│   │   └── themeToScss.js      主题转换函数
+│   ├── pages                   页面放置文件夹 （可选）
+│   │   └── index               页面文件夹
+│   │       ├── index.jsx       页面
+│   │       └── index.scss
+│   ├── utils                   工具库 （可选）
+│   │   ├── index.js            导出工具库
+│   │   └── ...youutil.js
+│   ├── update                  模块安装目录
+│   │   ├── copy                需要复制到项目的文件
+│   │   │   └── ...             
+│   │   └── index.js            安装脚本 主要针对RN端 插件安装方法
+│   ├── app.js                  模块入口文件
+│   ├── app.json                模块配置文件 包括名称 依赖等
+│   ├── app.scss                全局样式文件（次样式文件无需导入到js文件中，会自动注入全局）
+│   ├── changelog.md            更新日志
+│   ├── index.js                模块出口文件 可以导出组件和方法给其他模块使用
+│   ├── index.html              如果是h5的项目可以自定义index.html，仅当作为入口模块时可用
+│   ├── babel.config.js         babel配置文件
+│   ├── metro.config.js         metro配置文件
+│   ├── taro.config.js          Taro配置文件
+│   ├── taro.config.prod.js     Taro 发布配置文件
+│   ├── taro.config.dev.js      Taro 调试配置文件
+│   └── readme.md               自述文件
+```
+
+上面的目录结构中 `components` `pages` `utils` 都是可选的，不一定都需要存在，你也可以自定义为其他文件夹或者文件  
+
+不同的模块提供不同的功能，有的模块仅提供组件，例如 `duxui`，那么他就不需要页面，pages就不会存在
+
+## app.json
+
+一个简单的配置通常看起来是这样的
+
+```json
+{
+  "name": "duxui",
+  "description": "duxapp模块，所有模块的公共基础模块",
+  "version": "1.0.61",
+  "dependencies": [
+    "duxapp"
+  ],
+}
+```
+
+### name
+模块名称，请和模块目录保持一致
+
+### description
+模块描述
+
+### version
+版本号，版本号仅用于将版本模块到应用市场，发布的时候不能发布相同版本，需要更新版本号
+
+### dependencies
+要使用的依赖，数组类型，其中每一项都是其他模块名称，处理模块依赖时请不要出现循环依赖的情况，例如:  
+module2 -> module1 -> module2
+
+### npm
+此项配置的内容和 `package.json` 完全一致，会将多个模块的配置合并到 `package.json` 中  
+
+例如 `dependencies` 安装依赖，`scripts` 创建命令等
+
+## app.js
+
+入口文件需要默认导出一个对象，这个对象会用于一些生命周期的回调
+```js
+// 没有用到默认导出一个空对象
+export default {}
+
+// 根据需要使用回调
+export default {
+  // 启动配置 位于项目配置index.js文件中的option配置
+  option: option => {
+    console.log(option)
+  },
+  // useLaunch
+  launch: () => {},
+  // useShow
+  show: () => { },
+  // useHide
+  hide: () => { },
+  // useEffect
+  effect: () => {}
+}
+```
+
+对于一些模块需要初始化的内容也可以在此入口文件中执行
+
+### option
+
+用于回调用户配置中当前模块的配置内容，通常你可以通过`duxapp`导出的 `userConfig` 更快的获得模块参数
+
+### launch
+
+app 的 useLaunch
+
+### show
+
+app 的 useShow
+
+### hide
+
+app 的 useHide
+
+### effect
+
+app 的 useEffect
+
+## index.js
+
+这个文件用于导出内容，例如duxui模块导出了模块定义的所有ui组件 导出后提供给其他模模块使用，使用方法如下  
+
+```jsx
+import { Avatar, Column, Row } form '@/duxui'
+```
+
+就像上面的依赖关系一样，请不要如果模块依赖项里面没有依赖的模块，请不到 `import`
+
+## app.scss
+
+定义模块全局样式，修改内容后需要重新启动编译工具才能生效
+
+## index.html
+
+如果是h5的项目可以自定义index.html，仅当作为入口模块时可用
+
+## readme.md
+
+模块自述文件
+
+## changelog.md 
+模块更新日志，这个文件的内容用于发布模块，应用商店会显示更新内容  
+
+例如：
+```json md
+# 1.0.51
+## 初步兼容支付宝、抖音小程序
+- 更新cli兼容支付宝、抖音
+- 修改Header组件兼容
+- 修改Layout组件兼容
+- 修改全局样式兼容
+
+## getLocationBase
+将RN端的方法移动到RN端模块
+
+## 全局样式
+修复错误的全局样式
+
+# V2023-12-02
+## 发布说明
+
+- 发布首个版本
+
+```
+
+## babel.config.js
+
+配置模块babel，配置会合并的babel中，某些第三方插件有要求配置babel，才能使用，就可以创建这个配置文件
+
+## metro.config.js
+
+RN编译工具配置文件，会合并到metro配置文件中，请参阅 [https://metrobundler.dev/docs/configuration](https://metrobundler.dev/docs/configuration)
+
+## taro.config.js
+Taro编译配置文件，会合并到 `config/index.js` 中  
+`taro.config.prod.js`和`taro.config.dev.js`就分别是发布和调试模式的配置
+
+## config/route.js
+
+路由详细文档请查看 [路由](route)
+
+这个文件必须存在，配置当前模块的路由，即使当前模块没有页面也需要导出一个默认内容，他是这样导出的
+
+```js
+/**
+ * login:是否需要登录
+ * platform:支持的平台(weapp, h5, rn)不配置支持所有
+ * subPackage:是否将其设置为分包
+ * home: 是否是主页 是主页的页面将会被排在前面
+ */
+const config = {
+  // 指定页面路径
+  path: 'pages',
+  // 跳转时打印跳转路径
+  pages: {},
+  /**
+   * 路由转换，当跳转到左侧路由时，实际上跳转的是右侧的路由
+   *
+   * 右侧是字符串则全局匹配
+   * {
+   *  mode: 'start', // start匹配路由的开始部分
+   *  page: ''
+   * }
+   */
+  transfer: {
+
+  }
+}
+
+module.exports = config
+
+```
+
+:::info
+这是一个node模块，需要使用 `module.exports` 导出
+:::
+
+## config/theme.js
+
+主题详细文档请查看 [主题](theme)  
+
+当前模块的默认主题配置，这是duxapp的主题配置导出的内容
+
+```js
+export default {
+  primaryColor: '#337ab7', // 主色
+  secondaryColor: '#5bc0de', // 辅色
+  successColor: '#34a853',
+  dangerColor: '#ea4335',
+  warningColor: '#fbbc05',
+  pageColor: '#fafbf8',
+  // ... 其他
+}
+```
+
+## config/themeToScss.js
+
+主题详细文档请查看 [主题](theme)  
+
+这个文件是将用户配置或者默认配置的主题，转换为scss变量，方便在scss中调用
+
+## update/index.js
+
+用来处理rn原生模块的脚本文件，详情请查看 [原生模块处理明细](/docs/course/rn/package-update)
+
+## update/copy
+
+这个文件夹下的内容会被复制到项目对应的文件夹下面，例如 patches 布丁文件，就可以放在此处
+
+## pages
+
+通常用来放当前模块的页面
+
+## components
+
+通常用来放当前模块的组件
+
+## utils
+
+通常用来放当前模块的工具库

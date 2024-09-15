@@ -375,10 +375,11 @@ console.log(userConfig.option)
 上面只提到了小程序和h5，如果你想继续了解ReactNative，请查看[ReactNative快速开始](/docs/course/rn/start)
 
 你还可以继续查看：
-- 模块路由
-- 模块配置文件
-- 使用全局样式
-- 入口文件
-- 出口文件
-- 模块主题
-- 模块npm依赖
+- [模块路由](/docs/course/app/route)
+- [模块配置文件](/course/app/directory#appjson)
+- [使用全局样式](/docs/course/app/directory#appscss)
+- [入口文件](/docs/course/app/directory#appjs)
+- [出口文件](/docs/course/app/directory#indexjs)
+- [模块主题](/docs/course/app/theme)
+- [模块npm依赖](/docs/course/app/directory#npm)
+- [模块管理](/docs/course/app/manage)
