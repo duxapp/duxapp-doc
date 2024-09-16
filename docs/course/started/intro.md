@@ -376,7 +376,7 @@ console.log(userConfig.option)
 
 你还可以继续查看：
 - [模块路由](/docs/course/app/route)
-- [模块配置文件](/course/app/directory#appjson)
+- [模块配置文件](/docs/course/app/directory#appjson)
 - [使用全局样式](/docs/course/app/directory#appscss)
 - [入口文件](/docs/course/app/directory#appjs)
 - [出口文件](/docs/course/app/directory#indexjs)

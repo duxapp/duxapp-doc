@@ -5,7 +5,7 @@
 ## 使用方法
 
 ```jsx
-import { Header } from '@/base'
+import { Header } from '@/duxapp'
 
 <Header title="页面标题" />
 ```
@@ -32,7 +32,7 @@ import { Header } from '@/base'
 `Header.Back`：返回按钮组件，当你使用了`renderHeader`属性的时候，返回按钮将不在header上，你可以使用这个组件替代返回按钮的位置。
 
 ```jsx
-import { Header } from '@/base'
+import { Header } from '@/duxapp'
 
 <Header 
   title="页面标题"

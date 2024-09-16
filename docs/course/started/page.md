@@ -39,3 +39,13 @@ export default TopView.HOC(function Page() {
 - Agreement RN启动用户协议
 
 等等，依赖TopView组件可以实现很多功能
+
+## Header
+
+除了 `TopView` 之外，叶哥页面上至少还应该包含一个 `Header` 组件，用来展示头部内容，duxapp，默认是开启了自定义头部功能的，所以需要使用这个Heder组件填充
+
+## ScrollView
+
+duxapp禁用了页面的整体刷新功能，如果需要刷新功能，需要使用 duxapp 导出的 `ScrollView` 组件  
+
+请注意，这个组件拥有 `flex: 1` 的样式，也就是说你把他放在TopView中，他会自动使用除去Haeader之外的所有高度

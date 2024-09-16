@@ -39,7 +39,7 @@ const { path, params } = useRoute()
 ## 监听路由跳转
 
 ```js
-import { route }  from '@/base/utils'
+import { route }  from '@/duxapp/utils'
 
 // 比如在user模块监听路由跳转 判断是否需要登录 未登录的让其执行登录
 // 如果在这个地方抛出错误，则跳转不会成功
@@ -65,5 +65,47 @@ route.onNavBefore(async (config, params) => {
 // 监听跳转成功
 route.onNavAfter(params => {
 
+})
+```
+
+## 使用nav跳转
+
+nav 是一个集成了多种跳转方式的方法，采用协议解析的方法进行跳转
+
+```js
+import { nav }  from '@/duxapp/utils'
+
+// 跳转页面
+route.push('duxcmsMall/goods/list')
+nav('duxcmsMall/goods/list')
+
+// 重定向跳转
+route.redirect('duxcmsMall/goods/list')
+nav('redirect:duxcmsMall/goods/list')
+
+// 返回上一页
+route.back()
+nav('back:')
+
+// 返回上2页
+route.back(2)
+nav('back:2')
+
+// 返回并传参
+route.back(2, { name: '姓名' })
+nav('back:2', { name: '姓名' })
+
+// 拨打电话
+nav('tel:10086')
+
+// 打开一个网址
+nav('https:www.baidu.com')
+
+// 打开地图
+nav('map:point', {
+  longitude: 122.22,
+  latitude: 23.33,
+  name: '地点名称',
+  address: '地点位置'
 })
 ```

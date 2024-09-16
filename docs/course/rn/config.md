@@ -9,8 +9,8 @@ sidebar_position: 2
 ```js
 module.exports = {
   android: {
-    appid: 'com.duxapp.mifiagent',
-    appName: '智小巧管理端',
+    appid: 'cn.duxapp',
+    appName: 'duxapp',
     versionCode: 3,
     versionName: '1.0.2',
     keystore: {
@@ -21,15 +21,15 @@ module.exports = {
     }
   },
   ios: {
-    BundleId: 'com.duxapp.mifiagent',
-    appName: '智小巧管理端',
+    BundleId: 'cn.duxapp',
+    appName: 'duxapp',
     versionCode: 3,
     versionName: '1.0.2',
     team: '87MKAFB878',
     plist: {
       'duxapp/Info.plist': {
         NSCalendarsUsageDescription: 'Allow duxapp to access your calendar',
-        NSCameraUsageDescription: '智小巧管理端需要拍照用于APP内图片上传更换头像',
+        NSCameraUsageDescription: 'duxapp需要拍照用于APP内图片上传更换头像',
         NSContactsUsageDescription: 'duxapp需要访问你的通讯录，将客户信息保存到通讯录中',
         NSLocalNetworkUsageDescription: 'App需要访问你的本地网络，用于和服务器建立连接',
         NSLocationAlwaysAndWhenInUseUsageDescription: '使用你的位置信息用于地图定位和位置选择',
@@ -37,8 +37,8 @@ module.exports = {
         NSLocationWhenInUseUsageDescription: '使用你的位置信息用于地图定位和位置选择',
         NSMicrophoneUsageDescription: 'Allow duxapp to access your microphone',
         NSMotionUsageDescription: 'Allow duxapp to access your devices accelerometer',
-        NSPhotoLibraryAddUsageDescription: '智小巧管理端需要保存宣传图到你的相册用于分享',
-        NSPhotoLibraryUsageDescription: '智小巧管理端需要访问相册用于APP内图片上传更换头像',
+        NSPhotoLibraryAddUsageDescription: 'duxapp需要保存宣传图到你的相册用于分享',
+        NSPhotoLibraryUsageDescription: 'duxapp需要访问相册用于APP内图片上传更换头像',
         NSRemindersUsageDescription: 'Allow duxapp to access your reminders',
       },
       'duxapp/duxapp.entitlements': {
