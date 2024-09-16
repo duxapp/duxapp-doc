@@ -1,44 +1,194 @@
-# 头部(Header)
+---
+sidebar_position: 2
+---
 
-这是一个React组件，名为`Header`，包含了一个子组件`HeaderBack`。
+# Header 头部导航
 
-## 使用方法
+duxapp默认将头部设置为了自定义，每个页面面建议都使用一个头部组件作为标题的显示，且Header组件会控制状态栏颜色显示、H5页面标题显示
+
+## 示例
 
 ```jsx
-import { Header } from '@/duxapp'
+import { Header, ScrollView, TopView } from '@/duxapp'
 
-<Header title="页面标题" />
+export default TopView.HOC(function Duxapp() {
+
+  return <>
+    <Header title='页面标题' />
+    <ScrollView>
+      ... 页面内容
+    </ScrollView>
+  </>
+})
+
 ```
 
-## 属性
+## Props
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| color | string | theme.header.textColor | 文字及返回按钮颜色，默认为主题配置中的 `header.textColor` |
-| title | string | 无 | 标题 |
-| navTitle | string | title | H5端页面标题 |
-| absolute | boolean | false | 是否使用绝对定位，不占位置 |
-| show | boolean | true | 是否显示，配合 `absolute` 使用，直接使用则会直接出现 |
-| style | object | 无 | 样式 |
-| renderMain | boolean | false | 是否替换头部中间部分 |
-| renderHeader | element | 无 | 是否替换头部整个头部 |
-| renderRight | element | 无 | 右侧组件 |
-| showStatus | boolean | false | 使用了 `absolute` 的情况下是否显示状态栏 |
-| titleCenter | boolean | false | 强制让标题显示在中间，对 TabBar 页面有效 |
-| onBackClick | function | 无 | 如果存在点击事件，则点击按钮时不会触发返回操作 |
+继承自Taro的[View Props](https://nervjs.github.io/taro-docs/docs/components/viewContainer/view#viewprops)
 
-## 返回按钮组件
+### title
+标题，这个标题在在小程序中会在最左边，也就是返回按钮的右边，在其他端会在中间，为因小程序上右侧有胶囊，所以将标题放在左侧  
 
-`Header.Back`：返回按钮组件，当你使用了`renderHeader`属性的时候，返回按钮将不在header上，你可以使用这个组件替代返回按钮的位置。
+如果你在首页，首页不会有返回按钮，这时标题还在左侧他就会有点不太协调，通过设置 titleCenter 属性为 true 可以将首页的标题居中
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 |  |
+
+### navTitle
+
+h5端显示在头部的标题 默认等于title 设置为空将不会产生变化
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 | title |
+
+### color
+
+设置导航标题的颜色，返回按钮是用的图片，标题颜色设置为深色，那么放回按钮是黑色，反之则是白色
+
+如果要设置导航单的背景颜色通过 style 的 `backgroundColor` 进行设置（不支持通过css）
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 |  |
+
+### absolute
+
+使用聚堆定位，让Header悬浮在其他内容上面，例如某些页面头部通常是一个幻灯片图片，是没有header的，但是他又有返回按钮
+
+```jsx
+import { Header, ScrollView, TopView } from '@/duxapp'
+
+export default TopView.HOC(function Duxapp() {
+
+  return <>
+    <Header absolute color='#000' />
+    <ScrollView>
+      ... 幻灯片
+      ... 页面内容
+    </ScrollView>
+  </>
+})
+```
+
+### show
+
+用于控制组件的显示和隐藏
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
+### showStatus
+
+show=false的情况下时候显示status状态栏
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
+### renderMain
+
+自定义渲染标题区域
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| ReactElement | 否 |  |
+
+### renderHeader
+
+自定义渲染整个Header，包括返回区域和右侧区域
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| ReactElement | 否 |  |
+
+### renderLeft
+
+自定义渲染右侧区域
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| ReactElement | 否 |  |
+
+### renderRight
+
+自定义渲染返回区域
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| ReactElement | 否 |  |
+
+### titleCenter
+
+强制将标题显示在中间 仅在主页生效
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| noolean | 否 | false |
+
+### onBackClick
+
+左侧按钮点击事件 点击左侧按钮时，如果传入了点击事件 则点击按钮时不会触发返回操作
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| function | 否 | |
+
+## Header.Back
+
+返回按钮组件，当你使用了`renderHeader`属性的时候，返回按钮将不在header上，你可以使用这个组件替代返回按钮的位置。
 
 ```jsx
 import { Header } from '@/duxapp'
 
 <Header 
-  title="页面标题"
+  title='页面标题'
   renderHeader={<View>
     <Header.Back />
     <View>其他部分</View>
   </View>}
 />
 ```
+
+:::info
+Header.Back 基本只有这一种用法，这个组件不可单独使用，使用了将无法达到预定功能
+:::
+
+## 主题配置
+
+header的主题配置在 `theme.header`
+
+### color
+
+默认背景颜色，仅支持rgb hex值，请勿使用纯单词 设置为数组将显示一个渐变按钮
+
+| 类型 | 默认值 |
+| ---- | ------- |
+| string | #fff |
+
+### textColor
+
+默认文字颜色
+
+| 类型 | 默认值 |
+| ---- | ------- |
+| string | #000 |
+
+### showWechat
+
+微信H5是否显示header
+
+| 类型 | 默认值 |
+| ---- | ------- |
+| boolean | false |
+
+### showWap
+
+除去微信端，其他h5是否显示header
+
+| 类型 | 默认值 |
+| ---- | ------- |
+| boolean | true |

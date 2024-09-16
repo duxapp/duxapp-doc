@@ -1,58 +1,68 @@
-# 滚动容器(ScrollView)
+---
+sidebar_position: 3
+---
 
-`ScrollView` 组件用于在页面上垂直滚动内容。
+# ScrollView 滚动容器
 
-## 属性
-
-| 名称 | 类型 | 必填 | 默认值 | 描述 |
-| --- | --- | --- | --- | --- |
-| style | Object | 否 | {} | 自定义样式 |
-| refresh | Boolean | 否 | undefined | 是否开启下拉刷新 |
-| emptyIcon | String | 否 | 'tishi' | 数据为空时显示的图标名称 |
-| emptyTitle | String | 否 | '什么都没有' | 数据为空时显示的标题 |
-| emptyDesc | String | 否 | undefined | 数据为空时显示的描述 |
-| emptyBttton | String | 否 | undefined | 数据为空时显示的按钮文本 |
-| emptyColor | String | 否 | undefined | 数据为空时显示的颜色 |
-| emptyShow | Boolean | 否 | false | 是否显示数据为空时的提示 |
-| scrollWithAnimation | Boolean | 否 | true | 是否使用滚动动画 |
-| scrollTop | Number | 否 | 0 | 滚动条位置 |
-| flip | Boolean | 否 | false | 是否翻转滚动条 |
-
-## 事件
-
-| 名称 | 描述 |
-| --- | --- |
-| onScroll | 滚动时触发的事件 |
-| onScrollToLower | 滚动到底部时触发的事件 |
-| onRefresh | 下拉刷新时触发的事件 |
-| onReload | 数据为空时点击刷新按钮触发的事件 |
-| onEmptyButtonCilck | 数据为空时点击按钮触发的事件 |
+这是对Taro ScrollView的封装，实现了多个端的下拉刷新功能，ScrollView仅支持垂直滚动，需要横向滚动需要使用 `ScrollView.Horizontal`
 
 ## 示例
 
 ```jsx
-import { ScrollView, Icon, Button } from '@/components'
+import { Header, ScrollView, TopView } from '@/duxapp'
+import { useState } from 'react'
 
-<ScrollView
-  refresh
-  emptyIcon='zhanwei'
-  emptyTitle='没有数据了'
-  emptyDesc='快去添加一些数据吧'
-  emptyBttton='去添加'
-  emptyColor='#999'
-  emptyShow={dataSource.length === 0}
-  scrollTop={scrollTop}
-  onEmptyButtonCilck={() => Taro.navigateTo({ url: '/pages/add' })}
-  onRefresh={handleRefresh}
-  onScrollToLower={handleLoadMore}
->
-  {
-    dataSource.map(item => (
-      <View className='item' key={item.id}>
-        <Icon name='wode' size={40} color='#999' />
-        <Text className='title'>{item.title}</Text>
-      </View>
-    ))
-  }
-</ScrollView>
+export default TopView.HOC(function Duxapp() {
+
+  const [refresh, setRefresh] = useState(false)
+  return <>
+    <Header title='页面标题' />
+    <ScrollView refresh={refresh}
+      onRefresh={() => {
+        setRefresh(true)
+        setTimeout(() => {
+          setRefresh(false)
+        }, 2000)
+      }}
+    >
+      ... 页面内容
+    </ScrollView>
+  </>
+})
 ```
+
+## Props
+
+继承自Taro的[ScrollView Props](https://nervjs.github.io/taro-docs/docs/components/viewContainer/scroll-view#scrollviewprops)
+
+### refresh
+
+是否处于下拉刷新状态
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
+### onRefresh
+
+用户触发下拉刷新的回调
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| function | 否 | |
+
+### flip
+
+将ScrollView组件进行180的旋转，让滚动内容倒过来，这会在一些需要从下往上布局的场景中使用，例如消息聊天
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
+## ScrollView.Horizontal
+
+用于横向滚动的滚动组件
+
+## ScrollView.Horizontal Props
+
+继承自Taro的[ScrollView Props](https://nervjs.github.io/taro-docs/docs/components/viewContainer/scroll-view#scrollviewprops)

@@ -88,7 +88,7 @@ const config = {
             type: 'doc',
             docId: 'app/start',
             position: 'left',
-            label: '模块',
+            label: '模块参考',
           },
           {
             href: 'https://www.dux.cn/apps',

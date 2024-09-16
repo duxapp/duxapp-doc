@@ -1,8 +1,0 @@
-{
-  "label": "工具库",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "基础模块相关函数"
-  }
-}
