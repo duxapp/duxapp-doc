@@ -135,7 +135,7 @@ show=false的情况下时候显示status状态栏
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| function | 否 | |
+| () => void | 否 | |
 
 ## Header.Back
 

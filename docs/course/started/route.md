@@ -6,6 +6,13 @@ sidebar_position: 3
 
 路由系统对原生的路由进行了封装，当你使用duxapp时，需要使用封装过的路由
 
+相对于原生路由进行了一下封装
+- 路由拦截
+- 传递任何类型参数到页面
+- 路由协议解析
+- 返回传参
+- 封装返回主页方法
+
 ## 路由跳转
 
 ```js
@@ -73,36 +80,55 @@ route.onNavAfter(params => {
 nav 是一个集成了多种跳转方式的方法，采用协议解析的方法进行跳转
 
 ```js
-import { nav }  from '@/duxapp/utils'
+import { route }  from '@/duxapp'
 
 // 跳转页面
-route.push('duxcmsMall/goods/list')
-nav('duxcmsMall/goods/list')
+route.push('duxcmsMall/goods/list', { name: '张三' })
+route.nav('duxcmsMall/goods/list', { name: '张三' })
+
+// 传递复杂参数
+route.push('duxcmsMall/goods/list', { 
+  name: '张三',
+  func: () => {}
+  obj: {
+    name: '李四'
+  }
+})
 
 // 重定向跳转
-route.redirect('duxcmsMall/goods/list')
-nav('redirect:duxcmsMall/goods/list')
+route.redirect('duxcmsMall/goods/list', { name: '张三' })
+route.nav('redirect:duxcmsMall/goods/list', { name: '张三' })
+
+// 重启程序
+route.nav('relaunch:')
+
+// 打开小程序插件
+route.nav('plugin-private:插件参数')
 
 // 返回上一页
 route.back()
-nav('back:')
+route.nav('back:')
 
-// 返回上2页
+// 返回2个页面
 route.back(2)
-nav('back:2')
+route.nav('back:2')
+
+// 返回到主页
+route.back('home')
+route.nav('back:home')
 
 // 返回并传参
 route.back(2, { name: '姓名' })
-nav('back:2', { name: '姓名' })
+route.nav('back:2', { name: '姓名' })
 
 // 拨打电话
-nav('tel:10086')
+route.nav('tel:10086')
 
 // 打开一个网址
-nav('https:www.baidu.com')
+route.nav('https:www.baidu.com')
 
 // 打开地图
-nav('map:point', {
+route.nav('map:point', {
   longitude: 122.22,
   latitude: 23.33,
   name: '地点名称',

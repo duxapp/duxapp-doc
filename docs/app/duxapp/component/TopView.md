@@ -164,15 +164,15 @@ option参数
 
 | 名称 | 类型 | 必填 | 默认值 | 说明 |
 | ---- | ---- | -------- | ------- | ------- |
-| group | string | 否 |  | 分组 同一个分组内的弹窗 将会以队列的形式显示 |
+| group | string | 否 |  | 分组 同一个分组内的弹窗 将会以队列的形式显示 也就是他会一个一个的展示，等上一个被移除时，才会显示下一个 |
 | page | number | 否 |  | 标识，通常不需要指定 默认添加到当前页面 |
 
 返回值
 
 | 名称 | 类型 | 说明 |
 | ---- | ---- | ------- |
-| update(el) | function | 用于更新元素 |
-| remove() | function | 用于移除元素 |
+| update(el) | (el: Element) => void | 用于更新元素 |
+| remove() | () => void | 用于移除元素 |
 | key | number | 当前添加元素的标识 |
 
 ### removeAll()
@@ -196,7 +196,7 @@ TopView.addContainer(({ children }) => {
 
 | 名称 | 类型 | 必填 | 默认值 | 说明 |
 | ---- | ---- | -------- | ------- | ------- |
-| comp | function | 是 |  | 传入一个组件 |
+| comp | Component | 是 |  | 传入一个组件 |
 | props | object | 否 |  | 传给这个组件的props |
 
 ## 主题配置
@@ -223,6 +223,8 @@ module.exports = {
 }
 
 ```
+
+同时需要在每个页面中配置 `enablePageMeta: true`，这个问题等待Taro处理，应该要能全局配置开启这个属性    
 
 weappRemm默认未开启，可以传入true开启，或者可传入一个对象用于配置参数  
 
