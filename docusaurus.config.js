@@ -86,9 +86,21 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'duxapp/start',
+            position: 'left',
+            label: '基础模块',
+          },
+          {
+            type: 'doc',
+            docId: 'duxui/start',
+            position: 'left',
+            label: 'UI库',
+          },
+          {
+            type: 'doc',
             docId: 'app/start',
             position: 'left',
-            label: '模块参考',
+            label: '其他模块文档',
           },
           {
             href: 'https://www.dux.cn/apps',

@@ -1,0 +1,8 @@
+{
+  "label": "wechat 微信",
+  "position": 31,
+  "link": {
+    "type": "generated-index",
+    "description": "提供app端微信插件、h5端jssdk插件。集成了微信分享组件，同时支持小程序、h5、APP"
+  }
+}

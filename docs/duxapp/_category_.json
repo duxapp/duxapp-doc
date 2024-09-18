@@ -1,0 +1,8 @@
+{
+  "label": "duxapp 基础模块",
+  "position": 1,
+  "collapsed": false,
+  "link": {
+    "description": "基础模块是所有模块的基础，包含了大量通用组件及函数"
+  }
+}

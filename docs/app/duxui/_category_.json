@@ -1,8 +1,0 @@
-{
-  "label": "duxui UI库",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "基础模块是所有模块的基础，包含了大量通用组件及函数"
-  }
-}

@@ -131,7 +131,7 @@ export default function NewApp() {
   )
 }
 ```
-此文件默认内容，需要注意到 `import { Header, ScrollView, TopView } from '@/duxapp'` 中的 `@/duxapp`导入位置，以`@/`开头的导入位置就就指向一模块所在的文件夹，`@/duxapp` 就代表从 `duxapp` 模块导入，这个模块是所有模块的基础模块，有关此模块导出的组件和方法，请查看 [duxapp模块](/docs/category/duxapp-基础模块)。
+此文件默认内容，需要注意到 `import { Header, ScrollView, TopView } from '@/duxapp'` 中的 `@/duxapp`导入位置，以`@/`开头的导入位置就就指向一模块所在的文件夹，`@/duxapp` 就代表从 `duxapp` 模块导入，这个模块是所有模块的基础模块，有关此模块导出的组件和方法，请查看 [duxapp模块](/docs/duxapp/start)。
 
 ## 创建一个页面
 
@@ -286,7 +286,7 @@ export default function Mall() {
   )
 }
 ```
-有关 `duxui` 导出的组件 请查看 [duxui](/docs/category/duxui-ui库)，duxui的所有示例代码，在上面提到，请安装 `duxuiExample` 模块查看
+有关 `duxui` 导出的组件 请查看 [duxui](/docs/duxui/start)，duxui的所有示例代码，在上面提到，请安装 `duxuiExample` 模块查看
 
 ## 使用自定义配置
 

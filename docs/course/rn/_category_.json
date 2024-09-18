@@ -1,8 +1,8 @@
 {
   "label": "APP开发(ReactNative)",
   "position": 4,
+  "collapsed": false,
   "link": {
-    "type": "generated-index",
     "description": "APP端教程"
   }
 }
