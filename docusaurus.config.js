@@ -60,56 +60,62 @@ const config = {
           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve('./src/css/customTheme.scss'),
+            require.resolve('./src/css/showcase.scss')
+          ]
         },
       }),
     ],
   ],
-
+  plugins: [
+    'docusaurus-plugin-sass',
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'DuxApp',
-        // logo: {
-        //   alt: 'duxapp',
-        //   src: 'img/logo.svg',
-        // },
+        title: 'duxapp',
+        style: 'dark',
+        logo: {
+          alt: 'duxapp',
+          src: 'img/logo.jpg'
+        },
         items: [
           {
             type: 'doc',
             docId: 'course/started/intro',
-            position: 'left',
+            position: 'right',
             label: '教程',
           },
           {
             type: 'doc',
             docId: 'duxapp/start',
-            position: 'left',
+            position: 'right',
             label: '基础模块',
           },
           {
             type: 'doc',
             docId: 'duxui/start',
-            position: 'left',
+            position: 'right',
             label: 'UI库',
           },
           {
             type: 'doc',
             docId: 'app/start',
-            position: 'left',
-            label: '其他模块文档',
+            position: 'right',
+            label: '更多模块',
           },
           {
-            href: 'https://www.dux.cn/apps',
+            href: 'https://www.dux.cn/page/apps',
             label: '应用商店',
             position: 'right'
           },
           // {to: '/blog', label: '日志', position: 'left'},
           {
-            href: 'https://github.com/orgs/duxapp/repositories',
+            href: 'https://github.com/duxapp',
             label: 'GitHub',
             position: 'right',
           },
@@ -119,14 +125,35 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: '文档',
+            title: '教程',
             items: [
               {
-                label: '教程',
+                label: '入门',
                 to: '/docs/course/started/intro',
               },
               {
                 label: '模块',
+                to: '/docs/course/app/intro',
+              },
+              {
+                label: 'ReactNative',
+                to: '/docs/course/rn/start',
+              },
+            ],
+          },
+          {
+            title: '模块文档',
+            items: [
+              {
+                label: '基础模块',
+                to: '/docs/duxapp/start',
+              },
+              {
+                label: 'UI库',
+                to: '/docs/duxui/start',
+              },
+              {
+                label: '更多模块',
                 to: '/docs/app/start',
               },
             ],
@@ -140,7 +167,7 @@ const config = {
               },
               {
                 label: '应用商店',
-                href: 'https://www.dux.cn/apps',
+                href: 'https://www.dux.cn/page/apps',
               }
             ],
           },
@@ -157,13 +184,33 @@ const config = {
         // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: themes.github,
-        darkTheme: themes.dracula,
+        // theme: themes.github,
+        // darkTheme: themes.dracula,
+        // defaultLanguage: 'jsx',
+        theme: require('./core/PrismTheme'),
+        additionalLanguages: [
+          'diff',
+          'bash',
+          'json',
+          'java',
+          'kotlin',
+          'objectivec',
+          'swift',
+          'groovy',
+          'ruby',
+          'flow',
+        ],
         // additionalLanguages: ['bash', 'diff', 'json', 'js', 'css', 'scss']
       },
       // algolia: {
       //   contextualSearch: true,
       // }
+      algolia: {
+        appId: '3EJZY2E0NT',
+        apiKey: '330f7c6bc51c0b94f9a20d60f06a86e7',
+        indexName: 'duxapp',
+        contextualSearch: true,
+      },
     }),
 };
 
