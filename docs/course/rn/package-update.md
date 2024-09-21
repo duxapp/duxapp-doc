@@ -90,10 +90,10 @@ module.exports = () => {
 ### xml 合并/创建xml
 
 - xml.file.document  
-用于添加到文件顶层，用于创建一个新的xml文件，document选项只有一个子元素`child`，使用此选项是岂不要使用其他选项
+用于添加到文件顶层，用于创建一个新的xml文件，document选项只有一个子元素`child`，使用此选项时，请不要使用其他选项
 
 - xml.file.tag  
-通过标签名称查找到，如果存在多个同名的标签，只会查找到第一个
+通过标签名称查找，如果存在多个同名的标签，只会查找到第一个
 
 - xml.file.attr  
 通过属性进行查找，在`AndroidManifest.xml`，多数标签都有`android:name`属性，可以通过这个name查找到对应的标签

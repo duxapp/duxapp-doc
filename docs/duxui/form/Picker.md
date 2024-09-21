@@ -83,11 +83,11 @@ export default function PickerExample() {
 
 ### placeholder
 
-选项范围
+提示文本
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| string | 否 |  |
+| string | 否 | 请选择 |
 
 ### nameKey
 
@@ -119,7 +119,7 @@ export default function PickerExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| ModalFormProps | 否 |  |
+| [ModalFormProps](./ModalForm#props) | 否 |  |
 
 ## PickerMultiSelect Props
 
@@ -151,11 +151,11 @@ export default function PickerExample() {
 
 ### placeholder
 
-选项范围
+提示文本
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| string | 否 |  |
+| string | 否 | 请选择 |
 
 ### nameKey
 
@@ -187,4 +187,4 @@ export default function PickerExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| ModalFormProps | 否 |  |
+| [ModalFormProps](./ModalForm#props) | 否 |  |

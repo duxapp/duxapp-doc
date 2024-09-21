@@ -24,7 +24,7 @@ import { Button } from '@/duxui'
 
 继承自Taro的[View Props](https://nervjs.github.io/taro-docs/docs/components/viewContainer/view#viewprops)
 
-如果指定了 `openType` 那么他就会继承 [Button Props](https://nervjs.github.io/taro-docs/docs/components/forms/button)
+如果指定了 `openType` 那么他就会继承 [Button Props](https://nervjs.github.io/taro-docs/docs/components/forms/button) （仅限小程序端）
 
 ### type
 
@@ -110,7 +110,7 @@ import { Button } from '@/duxui'
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| enum(...) | 否 |  |
+| [OpenType](https://nervjs.github.io/taro-docs/docs/components/forms/button#opentype) | 否 |  |
 
 ### textStyle
 
@@ -134,7 +134,7 @@ import { Button } from '@/duxui'
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| string | 否 |  |
+| string \| ReactElement | 否 |  |
 
 ## 主题配置
 

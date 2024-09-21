@@ -130,7 +130,7 @@ export default function FormExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| TextProps | 否 |  |
+| [TextProps](../show/Text#props) | 否 |  |
 
 ### containerProps
 
@@ -154,7 +154,7 @@ export default function FormExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| ReactElement \| Component | 否 | true |
+| ReactElement \| Component | 否 |  |
 
 ## 方法
 
@@ -168,7 +168,7 @@ export default function FormExample() {
 
 并非用在表单中的，而是用在对其他表单的封装
 
-例如在对Input的封装中这样用
+例如在对Input的封装中这样用，封装后组件的值既可以外部控制，也可以内部控制
 
 ```jsx
 export const Input = ({
@@ -302,7 +302,7 @@ props参数
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| TextProps | 否 |  |
+| [TextProps](../show/Text#props) | 否 |  |
 
 ### containerProps
 
@@ -322,7 +322,7 @@ props参数
 
 ### renderLabelRight
 
-自定义渲染标题右侧区域 一般设置 vertical 为true时使用 时使用
+自定义渲染标题右侧区域 一般设置 vertical 为 `true` 时使用
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -378,7 +378,7 @@ props参数
 
 ### rules
 
-给表单绑定的值的属性名称
+表单项验证规则
 
 验证规则使用的是 [b-validate](https://github.com/PengJiyuan/b-validate) 
 
@@ -398,7 +398,7 @@ props参数
 
 ### children
 
-当子元素为ReactNode时，将不会使用按钮创建 当子元素为字符串时，将会创建一个按钮
+当子元素为ReactElement时，将不会使用按钮创建 当子元素为字符串时，将会创建一个按钮
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -414,7 +414,7 @@ props参数
 
 ### children
 
-当子元素为ReactNode时，将不会使用按钮创建 当子元素为字符串时，将会创建一个按钮
+当子元素为ReactElement时，将不会使用按钮创建 当子元素为字符串时，将会创建一个按钮
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -573,7 +573,7 @@ import { Form, Input } from '@/duxui'
 
 渲染数组表单的头部 渲染在此处的内容才能取到数组表单的 Context
 
-一般来说 ArrayAction 将渲染到此处或者renderBottom 否则 ArrayAction将不会生效
+一般来说 ArrayAction 将渲染到此处或者 renderItem、renderBottom 否则 ArrayAction将不会生效
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -583,7 +583,7 @@ import { Form, Input } from '@/duxui'
 
 渲染数组表单的底部 渲染在此处的内容才能取到数组表单的 Context
 
-一般来说 ArrayAction 将渲染到此处或者renderBottom 否则 ArrayAction将不会生效
+一般来说 ArrayAction 将渲染到此处或者 renderItem、renderTop 否则 ArrayAction将不会生效
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

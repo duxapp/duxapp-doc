@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # 请求上传
 
-程序对请求上传进行了封装，增加了更丰富的功能，封装实现了下面的特性
+duxapp对请求上方法传进行了封装，增加了更丰富的功能，封装实现了下面的特性
 
 - 请求拦截器（中间件）
 - 错误提醒
@@ -83,7 +83,7 @@ const urls = await upload('image', { count: 9 })
 const [url] = await upload('video', { count: 1 })
 ```
 
-更多请查看duxapp文档
+更多请查看[请求上传](/docs/duxapp/utils/net)
 
 ## 中间件
 
@@ -145,7 +145,7 @@ requestMiddle.result(async (res) => {
 ```
 
 :::info
-拦截器的第二个参数是运行顺序，数字越大的约在后面运行
+拦截器的第二个参数是运行顺序，数字越大的越在后面运行
 :::
 
 ## 使用hook
@@ -170,10 +170,14 @@ export {
 }
 ```
 
+:::info
+传入的request参数就是上面创建的request方法
+:::
+
 使用useRequest
 
 ```jsx
-// res是请求结果，未获得结果时，默认是一个对象
+// res是请求结果，未获得结果时，默认是一个空对象
 const [res, action] = useRequest('mall/list')
 
 // 重新加载数据
@@ -220,10 +224,10 @@ const [res, action] = useRequest('mall/list', {
 })
 ```
 
-usePageData是一个分页请求，传递 page 参数用于分页的情况下适用
+usePageData是一个分页请求，适用于使用page分页的列表请求
 
 ```js
-// res是请求结果，未获得结果时，默认是一个对象
+// list是请求结果，未获得结果时，默认是一个空数组
 const [list, action] = usePageData('mall/list')
 
 // 重新加载数据
@@ -271,4 +275,4 @@ const [list, action] = usePageData('mall/list', {
 
 ## 扩展
 
-`useRequest` `usePageData`，可以用于进一步创建 `List` 和 `Detail` 组件
+`useRequest` `usePageData`，可以用于进一步创建 [`List`](/docs/duxapp/component/List) 和 `Detail` 组件

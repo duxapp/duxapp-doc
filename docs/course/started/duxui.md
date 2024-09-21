@@ -118,8 +118,9 @@ export default function Sale() {
     </ScrollView >
   </TopView>
 }
-
 ```
+
+请查看[UI库](/docs/duxui/start)获取完整的帮助文档
 
 ## 组件库
 

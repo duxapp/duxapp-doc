@@ -12,7 +12,7 @@ sidebar_position: 1
 
 ### nav(path, params)
 
-进行页面跳转，通过字符串解析的形式识别路由协议，具体支持的协议通过斜面的示例可以查看到
+进行页面跳转，通过字符串解析的形式识别路由协议，具体支持的协议通过下面的示例可以查看到
 
 ```js
 import { route }  from '@/duxapp'
@@ -70,6 +70,10 @@ route.nav('map:point', {
   address: '地点位置'
 })
 ```
+
+:::info
+打开地图时，在微信中，如果你初始化了jssdk的功能，那么他会打开微信原生地图，否则将会通过网页打开一个百度地图
+:::
 
 ### push(path, params)
 

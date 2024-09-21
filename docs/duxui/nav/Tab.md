@@ -76,7 +76,7 @@ import { Tab } from '@/duxui'
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| emum('page') | 否 |  |
+| enum('page') | 否 |  |
 
 ### buttonRound
 
@@ -203,18 +203,10 @@ const getItemStyle = useCallback(({ select }) => {
 | ---- | -------- | ------- |
 | number \| string | 否 |  |
 
-### paneKey
-
-项目对应的key 如果不穿入将使用项目索引作为key
-
-| 类型 | 必填 | 默认值 |
-| ---- | -------- | ------- |
-| number \| string | 否 |  |
-
 ### badgeProps
 
 传入这参数可以给这一项加上红点指示
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| BadgeProps | 否 |  |
+| [BadgeProps](../show/Badge#props) | 否 |  |

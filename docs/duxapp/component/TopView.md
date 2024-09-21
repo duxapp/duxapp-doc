@@ -66,7 +66,7 @@ export default TopView.HOC(function Duxapp() {
 
 ### add(el, option)
 
-像顶层容器添加元素，PullView、Modal等组件都是使用这个方案来实现的
+向顶层容器添加元素，PullView、Modal等组件都是使用这个方案来实现的
 
 
 ```jsx
@@ -226,7 +226,7 @@ module.exports = {
 
 同时需要在每个页面中配置 `enablePageMeta: true`，这个问题等待Taro处理，应该要能全局配置开启这个属性    
 
-weappRemm默认未开启，可以传入true开启，或者可传入一个对象用于配置参数  
+weappRem默认未开启，可以传入true开启，或者可传入一个对象用于配置参数  
 
 配置参数说明
 

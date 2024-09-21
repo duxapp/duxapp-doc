@@ -4,7 +4,7 @@ sidebar_position: 16
 
 # InputCode 验证码密码输入
 
-通常需要配合 `NumberKeyboard` 组件来实现验证码的输入功能
+通常需要配合 [`NumberKeyboard`](./NumberKeyboard) 组件来实现验证码的输入功能
 
 ## 示例
 

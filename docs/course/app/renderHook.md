@@ -93,7 +93,9 @@ mallHook.add('mark', ({ name }) => {
   <Text>这是默认内容</Text>
 </mallHook.Render>
 ```
-子内容将作为children传入定义组件，可以判断显示子内容还是自定义内容，还是都显示，或者你还可以继续使用`React.cloneElement`处理这个子内容
+
+子内容将作为children传入定义组件，可以判断显示子内容还是自定义内容，还是都显示，或者你还可以继续使用`React.cloneElement`处理这个`children`
+
 ```jsx
 mallHook.add('mark', ({ children }) => {
 
@@ -129,7 +131,7 @@ mallHook.addAfter('mark', () => {、
 
 ### 多个插入
 
-同一个方法可以多次调用，插入过个内容，当你在不同的模块内都需要插入内容时，可以这样使用
+同一个方法可以多次调用，插入多个内容，当你在不同的模块内都需要插入内容时，可以这样使用
 
 ```jsx
 mallHook.addBefore('mark', () => {、

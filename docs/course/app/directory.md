@@ -4,50 +4,51 @@ sidebar_position: 2
 
 # 结构
 
-模块目录结构通常是下面这个样子的
+模块目录结构是下面这个样子的
 
 ```
 ├── duxapp                      模块名称
-│   ├── components              模块组件库 （可选）
+│   ├── components              模块组件库 
 │   │   ├── ComponentName       组件
 │   │   │   └── index.jsx
 │   │   └── index.js            导出需要导出的组件
-│   ├── config                  配置目录
-│   │   ├── route.js            路由配置文件
-│   │   ├── theme.js            主题配置文件（可选）
-│   │   └── themeToScss.js      主题转换函数
-│   ├── pages                   页面放置文件夹 （可选）
+│   ├── config                  配置目录 
+│   │   ├── route.js            路由配置文件（路径固定）
+│   │   ├── theme.js            主题配置文件（路径固定）
+│   │   └── themeToScss.js      主题转换函数（路径固定）
+│   ├── pages                   页面放置文件夹
 │   │   └── index               页面文件夹
 │   │       ├── index.jsx       页面
 │   │       └── index.scss
-│   ├── utils                   工具库 （可选）
+│   ├── utils                   工具库
 │   │   ├── index.js            导出工具库
-│   │   └── ...youutil.js
+│   │   └── ...you util.js
 │   ├── update                  模块安装目录
-│   │   ├── copy                需要复制到项目的文件
+│   │   ├── copy                需要复制到项目的文件（路径固定）
 │   │   │   └── ...             
-│   │   └── index.js            安装脚本 主要针对RN端 插件安装方法
+│   │   └── index.js            安装脚本 主要针对RN端 插件安装方法（路径固定）
 │   ├── app.js                  模块入口文件
-│   ├── app.json                模块配置文件 包括名称 依赖等
+│   ├── app.json                模块配置文件 包括名称 依赖等（必须）
 │   ├── app.scss                全局样式文件（次样式文件无需导入到js文件中，会自动注入全局）
-│   ├── changelog.md            更新日志
+│   ├── changelog.md            更新日志（必须 如果发布）
 │   ├── index.js                模块出口文件 可以导出组件和方法给其他模块使用
 │   ├── index.html              如果是h5的项目可以自定义index.html，仅当作为入口模块时可用
+│   ├── app.config.js           用于覆盖项目全局配置
 │   ├── babel.config.js         babel配置文件
 │   ├── metro.config.js         metro配置文件
-│   ├── taro.config.js          Taro配置文件
+│   ├── taro.config.js          Taro编译配置文件
 │   ├── taro.config.prod.js     Taro 发布配置文件
 │   ├── taro.config.dev.js      Taro 调试配置文件
-│   └── readme.md               自述文件
+│   └── readme.md               自述文件（必须 如果发布）
 ```
 
-上面的目录结构中 `components` `pages` `utils` 都是可选的，不一定都需要存在，你也可以自定义为其他文件夹或者文件  
+上面的目录结构中 `components` `pages` `utils` 文件夹是推荐写法，不一定都需要存在，你也可以自定义为其他文件夹或者文件  
 
 不同的模块提供不同的功能，有的模块仅提供组件，例如 `duxui`，那么他就不需要页面，pages就不会存在
 
 ## app.json
 
-一个简单的配置通常看起来是这样的
+模块配置文件，通常看起来是这样的
 
 ```json
 {
@@ -80,7 +81,7 @@ module2 -> module1 -> module2
 
 ## app.js
 
-入口文件需要默认导出一个对象，这个对象会用于一些生命周期的回调
+根据需要创建这个文件，入口文件需要默认导出一个对象，这个对象会用于一些生命周期的回调
 ```js
 // 没有用到默认导出一个空对象
 export default {}
@@ -124,6 +125,10 @@ app 的 useHide
 
 app 的 useEffect
 
+### app
+
+如果你需要定制入口文件，入口文件的组件将会作为一个参数传入，你需要返回一个新的组件
+
 ## index.js
 
 这个文件用于导出内容，例如duxui模块导出了模块定义的所有ui组件 导出后提供给其他模模块使用，使用方法如下  
@@ -132,7 +137,7 @@ app 的 useEffect
 import { Avatar, Column, Row } form '@/duxui'
 ```
 
-就像上面的依赖关系一样，请不要如果模块依赖项里面没有依赖的模块，请不到 `import`
+就像上面的依赖关系一样，请不要使用模块依赖项里面没有依赖的模块
 
 ## app.scss
 
@@ -144,10 +149,10 @@ import { Avatar, Column, Row } form '@/duxui'
 
 ## readme.md
 
-模块自述文件
+模块自述文件，如果要发布模块，需要编辑这个文件
 
 ## changelog.md 
-模块更新日志，这个文件的内容用于发布模块，应用商店会显示更新内容  
+模块更新日志，这个文件的内容用于发布模块，应用商店会显示更新内容  ，如果要发布模块，需要编辑这个文件
 
 例如：
 ```json md
@@ -171,6 +176,12 @@ import { Avatar, Column, Row } form '@/duxui'
 
 ```
 
+## app.config.js
+
+全局配置文件，会和默认的全局配置进行合并
+
+参考[Taro 全局配置](https://nervjs.github.io/taro-docs/docs/app-config)
+
 ## babel.config.js
 
 配置模块babel，配置会合并的babel中，某些第三方插件有要求配置babel，才能使用，就可以创建这个配置文件
@@ -182,6 +193,8 @@ RN编译工具配置文件，会合并到metro配置文件中，请参阅 [https
 ## taro.config.js
 Taro编译配置文件，会合并到 `config/index.js` 中  
 `taro.config.prod.js`和`taro.config.dev.js`就分别是发布和调试模式的配置
+
+参考[Taro 编译配置](https://nervjs.github.io/taro-docs/docs/config)
 
 ## config/route.js
 
@@ -201,22 +214,9 @@ const config = {
   path: 'pages',
   // 跳转时打印跳转路径
   pages: {},
-  /**
-   * 路由转换，当跳转到左侧路由时，实际上跳转的是右侧的路由
-   *
-   * 右侧是字符串则全局匹配
-   * {
-   *  mode: 'start', // start匹配路由的开始部分
-   *  page: ''
-   * }
-   */
-  transfer: {
-
-  }
 }
 
 module.exports = config
-
 ```
 
 :::info

@@ -56,7 +56,9 @@ h5端显示在头部的标题 默认等于title 设置为空将不会产生变�
 
 ### absolute
 
-使用聚堆定位，让Header悬浮在其他内容上面，例如某些页面头部通常是一个幻灯片图片，是没有header的，但是他又有返回按钮
+使用绝对定位，让Header悬浮在其他内容上面，例如某些页面头部通常是一个幻灯片图片，是没有header的，但是他又有返回按钮
+
+设置按钮颜色为黑色，设置背景颜色为透明
 
 ```jsx
 import { Header, ScrollView, TopView } from '@/duxapp'
@@ -64,7 +66,7 @@ import { Header, ScrollView, TopView } from '@/duxapp'
 export default TopView.HOC(function Duxapp() {
 
   return <>
-    <Header absolute color='#000' />
+    <Header absolute color='#000' style={{ backgroundColor: 'transparent' }} />
     <ScrollView>
       ... 幻灯片
       ... 页面内容
@@ -79,7 +81,7 @@ export default TopView.HOC(function Duxapp() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| boolean | 否 | false |
+| boolean | 否 | true |
 
 ### showStatus
 
@@ -127,7 +129,7 @@ show=false的情况下时候显示status状态栏
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| noolean | 否 | false |
+| boolean | 否 | false |
 
 ### onBackClick
 
@@ -137,7 +139,7 @@ show=false的情况下时候显示status状态栏
 | ---- | -------- | ------- |
 | () => void | 否 | |
 
-## Header.Back
+## Header.Back Props
 
 返回按钮组件，当你使用了`renderHeader`属性的时候，返回按钮将不在header上，你可以使用这个组件替代返回按钮的位置。
 
@@ -167,7 +169,7 @@ header的主题配置在 `theme.header`
 
 | 类型 | 默认值 |
 | ---- | ------- |
-| string | #fff |
+| string \| string[] | #fff |
 
 ### textColor
 

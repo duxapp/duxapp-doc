@@ -63,15 +63,15 @@ export default function AvatarExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| emum('s', 'm', 'l') | 否 | m |
+| enum('s', 'm', 'l') | 否 | m |
 
 ### radiusType
 
-头像边框类型
+头像圆角类型
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| emum('square', 'round', 'round-min') | 否 | round |
+| enum('square', 'round', 'round-min') | 否 | round |
 
 ### color
 
@@ -133,15 +133,15 @@ export default function AvatarExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| emum('s', 'm', 'l') | 否 | m |
+| enum('s', 'm', 'l') | 否 | m |
 
 ### radiusType
 
-头像边框类型
+头像圆角类型
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| emum('square', 'round', 'round-min') | 否 | round |
+| enum('square', 'round', 'round-min') | 否 | round |
 
 ### color
 

@@ -55,7 +55,7 @@ ios: `yarn ios --app=模块`
 }
 
 ```
-根据文档，除了添加依赖以外，还需要进行下面这些步骤的操作  
+根据文档，除了添加依赖以外，还需要进行下面这些操作  
 
 安卓：
 - 添加 proguard
@@ -69,7 +69,8 @@ ios：
 - 由于插件bug，需要添加 pod 依赖项 `pod 'WechatOpenSDK'`
 - 修改 `AppDelegate.h` 入口文件
 - 修改 `AppDelegate.mm` 文件进行一些处理
-- 在 `Info.plist` 添加 Schemes 和 BundleURLTypes
+- 在 `Info.plist` 添加 Schemes 和 BundleURLTypes 和 applinks
+- 在项目配置中，添加 `UniversalLink`
 
 其他：
 - 通过patch修复当前版本的一个bug  
@@ -85,7 +86,7 @@ module.exports = {
 文件路径是 `update/index.js`，cli会识别这个路径
 :::
 
-下面将使用insert预埋点将文档需要添加的内容添加到对应的文件，insert可以完成下面这些内容：
+下面将使用insert预埋点功能将文档需要添加的内容添加到对应的文件，insert可以完成下面这些内容：
 
 - 添加 proguard
 - 由于插件bug，需要添加 pod 依赖项 `pod 'WechatOpenSDK'`
@@ -244,7 +245,7 @@ module.exports = ({ config }) => {
 
 下面通过IOS的plist处理功能完成这些任务
 
-- 在 `Info.plist` 添加 Schemes 和 BundleURLTypes
+- 在 `Info.plist` 添加 Schemes 和 BundleURLTypes 和 applinks
 
 ```js
 module.exports = ({ config }) => {
@@ -259,17 +260,24 @@ module.exports = ({ config }) => {
               CFBundleTypeRole: 'Editor',
               CFBundleURLName: 'weixin',
               CFBundleURLSchemes: [
-                `wx${config.option?.wechat?.appid || ''}`
+                option?.wechat?.appid || 'wx'
               ]
             }
           ],
           LSApplicationQueriesSchemes: ['weixin', 'wechat', 'weixinULAPI']
+        },
+        'duxapp/duxapp.entitlements': {
+          'com.apple.developer.associated-domains': [
+            `applinks:${option?.wechat?.applinks || 'duxapp.cn'}`
+          ]
         }
       }
     }
   }
 }
 ```
+
+可以看到这里读取了 `option.wechat` 中的两个配置，那么你也需要在配置对应位置添加上这些配置
 
 :::info
 需要注意的是在安卓或者ios配置下的文件路径，不需要添加android或者ios前缀

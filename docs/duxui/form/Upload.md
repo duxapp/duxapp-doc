@@ -4,9 +4,9 @@ sidebar_position: 13
 
 # Upload 上传
 
-用户上传图片或者视频的组件
+用于上传图片或者视频的组件
 
-在是用这个这个组件之前需要先用 `formConfig.setConfig` 注册一个上传函数，可以参考 `duxcmsUser` `app.js` 中是如何注册这个函数的
+在使用这个这个组件之前需要先用 `formConfig.setConfig` 注册一个上传函数，可以参考 `duxcmsUser` `app.js` 中是如何注册这个函数的
 
 ```js
 formConfig.setConfig({
@@ -63,7 +63,7 @@ export default function UploadExample() {
 
 最多允许上传多少图片
 
-传入 1 箱单于单个上传，value是字符串类型，大于1是多个上传，value是数组类型
+传入 1 相当于单个上传，value是字符串类型，大于1是多个上传，value是数组类型
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -79,7 +79,7 @@ export default function UploadExample() {
 
 ### onChange
 
-操作值回调
+上传或者删除图片的回调
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # PickerDate 日期选择
 
-选择器包含了单列选择器和多列选择器
+用于日期时间的选择
 
 ## 示例
 
@@ -46,6 +46,14 @@ export default function DateExample() {
 日期选择器
 
 继承自 DatePickerProps
+
+### title
+
+弹出选择器的标题
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 |  |
 
 ### mode
 
@@ -105,11 +113,11 @@ export default function DateExample() {
 
 ### placeholder
 
-选项范围
+提示文本
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| string | 否 |  |
+| string | 否 | 请选择 |
 
 ### onChange
 
@@ -125,7 +133,7 @@ export default function DateExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| ModalFormProps | 否 |  |
+| [ModalFormProps](./ModalForm#props) | 否 |  |
 
 ### use12Hours
 

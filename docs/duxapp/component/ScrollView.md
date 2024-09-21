@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # ScrollView 滚动容器
 
-这是对Taro ScrollView的封装，实现了多个端的下拉刷新功能，ScrollView仅支持垂直滚动，需要横向滚动需要使用 `ScrollView.Horizontal`
+这是对Taro ScrollView的封装，实现了多个端的下拉刷新功能，ScrollView仅支持垂直滚动，需要横向滚动使用 `ScrollView.Horizontal`
 
 ## 示例
 
@@ -59,10 +59,8 @@ export default TopView.HOC(function Duxapp() {
 | ---- | -------- | ------- |
 | boolean | 否 | false |
 
-## ScrollView.Horizontal
+## ScrollView.Horizontal Props
 
 用于横向滚动的滚动组件
-
-## ScrollView.Horizontal Props
 
 继承自Taro的[ScrollView Props](https://nervjs.github.io/taro-docs/docs/components/viewContainer/scroll-view#scrollviewprops)

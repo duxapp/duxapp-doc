@@ -27,7 +27,7 @@ export default function LicensePlateExample() {
 
 ## Props
 
-继承自[InputCode](InputCode#props)
+继承自[InputCodeProps](InputCode#props)
 
 ### length
 

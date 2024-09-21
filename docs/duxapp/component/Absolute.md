@@ -8,7 +8,7 @@ sidebar_position: 6
 
 ## 示例
 
-示例中的代码将会显示在TopView中
+示例中的代码将会显示在TopView相同层级的dom中
 
 ```jsx
 import { Header, ScrollView, TopView, Absolute } from '@/duxapp'
@@ -32,7 +32,7 @@ export default TopView.HOC(function Duxapp() {
 
 ### group
 
-如果设置了分组，那么设置了相同分组名称的内容，将以队列的形式显示，这是[TopView 的app犯法参数](TopView#addel-option)
+如果设置了分组，那么设置了相同分组名称的内容，将以队列的形式显示，这是[TopView 的add方法参数](TopView#addel-option)
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

@@ -20,7 +20,7 @@ sidebar_position: 2
 
 ### grow
 
-设为为true相当于 `flex: 1`
+设置为true相当于 `flex: 1`
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -28,7 +28,7 @@ sidebar_position: 2
 
 ### shrink
 
-设为为true相当于 `flex-shrink: 0`
+设置为true相当于 `flex-shrink: 0`
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -60,4 +60,6 @@ sidebar_position: 2
 
 ## Input.Search Props
 
-这个组件是Input的封装，当用户快速输入时，进行了节流处理，没有其他Props
+继承自[Input Props](#props)
+
+这个组件是Input的封装，当用户快速输入时，进行了节流处理

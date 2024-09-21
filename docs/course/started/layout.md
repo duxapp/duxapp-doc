@@ -73,7 +73,7 @@ div span {
 }
 ```
 
-为了实现兼容RN的支持，需要使用BEM的规范书写样式，像下面这样
+为了实现兼容RN，需要使用BEM的规范书写样式，像下面这样
 
 ```jsx
 <View className="block">
@@ -91,9 +91,13 @@ div span {
 ```
 这样的方式编写，如果内容过多会导致你的className过长，且修改奇特也特别的费劲，更推荐使用下面的全局样式方式进行页面布局
 
+:::info
+在duxapp中使用的是scss，上面的样式文件是scss文件
+:::
+
 ## 使用全局样式布局
 
-模块的 [app.scss](/docs/course/app/directory#appscss) 提供了编写全局样式的地方，我们在基础模块(duxapp)的全面样式中导出了很多对于布局使用的全局样式，你可以在这个文档末尾查询到，用这些全局样式书写起来就类似于[`tailwindcss`](https://www.tailwindcss.cn/)一样
+模块的 [app.scss](/docs/course/app/directory#appscss) 提供了编写全局样式的地方，我们在基础模块(duxapp)的全局样式中导出了很多用于布局使用的全局样式，你可以在这个文档末尾查询到，用这些全局样式书写起来就类似于[`tailwindcss`](https://www.tailwindcss.cn/)一样
 
 ```jsx
 import { View, Text } from '@tarojs/components'
@@ -108,7 +112,7 @@ export const Test = () => {
 
 就像这个示例一样，因为用bem编写本身className就会很长，我用差不多的长度就实现了样式布局，还省去了编写样式，且在修改的时候也不需要去修改对应的scss的内容，这样写起来也是非常的方便  
 
-全局样式中很多样式都是和[主题](/docs/course/app/theme)相结合的，例如文字文字、背景颜色、边框颜色，字号等，可以在本文默认查看到  
+全局样式中很多样式都是和[主题](/docs/course/app/theme)相结合的，例如文字文字、背景颜色、边框颜色、字号等，可以在本文默认查看到  
 
 :::info
 为何获得更好的编辑体验，需要在vscode中安装 [`SCSS Everywhere`](https://marketplace.visualstudio.com/items?itemName=gencer.html-slim-scss-css-class-completion) 插件，他能识别到全局样式并给出编写提示
@@ -140,11 +144,11 @@ px方法是 Taro.pxTransform 的简写，为了看起来更简洁一些，并且
 
 ## 使用duxui
 
-使用样式编辑页面还是会很麻烦，要写很多的样式，那么可以在结合使用duxui模块提供的大量ui库，还能将写代码的速度提升一个层次  
+使用样式编辑页面还是会很麻烦，要写很多的样式，那么可以在结合使用duxui模块提供的大量ui组件，还能将写代码的速度提升一个层次  
 
-前往下一章节查看 [duxui](duxui)
+前往下一章节查看 [使用UI库](duxui)
 
-## 附：duxapp的全局样式
+## duxapp模块提供的全局样式
 
 ```css
 

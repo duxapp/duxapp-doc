@@ -40,7 +40,7 @@ const Child = () => {
 
 ### wrap
 
-是否换行是否自动换行 相当于 `flex-wrap: wrap`
+是否自动换行 相当于 `flex-wrap: wrap`
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -64,7 +64,7 @@ const Child = () => {
 
 ### grow
 
-设为为true相当于 `flex: 1`
+设置为true相当于 `flex: 1`
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -72,7 +72,7 @@ const Child = () => {
 
 ### shrink
 
-设为为true相当于 `flex-shrink: 0`
+设置为true相当于 `flex-shrink: 0`
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

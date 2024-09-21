@@ -51,11 +51,11 @@ export default config
 
 ## 配置文件使用
 
-配置文件是如何被使用的呢，在我们运行命令时，例如 `yarn dev:weapp --app=duxuiExample`，`--app`的入口模块，将会作为配置名称使用  
+配置文件是如何被使用的呢，在我们运行命令时，例如 `yarn dev:weapp --app=duxuiExample`，用`--app`指定的入口模块，将会作为配置名称使用  
 
 也就是此时用到的配置文件是 `configs/duxuiExample/index.js` 但是如果这个配置并不存在，那么他将会使用 `configs/default/index.js`，作为当前的配置文件
 
-如果你想自定义要使用的配置那么还需要在命令上加上 `--config=duxuiExampleCustom` 参数，像这样  
+如果你想使用自定义的配置那么还需要在命令上加上 `--config=duxuiExampleCustom` 参数，像这样  
 
 `yarn dev:weapp --app=duxuiExample --config=duxuiExampleCustom`
 
@@ -70,6 +70,10 @@ export default config
 inport { userConfig } from '@/duxapp'
 ```
 
+:::info
+这是由cli功能实现的，仅在duxapp模块里导出
+:::
+
 ## 参数详解
 
 ### disablePages
@@ -81,9 +85,11 @@ inport { userConfig } from '@/duxapp'
 
 这里的配置将会覆盖Taro的`app.config.js`配置文件
 
+例如你要配置小程序接口权限、小程序插件等，就配置在这个地方
+
 ### debug
 
-- vconsole 开启h5端vconsole功能
+- vconsole 开启h5端调试功能
 
 ### option
 

@@ -19,13 +19,16 @@ sidebar_position: 3
 import { route } from '@/duxapp'
 
 // 跳转页面
-route.push('duxcmsMall/goods/list')
+route.push('duxcmsMall/goods/list', { name: '张三' })
 
 // 重定向跳转
-route.redirect('duxcmsMall/goods/list')
+route.redirect('duxcmsMall/goods/list', { name: '张三' })
 
 // 返回上一页
 route.back()
+
+// 返回主页
+route.back('home')
 
 // 返回传参
 const { backdata } = await route.push('duxcmsMall/goods/list')
@@ -35,12 +38,12 @@ const res = await backdata()
 route.back(1, { name: '返回名称' })
 ```
 
-## 路由参数
+## 接收路由参数
 
 ```js
 import { route } from '@/duxapp'
 // 在 hook 或者 函数组件内使用
-const { path, params } = useRoute()
+const { path, params } = route.useRoute()
 ```
 
 ## 监听路由跳转
@@ -135,3 +138,4 @@ route.nav('map:point', {
   address: '地点位置'
 })
 ```
+查看[路由](/docs/duxapp/utils/route)获取更多细节

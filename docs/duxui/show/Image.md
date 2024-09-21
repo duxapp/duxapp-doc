@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Image 图片
 
-推图片的封装，实现了预览，多图预览，在RN端使用 `expo-image` 实现，提供更好的性能
+对图片的封装，实现了预览，多图预览，在RN端使用 `expo-image` 实现，提供更好的性能
 
 ## 示例
 
@@ -99,7 +99,7 @@ export default function ImagedExample() {
 
 ## Props
 
-继承自Taro的[Text Props](https://nervjs.github.io/taro-docs/docs/components/media/image#imageprops)
+继承自Taro的[Image Props](https://nervjs.github.io/taro-docs/docs/components/media/image#imageprops)
 
 ### preview
 

@@ -4,14 +4,14 @@ sidebar_position: 3
 
 # Textarea 多行文本
 
-对Taro Input的封装，新增了一些属性，基本不带样式，需要自行编写样式
+对Taro Textarea的封装，新增了一些属性
 
 ## 示例
 
 这个多行文本输入框默认会有一个背景颜色和圆角，你可以通过编写样式覆盖他
 
 ```jsx
-<Form.Item label='输入框' field='input'>
+<Form.Item label='输入框' field='textarea'>
   <Textarea placeholder='请输入' grow />
 </Form.Item>
 ```
@@ -48,7 +48,7 @@ sidebar_position: 3
 
 ### grow
 
-设为为true相当于 `flex: 1`
+设置为true相当于 `flex: 1`
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -56,7 +56,7 @@ sidebar_position: 3
 
 ### shrink
 
-设为为true相当于 `flex-shrink: 0`
+设置为true相当于 `flex-shrink: 0`
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

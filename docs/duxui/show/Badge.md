@@ -114,7 +114,7 @@ export default function BadgeExample() {
 
 ### color
 
-背景色
+颜色
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

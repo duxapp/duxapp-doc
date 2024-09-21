@@ -48,7 +48,7 @@ sidebar_position: 9
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| Component 或 JSX.Element | 否 |  |
+| Component \| ReactElement | 否 |  |
 
 ## add(mark, ...eles)
 

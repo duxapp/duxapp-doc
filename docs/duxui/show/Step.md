@@ -106,7 +106,7 @@ export default function StepExample() {
 
 ### renderPoint
 
-渲染中间的点的内容 获取在data的每一项上传入pointColor会自动渲染颜色
+渲染中间的点的内容 或者在data的每一项上传入pointColor会自动渲染颜色
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

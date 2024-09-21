@@ -24,7 +24,7 @@ sidebar_position: 3
 
 `yarn duxapp rn icon --config=配置名称`  
 
-命令用户生成项目的app图标，在生成之前需要将项目logo命名为`logo.png`，放在配置文件夹的根目录  
+用于生成项目的app图标，在生成之前需要将项目logo命名为`logo.png`，放在配置文件夹的根目录  
 
 执行命令后会自动生成安卓和ios的图标，不需要后续操作
 
@@ -38,7 +38,7 @@ sidebar_position: 3
 
 `yarn duxapp android keystore --config=配置名称`  
 
-创建安卓证书，创建后证书文件会自动放进配置中，需要手动将命令行打印的配置内容，放进duxapp.js响应位置
+创建安卓证书，创建后证书文件会自动放进配置中，需要手动将命令行打印的配置内容，放进duxapp.js相应位置
 
 ### 启动metro
 
@@ -52,7 +52,7 @@ sidebar_position: 3
 
 建议使用前者，前者就是和RN一样的编译命令，里面封装了自动打开模拟器等功能  
 
-如果你链接到手机的adb功能，或者电脑上安装了模拟器，会自动安装apk，如果你需要调试版的apk，那么他位于这个文件夹下：`android/app/build/outputs/apk/debug`
+如果你链接到手机的adb功能，或者电脑上安装了模拟器，会自动安装apk，如果你需要调试版的apk，那么它位于这个文件夹下：`android/app/build/outputs/apk/debug`
 
 :::info
 在使用此命令之前请确保你已经完成下面这些操作，包括下面的编译发布版本也一样
@@ -79,7 +79,7 @@ sidebar_position: 3
 :::info
 在使用此命令之前请确保你已经完成下面这些操作
 - 搭建好ios开发环境
-- 配置安卓BundleId、app名称
+- 配置ios BundleId、app名称
 :::
 
 ### 安装pod依赖

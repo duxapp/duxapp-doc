@@ -43,7 +43,7 @@ import { asyncTimeOut } from '@/duxapp'
 
 const task = asyncTimeOut(2000)
 
-// task.clear() 如果最要可以清除定时器
+// task.clear() 如果需要，可以调用此方法清除定时器
 
 await task
 ```

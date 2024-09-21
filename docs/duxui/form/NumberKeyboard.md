@@ -4,7 +4,7 @@ sidebar_position: 15
 
 # NumberKeyboard 数字键盘
 
-用户数字的输入，例如输入验证码，支付密码、电话号码、身份证等
+用于数字的输入，例如输入验证码，支付密码、电话号码、身份证等
 
 ## 示例
 
@@ -103,7 +103,7 @@ const [value, props] = NumberKeyboard.useController()
 <NumberKeyboard {...props} />
 ```
 
-参数说明
+option 参数说明
 
 | 名称 | 类型 | 必填 | 说明 |
 | ---- | ---- | -------- | ------- |

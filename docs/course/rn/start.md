@@ -13,7 +13,7 @@ sidebar_position: 1
 
 ## 准备
 
-在新手教程中，你已经创建了一个全新模块，并且添加了 `duxui` 模块的依赖，要兼容RN，还需要添加 `duxappReactNative` 模块作为依赖，在添加依赖之前你需要安装他
+在新手教程中，你已经创建了一个全新模块，并且添加了 `duxui` 模块的依赖，要兼容RN，还需要添加 `duxappReactNative` 模块作为依赖，在添加依赖之前你需要安装
 
 ```bash
 # 安装duxappReactNative
@@ -65,7 +65,7 @@ module.exports = config
 
 ```
 
-由于安卓报名限制条件，你的包名只能由小写字母组成，并不能像模块名称那样，使用驼峰命名  
+由于安卓包名限制条件，你的包名只能由小写字母组成，并不能像模块名称那样，使用驼峰命名  
 
 接下来使用如下命令为安卓创建证书，这需要你在搭建好安卓开发环境的前提下（jdk）
 
@@ -73,7 +73,7 @@ module.exports = config
 yarn duxapp android keystore --config=moduleName
 ```
 
-`--config=moduleName` 首次出现，用来指定配置文件，意思是为这个配置文件生成证书，上面之前教程提到的大多数命令都能使用此参数，当模块名称和配置名称不一致时，就可以指定此单数  
+`--config=moduleName` 首次出现，用来指定配置文件，意思是为这个配置文件生成证书，上面之前教程提到的大多数命令都能使用此参数，当模块名称和配置名称不一致时，就可以指定此参数 
 
 命令执行成功后会提示如下内容 
 
@@ -96,6 +96,7 @@ const config = {
     appName: 'APP名称',
     versionCode: 1,
     versionName: '1.0.0',
+    // 添加到这里
     keystore: {
       storeFile: 'duxapp.keystore',
       keyAlias: 'duxapp',
@@ -119,22 +120,26 @@ module.exports = config
 接下来就能执行打包命令了
 
 ```bash
-yarn debug:android --app=moduleName
+yarn android --app=moduleName
 ```
 
 如果一切顺利，将会打包成功一个调试版本的安装包，如果你手机开启开发者选项，并且链接到电脑，将会把app打包安装到你的手机上  
 
-启动app，设置你电脑的ip地址+端口8081，比如: `192.168.1.10:8081`,然后使用命令启动RN服务
+启动app，设置你电脑的ip地址+端口8081，比如: `192.168.1.10:8081`，然后使用命令启动RN服务
 
 ```bash
-yarn dev:rn --app=moduleName
+yarn start --app=moduleName
 ```
 
-服务启动后在手机上 `reload` 即可加载代码，其他流程和Taro开发别无二致
+服务启动后在手机上 `reload` 即可加载代码，其他流程和Taro开发一致
+
+:::info
+使用这个 `yarn android --app=moduleName` 编译安卓的时候会自动启动RN服务，但是大多数情况下还是需要使用 `yarn start --app=moduleName` 启动服务
+:::
 
 ## 自定义app图标
 
-自定义app图标的方式也比较简单，秩序一行命令，将你的logo文件命名为 `logo.png` 放在 项目配置目录下 `configs/moduleName` ，然后执行如下命令
+自定义app图标的方式也比较简单，执行一行命令，将你的logo文件命名为 `logo.png` 放在 项目配置目录下 `configs/moduleName` ，然后执行如下命令
 
 ```bash
 yarn duxapp rn logo --config=moduleName
@@ -143,7 +148,7 @@ yarn duxapp rn logo --config=moduleName
 命令执行成功，将会生成app需要的尺寸，放置在配置文件夹下，然后重新打包
 
 ```bash
-yarn debug:android --app=moduleName
+yarn android --app=moduleName
 ```
 
 ## 打包发布版本
@@ -180,14 +185,6 @@ yarn build:android --app=moduleName
 
 ```js
 const config = {
-  // 对于默认不开启的页面 配置在此处将开启这些页面
-  openPages: [
-
-  ],
-  // 不需要的页面可以配置路径禁用
-  disablePages: [
-
-  ],
   // 覆盖app.config.js 配置
   appConfig: {},
   // 调试配置
@@ -265,27 +262,27 @@ module.exports = config
 配置完上述配置之后，需要重新执行打包流程
 
 ```bash
-yarn debug:android --app=moduleName
+yarn android --app=moduleName
 ```
 
 打包之后原生模块打包进app，然后就可以使用微信提供的功能，具体使用方法可查看相关插件文档  
 
 官方还提供了一些常用的原生模块，一看参考文档使用
 
-- alipay 支付宝
-- amap 高德地图
+- [alipay 支付宝](/docs/app/unionpay/start)
+- [amap 高德地图](/docs/app/amap/start)
 - bootsplash app启动图
-- codepush 热更新
+- [codepush 热更新](/docs/app/codepush/start)
 - duxpush 厂商通道的消息推送
-- echarts 百度图表
-- unionpay 云闪付
-- wechat 微信
+- [echarts 百度图表](/docs/app/echarts/start)
+- [unionpay 云闪付](/docs/app/alipay/start)
+- [wechat 微信](/docs/app/wechat/start)
 
 ## 自己集成第三方插件
 
 如果官方提供的插件不满足需求，你可以自己集成想要的插件，以`react-native-document-picker`插件为例  
 
-在模块配置文件中先添加插件依赖，如下,新增 `npm.dependencies`
+在模块配置文件中先添加插件依赖，如下，新增 `npm.dependencies`
 
 ```json
 {
@@ -309,5 +306,6 @@ yarn debug:android --app=moduleName
 然后重新执行打包命令即可
 
 ```bash
-yarn debug:android --app=moduleName
+yarn android --app=moduleName
 ```
+详细内容请查看[使用原生模块](/docs/course/rn/package)

@@ -186,7 +186,7 @@ duxapp结束位置
 添加env内容
 
 
-### ios/.xcode.env
+### ios/.pod.env
 
 此文件是cli定制环境变量，其中添加的环境变量用于在pod安装时使用
 
@@ -199,7 +199,7 @@ duxapp结束位置
 依赖导入位置
 
 - appDelegate.protocol  
-微信插件有次需求
+微信插件有此需求
 
 - appDelegate  
 接口内容

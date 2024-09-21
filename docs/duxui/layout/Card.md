@@ -81,7 +81,7 @@ import { Card, Text } from '@/duxui'
 
 ### wrap
 
-是否换行是否自动换行 相当于 `flex-wrap: wrap`
+是否自动换行 相当于 `flex-wrap: wrap`
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

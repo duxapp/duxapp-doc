@@ -143,7 +143,7 @@ export default function CardSelectExample() {
 
 ### plain
 
-是否实心
+是否镂空
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

@@ -4,26 +4,26 @@ sidebar_position: 1
 
 # 介绍
 
-模块(app)概念类似于应用程序，它可以安装、发布、卸载，当你拥有一个模块时，就拥有这个模块提供的能力，例如：
-- duxapp 此模块是所有模块的基础，模块提供了常用的工具、组件
-- duxui 模块提供了全面的ui组件
-- duxappReactNative 此模块提供了RN端的支持
+模块(app)概念类似于应用程序，它可以安装、发布、删除，当你拥有一个模块时，就拥有这个模块提供的能力，例如：
+- [duxapp](/docs/duxapp/start) 此模块是所有模块的基础，模块提供了常用的工具、组件
+- [duxui](/docs/duxui/start) 模块提供了全面的ui组件
+- [duxappReactNative](/docs/app/duxcms/start) 此模块提供了RN端的支持
 - duxcmsShop 此模块提供了一个完整的单用户商城，里面包含了商品、订单、售后、用户等完整流程
 
 ## 为什么设计了模块化
 
-在很多后台应用程序中都有在后台安装一个应用，就能实现对应的功能，例如`微擎`,`duxcms`, `fastadmin`等，但是在前端，确甚少看到过类似的实现  
+在很多后台应用程序中都有在后台安装一个应用，就能实现对应的功能，例如`微擎`,`duxcms`, `fastadmin`等，但是在前端，确很少看到过类似的实现  
 
-借鉴了这些框架的思维，于是设计了模块化的前端框架，但是对于前端来说有些许不同，duxapp的模块他并不会多个模块同时工作，你通常需要指定一个模块作为入口，例如
+于是我就结合Taro设计了这样的开发模式，但这对比后端的模块化有些许不同，duxapp的模块他并不会多个模块同时工作，你通常需要指定一个模块作为入口，例如
 - `yarn dev:weapp --app=duxcmsShop`
 - `yarn dev:weapp --app=duxuiExample`  
 
 这里通过`--app`指定了入口模块，那么他们将分别会使用到下面这些模块
 
-- 入口duxcmsShop使用使用到的模块：  
+- 入口duxcmsShop使用到的模块：  
 duxcmsContent amap duxcmsChat unionpay alipay duxcmsPay wechat duxappReactNative duxui duxcms duxapp user duxcmsUser duxcmsAccount duxcmsOrder duxcmsMall duxcmsShop
 
-- 入口duxuiExample使用使用到的模块：  
+- 入口duxuiExample使用到的模块：  
 wechat echarts amap duxappReactNative duxcms duxapp duxui duxuiExample  
 
 可以看到他们都使用了多个模块，也就是说，当你选择对应模块作为入口的时候，他用到的模块将会被一起编译，未使用的模块则完全不工作，即使那个模块存在你的项目中  

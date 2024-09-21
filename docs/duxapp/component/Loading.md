@@ -26,7 +26,7 @@ loading颜色，有深色，浅色两个选项
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| enum('dark', 'size') | 否 | dark |
+| enum('dark', 'blank') | 否 | dark |
 
 ### size
 

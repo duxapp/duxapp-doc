@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Badge 标签
+# Tag 标签
 
 标签展示
 

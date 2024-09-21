@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # 用户配置
 
-配置文件用来配置包名、版本号、证书等信息，配置文件和配置一样都放在`configs`文件夹下对应的配置中，其名称为`duxapp.js`，这是一个node模块，需要使用`module.exports`导出一个配置对象
+配置文件用来配置包名、版本号、证书等信息，配置文件和配置一样都放在`configs`文件夹下对应的配置中，其名称为`duxapp.js`
 
 ```js
 module.exports = {
@@ -54,6 +54,10 @@ module.exports = {
 }
 ```
 
+:::info
+这是一个node模块，需要使用`module.exports`导出一个配置对象
+:::
+
 下面将详细介绍此对象包含的内容
 
 ## android
@@ -81,7 +85,7 @@ app版本号
   keyPassword: 'EQGNRXRE47CcSD5i'
 }
 ``` 
-cli提供了一个快捷命令用于创建证书`yarn duxapp android keystore --config=配置名称` 创建后命令行会在命令行输出这个配置的内容，复制这个内容设置到此配置
+cli提供了一个快捷命令用于创建证书`yarn duxapp android keystore --config=配置名称` 创建后，会在命令行输出这个配置的内容，复制这个内容设置到此配置
 
 ### fabricEnabled
 是否开启新架构，默认是开启的，如果需要关闭，请配置为false
@@ -110,17 +114,17 @@ app数字版本号，类型为number
 app版本号
 
 ### team
-项目团队，配置后用一打包
+项目团队，配置后用于打包
 
 ### fabricEnabled
 是否开启新架构，默认是开启的，如果需要关闭，请配置为false
 
 ### plist
-用于合并xml文件，他的配置和 [plist-配置合并](package-update#plist-配置合并) 一致
+用于合并plist文件，他的配置和 [plist-配置合并](package-update#plist-配置合并) 一致
 
 ## qiniu
 
-7牛云上传配置，次配置并非用于RN使用，而是用于创建Icon命令上传字体文件使用
+7牛云上传配置，此配置并非用于RN使用，而是用于创建Icon命令上传字体文件使用
 
 ### accessKey
 key
@@ -132,4 +136,4 @@ key
 访问域名
 
 ## option
-模块自定义配置，例如微信模块在编译ios时需要用到appid，就配置在`option.wechat.appd`
+模块自定义配置，例如微信模块在编译ios时需要用到appid，就配置在`option.wechat.appid`

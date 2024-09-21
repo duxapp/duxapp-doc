@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Calendar 日历
 
-为兼容多选编写的日历组件，支持日、周、范围选择，支持多种自定义日历的方式
+为兼容多端，所以编写的日历组件，支持日、周、范围选择，支持多种自定义日历的方式
 
 ## 示例
 
@@ -139,7 +139,7 @@ export default function ButtonExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| string | string[] | string[][] | 否 |  |
+| string \| string[] \| string[][] | 否 |  |
 
 ### navStyle
 
@@ -159,11 +159,11 @@ export default function ButtonExample() {
 
 ### onChange
 
-当选择发生改变是触发的时事件
+当选择发生改变时触发的事件
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| (value: string \| string[]) => void | 否 |  |
+| (value: string \| string[] \| string[][]) => void | 否 |  |
 
 ### onMonthChange
 
@@ -183,7 +183,7 @@ export default function ButtonExample() {
 
 ### max
 
-允许选择的最大日期 如2020-01-01
+允许选择的最大日期 如2030-01-01
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -213,7 +213,7 @@ export default function ButtonExample() {
 | ---- | -------- | ------- |
 | (string \| [string, string])[] | 否 |  |
 
-### disabledDate
+### enabledDate
 
 可用的日期 除了传入的日期或者范围，其他的日期将被禁用，当 enabledDate 的日期在 disabledDate 里面时 此日期将不可用
 

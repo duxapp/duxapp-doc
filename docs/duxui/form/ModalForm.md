@@ -4,7 +4,7 @@ sidebar_position: 14
 
 # ModalForm 弹出表单
 
-用于将其他表单封装为一个弹出表单，例如选择器，日期选择器都是经过这个组件封装的
+用于将其他表单封装为一个弹出表单，例如单列选择器、日期选择器都是由这个组件封装的
 
 这里包含了 
 
@@ -168,7 +168,7 @@ export default function ModalFormExample() {
 
 ### getValue
 
-获取value的显示值，如果是你自定义的表单，value不是你想要显示的值，你可以传入一个函数来返回要要显示的值
+获取value的显示值，如果是你自定义的表单，value不是你想要显示的值，你可以传入一个函数来返回要显示的值
 
 函数会把当前的value传入，需要返回要显示给用户的字符串
 
@@ -194,7 +194,7 @@ export default function ModalFormExample() {
 
 ### title
 
-弹出后顶部显示的表单
+弹出后顶部显示的标题
 
 ### renderHeader
 
@@ -303,7 +303,7 @@ const Dates = ({ value, ...props }) => {
 
 ## ModalForm.Submit Props
 
-提交按钮，showButton设置为fasle后，你可以自定义提按钮
+提交按钮，showButton设置为fasle后，你可以自定义提交按钮
 
 默认使用 [`Button`](../base/Button) 渲染按钮，如果你要自定义按钮内容，请使用一个可点击的元素作为子元素
 
@@ -327,7 +327,9 @@ const Dates = ({ value, ...props }) => {
 
 ## ModalForms Props
 
-用于弹出多个表单
+用于弹出多个表单，由于context的作用域问题，当你表单中的一部分需要弹出显示的时候，需要用这个组件来进行弹出
+
+如果你使用了PullView、Modal等弹出，填写的值将不会在表单中
 
 ### renderForm
 
@@ -347,7 +349,7 @@ const Dates = ({ value, ...props }) => {
 
 ### title
 
-弹出后顶部显示的表单
+弹出后顶部显示的标题
 
 ### showButton
 

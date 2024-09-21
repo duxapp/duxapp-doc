@@ -109,15 +109,15 @@ CascadeData 数据格式
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| `(value: string | number | (string | number)[]) => void` | 否 |  |
+| `(value: string \| number \| (string \| number)[]) => void` | 否 |  |
 
 ### onChangeItem
 
-会把选中项的对象，而不是值传回去
+和 `onChange` 一同触发 会把选中项的对象，而不是值传回去
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| `(item: CascadeData | CascadeData[]) => void` | 否 |  |
+| `(item: CascadeData \| CascadeData[]) => void` | 否 |  |
 
 ### checkbox
 
@@ -161,7 +161,7 @@ CascadeData 数据格式
 
 ### nameKey
 
-分类名称的键名
+名称的键名
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -169,7 +169,7 @@ CascadeData 数据格式
 
 ### valueKey
 
-分类名称的键名
+值的键名
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
