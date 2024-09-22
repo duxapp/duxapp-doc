@@ -1,8 +1,4 @@
 {
-  "label": "duxappReactNative RN端",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "ReactNative端基座，所有需要支持app的模块都需要依赖此模块"
-  }
+  "label": "duxcms",
+  "position": 10
 }

@@ -1,8 +1,4 @@
 {
-  "label": "duxcms 后端cms框架桥接",
-  "position": 100,
-  "link": {
-    "type": "generated-index",
-    "description": "ReactNative端基座，所有需要支持app的模块都需要依赖此模块"
-  }
+  "label": "duxappReactNative RN支持",
+  "position": 5
 }

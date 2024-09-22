@@ -1,8 +1,4 @@
 {
   "label": "echarts 百度图表",
-  "position": 33,
-  "link": {
-    "type": "generated-index",
-    "description": "集成百度图表插件，兼容多个端，RN端组件基本支持"
-  }
+  "position": 33
 }

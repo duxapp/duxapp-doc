@@ -309,3 +309,7 @@ yarn android --app=moduleName
 yarn android --app=moduleName
 ```
 详细内容请查看[使用原生模块](/docs/course/rn/package)
+
+## RN模块教程
+
+RN基础模块中提供了用户协议、版本更新、权限管理等功能，前往[duxappReactNativem模块](/docs/app/duxappReactNative/start)了解
