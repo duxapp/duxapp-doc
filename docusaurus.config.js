@@ -54,6 +54,8 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarTitle: '全部博客',
+          blogSidebarCount: 'ALL',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -108,12 +110,12 @@ const config = {
             position: 'right',
             label: '更多模块',
           },
+          {to: '/blog', label: '博客', position: 'right'},
           {
             href: 'https://www.dux.cn/page/apps',
             label: '应用商店',
             position: 'right'
           },
-          // {to: '/blog', label: '日志', position: 'left'},
           {
             href: 'https://github.com/duxapp',
             label: 'GitHub',

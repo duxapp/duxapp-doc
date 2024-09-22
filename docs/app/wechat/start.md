@@ -103,6 +103,10 @@ export default TopView.HOC(function Page() {
 })
 ```
 
+:::info
+如果要在页面中设置分享参数，页面必须要使用`TopView.HOC`进行包装，而不是将TopView作为组件使用
+:::
+
 ### 设置全局分享参数
 
 ```jsx
