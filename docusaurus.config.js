@@ -39,7 +39,12 @@ const config = {
       }
     }
   },
-
+  scripts: [
+    {
+      src: 'https://hm.baidu.com/hm.js?dd8451cb032d05dbd8f8fee75e02ecc5',
+      async: true
+    }
+  ],
   presets: [
     [
       'classic',
