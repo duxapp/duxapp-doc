@@ -6,6 +6,16 @@ authors: [duxapp]
 tags: [duxapp, 项目, 介绍]
 ---
 
+duxapp是基于Taro二次开发的模块化框架
+
+使用这个框架，结合框架提供的UI库和工具库，能帮助你快速且高质量的完成项目，且能实现同时开发小程序、H5、APP（React Native），并且保证各个端的一致性
+
+duxapp还针对APP开发（React Native）做了大量优化，大大降低了APP发开的难度，你可以阅读[React Native教程](http://duxapp.cn/docs/course/rn/start)，了解详情
+
+下面让我来详细介绍如何使用duxapp
+
+## 何为模块化
+
 什么是模块化？就像npm包一样，我们可以将一些通用的功能或页面编写在一个模块内，提供给多个项目来使用，以提高代码的复用性。
 
 模块的概念在很多后端框架中很常见，它们可以在应用商店通过安装应用的方式来获得新功能，在前端框架中确很少见到类似的设计方案，当然你其实也可以理解为发布到npm就是一种模块化的设计，但是在Taro中很多功能他并不能发布到npm中，例如页面。页面需要放在项目中，当发布到npm之后就会无法使用
@@ -141,7 +151,7 @@ npx duxapp-cli create projectName
 │   └── readme.md               自述文件（必须 如果发布）
 ```
 
-关于模块目录的详细内容查看这个 [模块结构](/docs/course/app/directory) 获取
+关于模块目录的详细内容查看这个 [模块结构](http://duxapp.cn/docs/course/app/directory) 获取
 
 ## 模块配置
 
@@ -443,6 +453,12 @@ const config = {
 
 export default config
 ```
+
+## 后端框架
+
+在我开发的项目中，后端框架是我的合伙人负责的，后端同样也是采用模块化的开发模式完成的，duxapp框架对后端框架已经打好了对接的基础，如果你考虑进一步提升后端的开发效率，可以考虑使用
+
+后端开发文档：[https://www.dux.cn/](https://www.dux.cn/)
 
 ## 总结
 
