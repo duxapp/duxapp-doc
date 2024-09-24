@@ -156,6 +156,24 @@ ios：
 其他：
 - 通过patch修复当前版本的一个bug 
 
+首先还是要在模块中添加依赖
+```json
+{
+  "name": "wechat",
+  "description": "端微信模块依赖,APP端和h5端",
+  "version": "1.0.15",
+  "dependencies": [
+    "duxappReactNative"
+  ],
+  "npm": {
+    "dependencies": {
+      "react-native-wechat-lib": "^3.0.4",
+      "wechat-jssdk": "^5.1.0"
+    }
+  }
+}
+```
+
 那么在duxapp前面提到，安卓和ios文件夹的内容都是自动生成的，我又是如何处理这些修改的呢？这里就需要用到 duxapp-cli 提供的模块更新脚本来处理
 
 针对微信插件的处理脚本文件位于 `src/wechat/update/index.js`，这个文件的内容是下面这样的
@@ -337,3 +355,5 @@ yarn duxapp app add wechat
 通过上面的说明，你已经基本了解了duxapp是如何处理RN端开发的，还有很多的详细的内容，还需要前往文档查看[http://duxapp.cn/docs/course/rn/start](http://duxapp.cn/docs/course/rn/start)
 
 再结合duxapp提供的ui库、工具库、全局样式等方法，就能很快的完成你的APP项目了
+
+GitHub：[https://github.com/duxapp](https://github.com/duxapp)
