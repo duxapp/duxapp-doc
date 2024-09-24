@@ -22,7 +22,7 @@ sidebar_position: 3
 
 ### 生成项目logo
 
-`yarn duxapp rn icon --config=配置名称`  
+`yarn duxapp rn logo --config=配置名称`  
 
 用于生成项目的app图标，在生成之前需要将项目logo命名为`logo.png`，放在配置文件夹的根目录  
 
