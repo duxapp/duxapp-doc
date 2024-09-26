@@ -12,7 +12,7 @@ duxapp框架的duxui模块是免费开放的，使用这个库来编写项目，
 
 - 小程序 （小程序搜索 duxui）
 - APP https://app.share.dux.plus/com.duxapp.duxui
-- H5 https://example.duxui.cn
+- H5 https://duxui.duxapp.cn/
 
 ## 使用
 
