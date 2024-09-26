@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# 问题反馈
+# 加群反馈
 
 如果你发现bug或者有新的想法，可以在讨论区发起讨论
 [https://github.com/orgs/duxapp/discussions](https://github.com/orgs/duxapp/discussions)
