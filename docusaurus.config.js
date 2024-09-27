@@ -5,12 +5,12 @@ const { themes } = require('prism-react-renderer')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'DuxApp',
-  tagline: '基于Taro开发的模块化架构',
+  title: 'duxapp',
+  tagline: '基于Taro开发的模块化开发框架',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://duxapp.cn',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -61,6 +61,7 @@ const config = {
           showReadingTime: true,
           blogSidebarTitle: '全部博客',
           blogSidebarCount: 'ALL',
+          blogTitle: '博客',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -163,6 +164,15 @@ const config = {
                 label: '更多模块',
                 to: '/docs/app/start',
               },
+            ],
+          },
+          {
+            title: '博客',
+            items: [
+              {
+                label: '博客',
+                to: '/blog',
+              }
             ],
           },
           {
