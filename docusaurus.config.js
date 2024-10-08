@@ -116,7 +116,15 @@ const config = {
             position: 'right',
             label: '更多模块',
           },
-          {to: '/blog', label: '博客', position: 'right'},
+          {
+            to: '/blog', label: '博客', position: 'right'
+          },
+          {
+            type: 'doc',
+            docId: 'contact/start',
+            position: 'right',
+            label: '联系我们',
+          },
           {
             href: 'https://www.dux.cn/page/apps',
             label: '应用商店',
