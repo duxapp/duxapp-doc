@@ -1,6 +1,6 @@
 ---
 slug: duxui
-title: duxui：基于Taro，兼容小程序、H5、RN的多端UI库
+title: duxui：基于Taro，兼容React Native、小程序、H5的多端UI库
 description: 使用UI库提供的多端统一组件，来快速完成项目
 authors: [duxapp]
 tags: [duxapp, duxui]
@@ -18,7 +18,7 @@ duxui已经被我用于很多项目中，其中包含APP的项目就开发了几
 
 - 小程序  
   ![小程序](./images/weapp.jpg)
-- APP [https://app.share.dux.plus/com.duxapp.duxui](https://app.share.dux.plus/com.duxapp.duxui)
+- APP [https://app.share.dux.plus/cn.duxapp.duxui](https://app.share.dux.plus/cn.duxapp.duxui)
 - H5 [https://duxui.duxapp.cn](https://duxui.duxapp.cn)
 
 如果你想通过项目来查看这些组件的运行效果或者组件源码，使用下面这个命令创建一个UI库的示例代码
