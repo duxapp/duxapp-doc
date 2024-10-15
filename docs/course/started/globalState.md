@@ -74,10 +74,10 @@ const C = () => {
 这个状态可以在整个运行时内所有页面或者组件内调用
 
 ```js
-import { creatGlobalState } from '@/duxapp'
+import { createGlobalState } from '@/duxapp'
 
 /** 需要在合适的地方创建，然后导出，在此处仅演示如何使用 */
-const globalState = creatGlobalState({ text: '默认值' })
+const globalState = createGlobalState({ text: '默认值' })
 
 // 任何地方设置值
 globalState.setState({ text: '设置的值' })

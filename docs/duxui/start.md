@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # 开始
 
-兼容小程序、APP、H5的移动端ui组件库，提供了50+个组件，帮助你快速完成业务
+兼容小程序、APP、H5的移动端ui组件库，提供了60+个组件，帮助你快速完成业务
 
 ## 安装
 
@@ -16,8 +16,10 @@ yarn duxapp app add duxui
 
 ## 示例
 
-- 小程序 （小程序搜索 duxui）
-- APP https://app.share.dux.plus/com.duxapp.duxui
+- 小程序  
+<img src="/img/weapp/duxui.jpg" width="200" />  
+
+- APP https://app.share.dux.plus/cn.duxapp.duxui
 - H5 https://duxui.duxapp.cn/
 
 ## 示例代码
@@ -75,6 +77,7 @@ yarn duxapp app add duxuiExample
 - NumberKeyboard 数字键盘
 - InputCode 验证码密码输入
 - LicensePlate 车牌号输入
+- Recorder 录音
 
 ### 展示组件
 - Text 文本

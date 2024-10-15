@@ -83,7 +83,7 @@ export default function UploadExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| (value: string \| string[]) => void | 否 | 1 |
+| (value: string \| string[]) => void | 否 |  |
 
 ### column
 

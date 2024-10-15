@@ -128,6 +128,15 @@ export default function StepExample() {
 | ---- | -------- | ------- |
 | `(option: { item: any, index: number }) => void` | 否 |  |
 
+### lineType
+
+连接的线条类型
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| emun('solid', 'dashed', 'dotted') | 否 | solid |
+
+
 ### itemClassName
 
 每一项的样式

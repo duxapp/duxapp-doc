@@ -40,7 +40,7 @@ yarn start --app=duxuiExample
 ```js
 const config = {
   android: {
-    appid: 'com.duxapp.duxui',
+    appid: 'cn.duxapp.duxui',
     appName: 'duxUI库',
     versionCode: 2,
     versionName: '1.1.0',
@@ -52,7 +52,7 @@ const config = {
     }
   },
   ios: {
-    BundleId: 'com.duxapp.duxui',
+    BundleId: 'cn.duxapp.duxui',
     appName: 'duxUI库',
     versionCode: 1,
     versionName: '1.0.0',

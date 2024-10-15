@@ -6,11 +6,11 @@ sidebar_position: 7
 
 网络请求的hook文档写在 [请求上传](net) 中
 
-这个文档介绍 `creatGlobalState` `creatContextState` `useDeepObject` 这些hook的用途
+这个文档介绍 `createGlobalState` `createContextState` `useDeepObject` 这些hook的用途
 
 ## 方法
 
-### creatGlobalState(defaultState)
+### createGlobalState(defaultState)
 
 用于创建全局状态，请参考入门教程[全局状态](/docs/course/started/globalState#全局状态-1)
 
@@ -25,7 +25,7 @@ sidebar_position: 7
 | useState | () => any | 获取当前值的hook |
 | setState | (value: S | ((prevState: S) => S)) => void | 设置值 |
 
-### creatContextState()
+### createContextState()
 
 用于创建局部全局状态，请参考入门教程[局部全局状态](/docs/course/started/globalState#局部全局状态)
 
