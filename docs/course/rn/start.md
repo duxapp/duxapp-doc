@@ -13,7 +13,7 @@ sidebar_position: 1
 
 ## 准备
 
-在新手教程中，你已经创建了一个全新模块，并且添加了 `duxui` 模块的依赖，要兼容RN，还需要添加 `duxappReactNative` 模块作为依赖，在添加依赖之前你需要安装
+在[新手教程](/docs/course/started/intro)中，你已经创建了一个全新模块，并且添加了 `duxui` 模块的依赖，要兼容RN，还需要添加 `duxappReactNative` 模块作为依赖，在添加依赖之前你需要安装
 
 ```bash
 # 安装duxappReactNative
@@ -43,7 +43,9 @@ yarn duxapp runtime enterFile --app=moduleName
 
 ## 添加配置文件
 
-在之前的入门教程中我们已经创建了 `index.js` 配置文件, RN配置需要在同一个目录下创建 `duxapp.js` 文件，内容如下
+在之前的[入门教程](/docs/course/started/intro)中我们已经创建了 `index.js` 配置文件, RN配置需要在同一个目录下创建 `duxapp.js` 文件，内容如下，
+
+`configs/modeName/duxapp.js`
 
 ```js
 const config = {
@@ -65,9 +67,13 @@ module.exports = config
 
 ```
 
+:::info
+android和ios都需要配置上，即便你只开发安卓端，否则无法正常编译
+:::
+
 由于安卓包名限制条件，你的包名只能由小写字母组成，并不能像模块名称那样，使用驼峰命名  
 
-接下来使用如下命令为安卓创建证书，这需要你在搭建好安卓开发环境的前提下（jdk）
+接下来使用如下命令为安卓创建证书，这需要你在搭建好安卓开发环境的前提下（JDK需要安装到默认位置，否则可能识别不到）
 
 ```bash
 yarn duxapp android keystore --config=moduleName

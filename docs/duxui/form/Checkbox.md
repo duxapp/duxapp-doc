@@ -45,6 +45,14 @@ sidebar_position: 7
 | ---- | -------- | ------- |
 | boolean | 否 | false |
 
+### half
+
+半选中状态，checked为false的时候生效
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
 ### disabled
 
 是否禁用这个选项

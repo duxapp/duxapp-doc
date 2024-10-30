@@ -128,7 +128,7 @@ route.nav('back:2', { name: '姓名' })
 route.nav('tel:10086')
 
 // 打开一个网址
-route.nav('https:www.baidu.com')
+route.nav('https://www.baidu.com')
 
 // 打开地图
 route.nav('map:point', {

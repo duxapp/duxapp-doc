@@ -288,6 +288,76 @@ const action = useRef()
 | ---- | -------- | ------- |
 | string | 否 |  |
 
+### useVirtualList
+
+是否使用虚拟列表 这在小程序和H5端生效 RN端默认使用虚拟列表
+
+开启后还需要传入 virtualListProps 或者 virtualWaterfallProps 参数
+
+如果columns>1使用virtualListProps传入参数
+
+要需要配置 itemSize 才能正常显示，请查看相关文档
+
+开启后，传入renderItem的组件就会接收到一个叫id的props，需要将这个id传递给你的组件的根节点
+
+```jsx
+// 单列示例
+<List
+  url='mall/mall'
+  renderItem={Item}
+  renderEmpty={<Empty title='暂无数据' />}
+  useVirtualList
+  virtualListProps={{
+    // 需要将外边距也计算在内
+    itemSize: List.itemSize(550),
+    // 设置可是区域外渲染的项目数量
+    overscanCount: 2,
+  }}
+/>
+
+// 项目组件需要用memo处理
+const Item = memo(({ item, id, index }) => {
+  // 将id赋值给根组件
+  return <Column id={id} style={{ height: px(550) }}>
+    <Text>项目</Text>
+  </Column>
+})
+```
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 |  |
+
+:::info
+开启虚拟列表会有一些使用限制
+- 虚拟列表所在的区域不可动态变更高度，高度需要在你初始布局的时候就确定
+- 需要给每一项设置一个itemSize，通常在每一项等高的时候，更合适开启虚拟列表的使用
+:::
+
+### virtualListProps
+
+传给VirtualList的参数，至少需要配置 itemSize 列表才能正常运行
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| [VirtualList](https://nervjs.github.io/taro-docs/docs/virtual-list) | 否 |  |
+
+### virtualWaterfallProps
+
+当 columns > 1 时传递给 VirtualWaterfall 的参数
+
+至少需要配置 itemSize 列表才能正常运行
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| [VirtualWaterfall](https://nervjs.github.io/taro-docs/docs/virtual-waterfall) | 否 |  |
+
+## 方法
+
+### itemSize(size)
+
+开启虚拟列表后，用于提供给itemSize计算的方法
+
 ## 数据选择
 
 列表组件可以用于数据选择

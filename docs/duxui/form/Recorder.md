@@ -116,7 +116,7 @@ export default function RecorderExample() {
 
 ### start()
 
-异步弹出录音界面，并返回本里录音结果
+异步弹出录音界面，并异步返回本地录音结果
 
 返回值
 
