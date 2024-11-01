@@ -315,13 +315,12 @@ const action = useRef()
   }}
 />
 
-// 项目组件需要用memo处理
-const Item = memo(({ item, id, index }) => {
+const Item = ({ item, id, index }) => {
   // 将id赋值给根组件
   return <Column id={id} style={{ height: px(550) }}>
     <Text>项目</Text>
   </Column>
-})
+}
 ```
 
 | 类型 | 必填 | 默认值 |

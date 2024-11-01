@@ -273,6 +273,14 @@ const Dates = ({ value, ...props }) => {
 | ---- | -------- | ------- |
 | enum('default', 'clear', 'prev') | 否 | default |
 
+### onSubmitBefore
+
+可以监听用户提交，传入要提交的值，通过抛出错误的方式阻止用户提交，这个方法可以是同步，也可以是异步的
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| `(val: any) => Promise<{}>` | 否 |  |
+
 ## ModalForm.Reset Props
 
 重置按钮，showButton设置为fasle后，你可以自定义重置按钮
