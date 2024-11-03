@@ -190,10 +190,10 @@ duxapp结束位置
 - end  
 文件末尾
 
-- postInstallStart
+- postInstallStart  
 post_install 的开始位置
 
-- postInstallEnd
+- postInstallEnd  
 post_install 的结束位置
 
 ### ios/.xcode.env
