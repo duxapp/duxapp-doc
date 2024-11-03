@@ -96,6 +96,17 @@ cli提供了一个快捷命令用于创建证书`yarn duxapp android keystore --
 ### enableSeparateBuildPerCPUArchitecture
 将apk打包为不同架构，默认开启，如需关闭，需配置为`false`
 
+### reactNativeArchitectures
+默认只会编译 `arm64-v8a` 的包，如果你还需要编译其他的包请配置替换
+
+完整的为 `armeabi-v7a,x86,x86_64,arm64-v8a` 你可以参照这个，按照需要进行修改
+
+### distributionUrl
+用于替换默认的 gradle 下载地址
+
+默认值为
+`https\://services.gradle.org/distributions/gradle-8.8-all.zip`
+
 ### xml
 用于合并xml文件，他的配置和 [合并创建xml](package-update#xml-合并创建xml) 一致
 

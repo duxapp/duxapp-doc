@@ -115,23 +115,15 @@ yarn duxapp rn logo --config=duxuiExample
 
 像这个`react-native-view-shot`安装方式很简单的插件，他只要求你将他添加到 `package.json` 的依赖中就可以使用了
 
-那么我们结合模块，在你需要用到这个功能的模块配置文件中，一样的添加上这个依赖即可，像下面这个`duxui`模块的配置文件一样
+那么我们结合模块，在你需要用到这个功能的模块配置文件中，一样的添加上这个依赖即可，像下面这个`duxui`模块的`package.json`文件一样
 
 ```json
 {
-  "name": "duxui",
-  "description": "DUXUI库",
-  "version": "1.0.42",
-  "dependencies": [
-    "duxapp"
-  ],
-  "npm": {
-    "dependencies": {
-      "b-validate": "^1.5.3",
-      "react-native-view-shot": "~3.8.0",
-      "react-native-fast-shadow": "~0.1.1",
-      "array-tree-filter": "^2.1.0"
-    }
+  "dependencies": {
+    "b-validate": "^1.5.3",
+    "react-native-view-shot": "~3.8.0",
+    "react-native-fast-shadow": "~0.1.1",
+    "array-tree-filter": "^2.1.0"
   }
 }
 ```
@@ -156,20 +148,12 @@ ios：
 其他：
 - 通过patch修复当前版本的一个bug 
 
-首先还是要在模块中添加依赖
+首先还是要在模块中添加依赖 `package.json` 文件
 ```json
 {
-  "name": "wechat",
-  "description": "端微信模块依赖,APP端和h5端",
-  "version": "1.0.15",
-  "dependencies": [
-    "duxappReactNative"
-  ],
-  "npm": {
-    "dependencies": {
-      "react-native-wechat-lib": "^3.0.4",
-      "wechat-jssdk": "^5.1.0"
-    }
+  "dependencies": {
+    "react-native-wechat-lib": "^3.0.4",
+    "wechat-jssdk": "^5.1.0"
   }
 }
 ```

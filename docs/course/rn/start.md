@@ -288,23 +288,12 @@ yarn android --app=moduleName
 
 如果官方提供的插件不满足需求，你可以自己集成想要的插件，以`react-native-document-picker`插件为例  
 
-在模块配置文件中先添加插件依赖，如下，新增 `npm.dependencies`
+在模块配置文件中先添加插件依赖，如下，先在模块创建 `package.json` 文件，放入下面的内容
 
 ```json
 {
-  "name": "moduleName",
-  "description": "模块介绍",
-  "version": "1.0.0",
-  "dependencies": [
-    "duxapp",
-    "duxui",
-    "duxappReactNative",
-    "wechat"
-  ],
-  "npm": {
-    "dependencies": {
-      "react-native-document-picker": "9.1.0"
-    }
+  "dependencies": {
+    "react-native-document-picker": "9.1.0"
   }
 }
 ```

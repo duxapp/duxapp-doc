@@ -67,15 +67,7 @@ duxui的配置文件：
   "version": "1.0.39",
   "dependencies": [
     "duxapp"
-  ],
-  "npm": {
-    "dependencies": {
-      "b-validate": "^1.5.3",
-      "react-native-view-shot": "~3.8.0",
-      "react-native-fast-shadow": "~0.1.1",
-      "array-tree-filter": "^2.1.0"
-    }
-  }
+  ]
 }
 ```
 

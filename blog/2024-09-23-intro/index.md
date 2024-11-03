@@ -48,15 +48,7 @@ duxapp还针对APP开发（React Native）做了大量优化，大大降低了AP
   "version": "1.0.42",
   "dependencies": [
     "duxapp"
-  ],
-  "npm": {
-    "dependencies": {
-      "b-validate": "^1.5.3",
-      "react-native-view-shot": "~3.8.0",
-      "react-native-fast-shadow": "~0.1.1",
-      "array-tree-filter": "^2.1.0"
-    }
-  }
+  ]
 }
 ```
 
@@ -139,6 +131,7 @@ npx duxapp-cli create projectName
 │   ├── app.js                  模块入口文件
 │   ├── app.json                模块配置文件 包括名称 依赖等（必须）
 │   ├── app.scss                全局样式文件（次样式文件无需导入到js文件中，会自动注入全局）
+│   ├── package.json            和项目的package.json相同，用于指定当前模块需要用到的三方依赖等
 │   ├── changelog.md            更新日志（必须 如果发布）
 │   ├── index.js                模块出口文件 可以导出组件和方法给其他模块使用
 │   ├── index.html              如果是h5的项目可以自定义index.html，仅当作为入口模块时可用
@@ -164,19 +157,11 @@ npx duxapp-cli create projectName
   "version": "1.0.42",
   "dependencies": [
     "duxapp"
-  ],
-  "npm": {
-    "dependencies": {
-      "b-validate": "^1.5.3",
-      "react-native-view-shot": "~3.8.0",
-      "react-native-fast-shadow": "~0.1.1",
-      "array-tree-filter": "^2.1.0"
-    }
-  }
+  ]
 }
 ```
 
-我们看到，他有一个字段 `npm`，它的内容和项目的 `package.json` 的配置是完全一样的，在模块中编写这个内容，将会和项目的 `package.json` 进行覆盖合并，那么你就可以通过模块来安装当前模块需要依赖了，每个模块中都可以指定这个依赖，他们会合并在一起
+我们看到，他有一个字段 `npm`，(新版本中，这个配置已经移动到模块的`package.json`文件中)它的内容和项目的 `package.json` 的配置是完全一样的，在模块中编写这个内容，将会和项目的 `package.json` 进行覆盖合并，那么你就可以通过模块来安装当前模块需要依赖了，每个模块中都可以指定这个依赖，他们会合并在一起
 
 当你指定了不同的 `--app=` 入口模块之后，框架会根据你使用到的模块中的第三方依赖自动重新安装
 

@@ -58,6 +58,11 @@ true 或者 false，默认true， 传入true会对打包的apk进行压缩处理
 - packageName  
 包名，默认 `cn.duxapp`，此项一般通过配置更新，请勿通过更新程序更新
 
+### android/gradle/wrapper/gradle-wrapper.properties
+
+- distributionUrl
+gradle 下载地址，此项一般通过配置更新，请勿通过更新程序更新
+
 ### ios/.xcode.env
 
 此文件是cli定制环境变量，其中添加的环境变量用于在pod安装时使用
@@ -166,6 +171,11 @@ app创建需要执行的其他代码
 - mainApplication  
 其他方法用于覆盖默认方法
 
+### android/gradle/wrapper/gradle-wrapper.properties
+
+- content
+插入此文件的其他内容
+
 ### ios/Podfile
 
 - start  
@@ -179,6 +189,12 @@ duxapp结束位置
 
 - end  
 文件末尾
+
+- postInstallStart
+post_install 的开始位置
+
+- postInstallEnd
+post_install 的结束位置
 
 ### ios/.xcode.env
 

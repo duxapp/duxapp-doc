@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ## 基本模块
 
-在开发RN是不可避免使用到原生模块，而大多数的原生模块集成进来都比较简单，例如duxui使用到的`react-native-view-shot` 和 `react-native-fast-shadow`只需要在模块的app.json中添加依赖  
+在开发RN是不可避免使用到原生模块，而大多数的原生模块集成进来都比较简单，例如duxui使用到的`react-native-view-shot` 和 `react-native-fast-shadow`只需要在模块的`package.json`中添加依赖  
 
 添加依赖之后需要重新编译  
 android: `yarn android --app=模块`  
@@ -14,46 +14,30 @@ ios: `yarn ios --app=模块`
 
 ```json
 {
-  "name": "duxui",
-  "description": "DUXUI库",
-  "version": "1.0.39",
-  "dependencies": [
-    "duxapp"
-  ],
-  "npm": {
-    "dependencies": {
-      "b-validate": "^1.5.3",
-      "react-native-view-shot": "~3.8.0",
-      "react-native-fast-shadow": "~0.1.1",
-      "array-tree-filter": "^2.1.0"
-    }
+  "dependencies": {
+    "b-validate": "^1.5.3",
+    "react-native-view-shot": "~3.8.0",
+    "react-native-fast-shadow": "~0.1.1",
+    "array-tree-filter": "^2.1.0"
   }
 }
 ```
 
 :::info
-`npm`字段里面的内容会完整的和`package.json`进行合并
+内容会完整的和`package.json`进行合并
 :::
 
 ## 复杂模块
 有的模块除了添加依赖项之外，还需要对原生的内容进行一些处理，比如说微信模块 `react-native-wechat-lib`
 
+package.json
 ```json
 {
-  "name": "wechat",
-  "description": "端微信模块依赖,APP端和h5端",
-  "version": "1.0.12",
-  "dependencies": [
-    "duxappReactNative"
-  ],
-  "npm": {
-    "dependencies": {
-      "react-native-wechat-lib": "^3.0.4",
-      "wechat-jssdk": "^5.1.0"
-    }
+  "dependencies": {
+    "react-native-wechat-lib": "^3.0.4",
+    "wechat-jssdk": "^5.1.0"
   }
 }
-
 ```
 根据文档，除了添加依赖以外，还需要进行下面这些操作  
 
