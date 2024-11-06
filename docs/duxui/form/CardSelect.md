@@ -133,6 +133,14 @@ export default function CardSelectExample() {
 | ---- | -------- | ------- |
 | string \| number | 是 |  |
 
+### defaultValue
+
+默认值 
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string \| number | 是 |  |
+
 ### checked
 
 是否选中，单独使用时，选中这个选项，配合onClick来处理 

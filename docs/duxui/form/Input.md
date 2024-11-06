@@ -58,6 +58,14 @@ sidebar_position: 2
 | ---- | -------- | ------- |
 | (value: string) => void | 否 |  |
 
+### defaultValue
+
+默认值
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 |  |
+
 ## Input.Search Props
 
 继承自[Input Props](#props)

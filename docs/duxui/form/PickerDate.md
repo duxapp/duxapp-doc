@@ -111,6 +111,14 @@ export default function DateExample() {
 | ---- | -------- | ------- |
 | string | 否 |  |
 
+### defaultValue
+
+默认值
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 |  |
+
 ### placeholder
 
 提示文本

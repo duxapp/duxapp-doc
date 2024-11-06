@@ -77,6 +77,14 @@ export default function UploadExample() {
 | ---- | -------- | ------- |
 | string \| string[] | 否 | 1 |
 
+### defaultValue
+
+默认值
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string \| string[] | 否 |  |
+
 ### onChange
 
 上传或者删除图片的回调

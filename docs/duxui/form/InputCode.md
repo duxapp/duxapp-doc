@@ -61,6 +61,14 @@ export default function InputCodeExample() {
 | ---- | -------- | ------- |
 | (value: string) => void | 否 |  |
 
+### defaultValue
+
+默认值
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 |  |
+
 ### length
 
 输入长度

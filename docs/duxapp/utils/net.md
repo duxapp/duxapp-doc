@@ -205,7 +205,7 @@ option参数
 - **detailCallback** (`(result: object) => object`): 返回数据的回调，函数中返回的数据将作为此 hook 的结果
 - **defaultData** (`any`): 默认数据
 - **field** (`string`): 在返回的数据中用这个 key 取值
-- **onError** (`(err: any) => void`): 请求错误回调
+- **onError** (`(err: any) => any | Promise<{}>`): 请求错误回调，在这里如果不抛出错误，的话需要返回正确的值，算是请求成功
 - **reloadForShow** (`boolean`): 在页面显示的时候刷新数据
 - **cache** (`boolean`): 启用缓存
 - **ready** (`boolean`): 是否准备好，如果此参数为 `false`，将不会发起请求

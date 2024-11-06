@@ -73,6 +73,14 @@ export default function PickerExample() {
 | ---- | -------- | ------- |
 | string | 否 |  |
 
+### defaultValue
+
+默认值
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 |  |
+
 ### range
 
 选项范围
@@ -88,6 +96,10 @@ export default function PickerExample() {
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | string | 否 | 请选择 |
+
+### search
+
+启用搜索功能
 
 ### nameKey
 
@@ -136,6 +148,14 @@ export default function PickerExample() {
 ### value
 
 当前选中的值
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| any[] | 否 |  |
+
+### defaultValue
+
+默认值
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

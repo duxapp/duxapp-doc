@@ -72,6 +72,14 @@ export default function RecorderExample() {
 | ---- | -------- | ------- |
 | string \| string[] | 否 | 1 |
 
+### defaultValue
+
+默认值
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string \| string[] | 否 |  |
+
 ### onChange
 
 用户操作时回调
