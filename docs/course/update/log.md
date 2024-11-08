@@ -25,7 +25,7 @@ module.exports = {
 ```
 
 ```js
-// babel.config.js
+// taro.config.js
 module.exports = {
   framework: 'preact'
 }
