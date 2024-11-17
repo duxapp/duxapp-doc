@@ -17,7 +17,7 @@ sidebar_position: 11
 - `ScrollView` 的子元素，需要设置 className `self-stretch` 用来和其他端保持一致，否则会导致宽度不对
 - 不要把一个 `undfined` 赋值给任何一个组件的 `className` ，这样会导致报错
 - 字体图标需要放在本地，不支持在线图标
-- 如果父组件指定了 className ，子组件也是用了 className 并且子组件将父组件剩余的所有 props 解构赋值到子组件上，那么子组件的 className 将失效，子组件的 props 需要排除 __hmStyle，才能让其生效(似乎只对原生组建有问题，需要继续研究)
+- 如果父组件指定了 className ，子组件也是用了 className 并且子组件将父组件剩余的所有 props 解构赋值到子组件上，那么子组件的 className 将失效，子组件的 props 需要排除 __hmStyle，才能让其生效(似乎只对原生组件有问题，需要继续研究)
 - 鸿蒙绝对定位问题，设置百分比宽度不包含padding
 - Layout 获取的位置信息中的 buttom 似乎不对
 - 给每个子元素都设置上 `flex: 1` 他们并不会平均分布，会受到这个每个子元素的子元素的宽度所影响，和标准不一致，解决办法是给每个子元素的子元素，设置 `width: 100%`
