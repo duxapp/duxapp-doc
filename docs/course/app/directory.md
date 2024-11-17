@@ -24,9 +24,11 @@ sidebar_position: 2
 │   │   ├── index.js            导出工具库
 │   │   └── ...you util.js
 │   ├── update                  模块安装目录
-│   │   ├── copy                需要复制到项目的文件（路径固定）
-│   │   │   └── ...             
-│   │   └── index.js            安装脚本 主要针对RN端 插件安装方法（路径固定）
+│   │   ├── copy                需要复制到项目的文件，这里面现在只支持放 patches（路径固定）
+│   │   ├── copy.rn             编译 RN 的时候需要复制到项目的文件（路径固定）
+│   │   ├── copy.harmony        运行鸿蒙端需要复制到鸿蒙项目的文件（路径固定）
+│   │   ├── rn.js               RN 端安装脚本 插件安装方法（路径固定）
+│   │   └── harmony.js          鸿蒙 端安装脚本 插件安装方法（路径固定）
 │   ├── app.js                  模块入口文件
 │   ├── app.json                模块配置文件 包括名称 依赖等（必须）
 │   ├── app.scss                全局样式文件（次样式文件无需导入到js文件中，会自动注入全局）
@@ -259,13 +261,24 @@ export default {
 
 这个文件是将用户配置或者默认配置的主题，转换为scss变量，方便在scss中调用
 
-## update/index.js
+## update/copy
+这个文件夹下的内容会被复制到项目对应的文件夹下面，目前仅支持 patches 布丁文件，后续亏考虑支持其他文件
+
+## update/rn.js
 
 用来处理rn原生模块的脚本文件，详情请查看 [原生模块处理明细](/docs/course/rn/package-update)
 
-## update/copy
+## update/copy.rn
 
-这个文件夹下的内容会被复制到项目对应的文件夹下面，例如 patches 布丁文件，就可以放在此处
+这个文件夹下的内容，在编译 RN 端的时候，会被复制到项目对应的文件夹下面
+
+## update/harmony.js
+
+用来处理鸿蒙端的脚本文件
+
+## update/copy.harmony
+
+这个文件夹下的内容，在编译鸿蒙端的时候，会被复制到项目对应的文件夹下面
 
 ## pages
 

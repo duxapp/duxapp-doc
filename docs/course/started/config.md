@@ -8,7 +8,7 @@ sidebar_position: 6
 
 配置文件放在`configs`下，每个文件夹就是一个项目的用户配置，其中`index.js`就是用户配置文件  
 
-此处还会放其他文件 入 `duxapp.js` 是框架配置文件，一般用于RN端使用，请查看[RN用户配置](/docs/course/rn/config)  
+此处还会放其他文件 入 `duxapp.rn.js` 是框架配置文件，一般用于RN端使用，请查看[RN用户配置](/docs/course/rn/config)  
 
 用户配置文件是一般是这样面这样的
 

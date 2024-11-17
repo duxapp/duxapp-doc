@@ -35,17 +35,17 @@ yarn duxapp app add duxappReactNative
 
 ```
 
-修改文件后，执行下面的命令，完成一个初始化的过程，这会安装RN相关的依赖
+修改文件后，执行下面的命令，完成一个初始化的过程，这会安装RN相关的依赖，以及补全 RN 端相关的命令
 
 ```bash
-yarn duxapp runtime enterFile --app=moduleName
+yarn app --app=moduleName
 ```
 
 ## 添加配置文件
 
-在之前的[入门教程](/docs/course/started/intro)中我们已经创建了 `index.js` 配置文件, RN配置需要在同一个目录下创建 `duxapp.js` 文件，内容如下，
+在之前的[入门教程](/docs/course/started/intro)中我们已经创建了 `index.js` 配置文件, RN配置需要在同一个目录下创建 `duxapp.rn.js` 文件，内容如下，
 
-`configs/modeName/duxapp.js`
+`configs/modeName/duxapp.rn.js`
 
 ```js
 const config = {
@@ -84,7 +84,7 @@ yarn duxapp android keystore --config=moduleName
 命令执行成功后会提示如下内容 
 
 ```bash
-请将下列配置配置到 duxapp.js 的 android.keystore 中
+请将下列配置配置到 duxapp.rn.js 的 android.keystore 中
 {
   storeFile: 'duxapp.keystore',
   keyAlias: 'duxapp',
@@ -233,7 +233,7 @@ export default config
 
 ```
 
-在`configs/moduleName/duxapp.js` 也有对应的打包配置，当然这个配置只使用于ios打包，如果仅限安卓可以不配置,新增 `option.wechat` 配置
+在`configs/moduleName/duxapp.rn.js` 也有对应的打包配置，当然这个配置只使用于ios打包，如果仅限安卓可以不配置,新增 `option.wechat` 配置
 ```js
 const config = {
   android: {

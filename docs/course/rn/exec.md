@@ -8,11 +8,36 @@ sidebar_position: 3
 
 ## RN命令
 
+### 初始化
+
+`yarn app --app=模块`  
+
+这个命令的用途是，当你从一个没有 RN 依赖的项目切换到一个有 RN 依赖的项目时使用的，因为没有 RN 依赖的项目中，同时也不会有编译 RN 相关的命令，例如 `yarn start --app=模块`，在你执行这些命令之前需要先执行这个命令来初始化
+
+### 启动metro
+
+`yarn start --app=模块` 或者 `yarn dev:rn --app=模块`  
+
+两个命令完全一样，都能启动meter代码编译功能
+
+:::info
+RN的metro服务缓存比较重，在下面这些情况下，你需要重启命令，并且在命令后盖面加上 `--reset-cahce`
+
+如果你不这样做，你修改的内容将不会生效
+
+```bash
+yarn start --app=modeName --reset-cahce
+```
+- 切换项目 （就是当你的--app=参数不一样的时候）
+- 添加、删除了模块路由
+:::
+
+
 ### 初始化RN打包环境
 
 `yarn duxapp rn create --app=模块`  
 
-使用命令后，将会生成RN一样的 `android`、`ios`，`index.js` 等RN的相关文件
+使用命令后，将会生成RN一样的 `android`、`ios`，`index.js` 等RN的相关文件，一般不需要直接执行这个命令，直接执行 `yarn android --app=模块` 等命令的时候会自动执行这个命令
 
 :::info
 使用这个命令需要提前创建好配置文件，包括包名、证书等必填配置  
@@ -38,26 +63,7 @@ sidebar_position: 3
 
 `yarn duxapp android keystore --config=配置名称`  
 
-创建安卓证书，创建后证书文件会自动放进配置中，需要手动将命令行打印的配置内容，放进duxapp.js相应位置
-
-### 启动metro
-
-`yarn start --app=模块` 或者 `yarn dev:rn --app=模块`  
-
-两个命令完全一样，都能启动meter代码编译功能
-
-:::info
-RN的metro服务缓存比较重，在下面这些情况下，你需要重启命令，并且在命令后盖面加上 `--reset-cahce`
-
-如果你不这样做，你修改的内容将不会生效
-
-```bash
-yarn start --app=modeName --reset-cahce
-```
-- 切换项目 （就是当你的--app=参数不一样的时候）
-- 添加、删除了模块路由
-:::
-
+创建安卓证书，创建后证书文件会自动放进配置中，需要手动将命令行打印的配置内容，放进duxapp.rn.js相应位置
 ### 编译调试版本
 
 `yarn android --app=模块` 或者 `yarn debug:android --app=模块`  

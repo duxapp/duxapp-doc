@@ -20,7 +20,7 @@ function Native() {
         title="全平台支持"
         description={
           <>
-            兼容微信小程序、ReactNative、H5、支付宝小程序、抖音小程序 <br />
+            兼容微信小程序、ReactNative、鸿蒙 ArkUI、H5、支付宝小程序、抖音小程序、QQ小程序 <br />
             代码一次编写到处使用 <br /> <br />
             针对ReactNative端做了大量优化（项目配置化、打包所需文件自动创建、集成常用第三方库）
           </>

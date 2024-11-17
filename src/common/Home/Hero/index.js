@@ -39,13 +39,16 @@ function Hero() {
       <div className={styles.content}>
         <Logo />
         <h1 className={styles.title}>duxapp</h1>
-        <h2 className={styles.subtitle}>基于Taro的模块化开发框架</h2>
+        <h2 className={styles.subtitle}>基于Taro的模块化、多端、跨平台开发框架</h2>
         <div className={styles.buttonContainer}>
           <a href="/docs/course/started/intro" className={styles.primaryButton}>
-            马上开始
+            入门教程
           </a>
           <a href="/docs/course/rn/start" className={styles.secondaryButton}>
             开始 ReactNative
+          </a>
+          <a href="/docs/course/harmony/start" className={styles.secondaryButton}>
+            开始鸿蒙
           </a>
         </div>
       </div>

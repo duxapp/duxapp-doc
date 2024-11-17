@@ -133,7 +133,7 @@ module.exports = {
 - 新建 `WXEntryActivity.java` 用于回调处理
 - 新建 `WXPayEntryActivity.java` 用于支付回调处理
 
-因为按照要求，需要用到当前app的包名，所以需要将导出的内容修改为一个函数，函数传入的参数中，能获取到当前项目 `duxapp.js` 中的配置，config字段就是这个配置，从中获取到appid，添加到文件对应位置
+因为按照要求，需要用到当前app的包名，所以需要将导出的内容修改为一个函数，函数传入的参数中，能获取到当前项目 `duxapp.rn.js` 中的配置，config字段就是这个配置，从中获取到appid，添加到文件对应位置
 ```js
 module.exports = ({ config }) => {
   const { android } = config

@@ -6,7 +6,7 @@ sidebar_position: 5
 
 模块处理用来处理三方插件，很多三方插件需要对原生模块代码或者配置进行修改才能使用，如微信、支付宝、codepush、高德地图等，这个文档将详细介绍模块处理的功能  
 
-每个模块都可用拥有自己的三方模块处理，模块下 `update/index.js`，就是当前模块的处理文件，这个文件是node模块文件，需要用`module.exports`进行导出
+每个模块都可用拥有自己的三方模块处理，模块下 `update/rn.js`，就是当前模块的处理文件，这个文件是node模块文件，需要用`module.exports`进行导出
 
 ```js
 module.exports = {
@@ -198,12 +198,10 @@ module.exports = () => {
 
 ## 文件复制
 
-这个并不是用于此脚本的，而是一个规定，模块文件夹下 `update/copy` 里面的内容会被原样复制到项目中
+这个并不是用于此脚本的，而是一个规定，模块文件夹下 `update/copy.rn` 里面的内容会被原样复制到项目中
 
-例如 `update/copy/android/app/libs/push-3.0.0.aar` 这个文件，在编译安卓的时候，他就会被放在 安卓工程的这个位置：`android/app/libs/push-3.0.0.aar`
+例如 `update/copy.rn/android/app/libs/push-3.0.0.aar` 这个文件，在编译安卓的时候，他就会被放在 安卓工程的这个位置：`android/app/libs/push-3.0.0.aar`
 
 再结合 `insert` 将这个aar包，导入到项目中
 
 内容复制可以放任何文件类型，按照目录复制到对应位置
-
-这其中 `patches` 是一个较为特殊的目录，用来存放补丁文件，这些文件会在所有情况下都复制到对应位置，而不是在编译原生包的时候，查看使用说明：[patch-package](https://github.com/ds300/patch-package#readme)

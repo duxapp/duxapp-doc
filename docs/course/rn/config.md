@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # 用户配置
 
-配置文件用来配置包名、版本号、证书等信息，配置文件和配置一样都放在`configs`文件夹下对应的配置中，其名称为`duxapp.js`
+配置文件用来配置包名、版本号、证书等信息，配置文件和配置一样都放在`configs`文件夹下对应的配置中，其名称为`duxapp.rn.js`
 
 ```js
 module.exports = {
@@ -132,6 +132,14 @@ app版本号
 
 ### plist
 用于合并plist文件，他的配置和 [plist-配置合并](package-update#plist-配置合并) 一致
+
+## onStart(callback)
+
+模块处理开始回调
+
+## onStop(callback)
+
+模块处理结束回调
 
 ## qiniu
 

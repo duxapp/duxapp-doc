@@ -22,3 +22,7 @@ https://github.com/midwayjs/midway/discussions/3903
 ## 首次调试APP，加载成功什么都不显示
 
 显示 Bridgeless mode is enabled 但是未显示时任何内容，需要结束app进程，后启动app
+
+## Could not resolve all dependencies for configuration
+
+编译安卓常见错误，通常需要翻墙

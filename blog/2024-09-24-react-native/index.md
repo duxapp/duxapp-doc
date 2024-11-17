@@ -33,7 +33,7 @@ yarn start --app=duxuiExample
 
 对于Taro的壳子，或者原生React Native，都会存在 `android` `ios`这两个文件夹，而在duxapp中，这些文件夹的内容是自动生成的，那么对于需要在这些文件夹中修改的配置内容，例如包名、版本号、新架构开关等，都通过配置文件的方式配置了，而不需要需修改具体的文件
 
-这个配置文件是项目配置文件夹下的 `configs/duxuiExample/duxapp.js`，其中 duxuiExample 就是我通过`--app=duxuiExample` 指定的入口模块
+这个配置文件是项目配置文件夹下的 `configs/duxuiExample/duxapp.rn.js`，其中 duxuiExample 就是我通过`--app=duxuiExample` 指定的入口模块
 
 这个配置文件的内容就像下面这样，可以清晰的看到，对安卓配置了包名、名称、版本号等信息，IOS同样如此
 
@@ -91,7 +91,7 @@ module.exports = config
 yarn duxapp android keystore --config=duxuiExample
 ```
 
-创建成功后，需要手动将命令行打印的配置内容，放进duxapp.js相应位置
+创建成功后，需要手动将命令行打印的配置内容，放进duxapp.rn.js相应位置
 
 然后是logo创建，需要将你项目的logo文件放在配置文件根目录，也就是 `configs/duxuiExample/logo.png`
 
