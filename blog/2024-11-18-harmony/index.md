@@ -50,7 +50,7 @@ yarn dev:harmony --app=duxuiExample
 
 我们将鸿蒙端的支持封装到了 `duxapp` 的一个模块 `duxappHarmony` 中，只要你依赖了这个模块，就能实现对鸿蒙端的兼容
 
-如果你还不是很了解 duxapp 的模块化，可以[模块化介绍](https://duxapp.cn/docs/course/app/intro)
+如果你还不是很了解 duxapp 的模块化，可以查看[模块化介绍](https://duxapp.cn/docs/course/app/intro)
 
 ### UI组件库 
 
