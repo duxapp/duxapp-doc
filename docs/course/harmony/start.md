@@ -6,6 +6,10 @@ sidebar_position: 1
 
 `duxapp` 通过框架和模块组合，实现了鸿蒙端的支持，现在 duxui 这个 ui 库已经基本兼容了鸿蒙端。
 
+:::info
+在 windows 上仍然存在问题，请使用其他系统进行调试，例如 Mac
+:::
+
 ## 开始之前
 
 - 下载并安装 最新版 DevEco Studio

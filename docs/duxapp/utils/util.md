@@ -77,3 +77,9 @@ import { stopPropagation } from '@/duxapp'
 | 名称 | 类型 | 说明 |
 | ---- | ---- | ------- |
 | px | number | px值 |
+
+### isPlatformMini
+
+`boolean` 常量，判断当前环境是不是各种小程序，包括这个数组内的平台 
+
+`['weapp', 'tt', 'alipay', 'swan', 'qq', 'jd', 'quickapp']`
