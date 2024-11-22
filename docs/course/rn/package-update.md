@@ -137,7 +137,7 @@ module.exports = () => {
               }
             }
           },
-          custom: doc => {
+          custom: document => {
             // 选择一个标签设置属性
             // getElementByAttr方法是扩展方法，在文档上无法找到，仅此一个扩展方法
             const el = document.getElementByAttr('android:name=".MainApplication"')

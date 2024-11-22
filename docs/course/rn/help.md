@@ -6,7 +6,7 @@ sidebar_position: 10
 
 ## 切换项目、新增路由不生效
 
-因为缓存问题，请参考 [启动metro服务命令](http://localhost:3000/docs/course/rn/exec#%E5%90%AF%E5%8A%A8metro)
+因为缓存问题，请参考 [启动metro服务命令](/docs/course/rn/exec#%E5%90%AF%E5%8A%A8metro)
 
 ## Error: spawn EINVAL
 

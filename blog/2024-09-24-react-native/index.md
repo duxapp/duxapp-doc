@@ -307,7 +307,7 @@ public class WXPayEntryActivity extends Activity {
 - android 其中的xml用来处理合并安卓中的xml文件的，这是用 [`xmldom`](https://github.com/xmldom/xmldom)来实现的
 - ios 其中的plist是用来合并ios的plist配置文件的
 
-关于这个脚本文件的详细内容需阅读 [使用原生模块](http://localhost:3000/docs/course/rn/package) 了解详情
+关于这个脚本文件的详细内容需阅读 [使用原生模块](/docs/course/rn/package) 了解详情
 
 看了半天，是不是感觉这个模块处理也是挺复杂的，其实我已经封装了一些常用的原生模块，就像这个微信插件，你不需要再去实现一遍，你只需要安装这个微信模块并把他添加到你项目模块的依赖中就能使用了
 

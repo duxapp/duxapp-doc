@@ -117,6 +117,12 @@ const config = {
             label: '更多模块',
           },
           {
+            type: 'doc',
+            docId: 'update/start',
+            position: 'right',
+            label: '更新',
+          },
+          {
             to: '/blog', label: '博客', position: 'right'
           },
           {
