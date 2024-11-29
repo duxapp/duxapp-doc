@@ -405,6 +405,13 @@ const Dates = ({ value, ...props }) => {
 | ---- | -------- | ------- |
 | ReactElement | 否 |  |
 
+### onSubmitBefore
+
+可以监听用户提交，传入要提交的值，通过抛出错误的方式阻止用户提交，这个方法可以是同步，也可以是异步的
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| `(val: {[key: string]: any}) => Promise<{}>` | 否 |  |
 
 ## ModalForms.Reset Props
 
