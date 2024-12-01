@@ -4,28 +4,10 @@ sidebar_position: 1
 
 # 入门
 
-:::info
-当前仍在整理中，将在未来不久上线
-:::
+[[duxapp入门教程 01] 跨平台特性介绍，多端演示](https://www.bilibili.com/video/BV1QJzZYXEJo/?vd_source=c24addc24db142bb303ccea2467d79e3)
 
-## 什么是duxapp，和Taro之间的关系
+[[duxapp入门教程 02] 什么是模块化，查看这个教程你就知道了](https://www.bilibili.com/video/BV1QJzZYXELt/)
 
-## 体验现有项目
+[[duxapp入门教程 03] 创建第一个项目](https://www.bilibili.com/video/BV18JzZYXEdM/)
 
-## 创建自己的模块
-
-## 从一个新项目开始
-
-一个展示新闻的站点，包括分类导航，文章列表、文章详情
-
-## 完善项目功能
-
-配置接口请求、使用request、hook、List等技术，逐步完善这个项目
-
-## 使用图标库、加入底部导航、个人中心
-
-## RN初探
-
-## RN编译环境，编译apk
-
-## 将项目运行在app上
+... 继续更新中
