@@ -50,6 +50,9 @@ function Hero() {
           <a href="/docs/course/harmony/start" className={styles.secondaryButton}>
             开始鸿蒙
           </a>
+          <a href="/docs/course/video/intro" className={styles.secondaryButton}>
+            视频入门教程
+          </a>
         </div>
       </div>
     </div>
