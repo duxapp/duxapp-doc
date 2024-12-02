@@ -226,6 +226,7 @@ option参数
 - **cache** (`boolean`): 启用缓存，会缓存第一页的内容
 - **ready** (`boolean`): 是否准备好，如果此参数为 `false`，将不会发起请求
 - **defaultListData** (`any[]`): 默认列表数据
+- **onRequestOption** 处理请求参数的回调函数
 
 ### UsePageDataResult
 
