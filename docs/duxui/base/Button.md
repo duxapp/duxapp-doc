@@ -2,9 +2,14 @@
 sidebar_position: 1
 ---
 
+
 # Button 按钮
 
 ## 示例
+
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Button' />
 
 ```jsx
 import { Button } from '@/duxui'

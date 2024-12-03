@@ -6,6 +6,10 @@ sidebar_position: 17
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='LicensePlate' />
+
 ```jsx
 import { Header, ScrollView, TopView, Form, LicensePlate, GroupList } from '@/duxuiExample'
 

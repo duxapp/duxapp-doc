@@ -8,6 +8,10 @@ sidebar_position: 5
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Date' />
+
 ```jsx
 import { Header, ScrollView, TopView, Form, Card, Divider, PickerDate } from '@/duxuiExample'
 

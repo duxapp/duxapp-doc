@@ -8,6 +8,10 @@ sidebar_position: 1
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='LongPress' />
+
 ```jsx
 <LongPress onLongPress={() => toast('长按事件')}>
   <Column style={{ backgroundColor: '#fff', padding: 12 }}>

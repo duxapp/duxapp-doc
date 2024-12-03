@@ -8,6 +8,10 @@ sidebar_position: 4
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Picker' />
+
 ```jsx
 import { Header, ScrollView, TopView, Form, Card, Divider, PickerSelect, PickerMultiSelect } from '@/duxui'
 

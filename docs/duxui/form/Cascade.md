@@ -6,6 +6,10 @@ sidebar_position: 11
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Cascade' />
+
 ```jsx
 import { Header, ScrollView, TopView, Form, Card, Divider, Cascade } from '@/duxui'
 

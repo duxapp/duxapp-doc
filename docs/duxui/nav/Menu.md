@@ -8,6 +8,10 @@ sidebar_position: 4
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Menu' />
+
 ```jsx
 import { Menu, Form } from '@/duxui'
 

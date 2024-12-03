@@ -8,6 +8,10 @@ sidebar_position: 15
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='NumberKeyboard' />
+
 ```jsx
 import { Header, ScrollView, TopView, GroupList, NumberKeyboard, toast } from '@/duxuiExample'
 

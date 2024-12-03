@@ -8,6 +8,10 @@ sidebar_position: 2
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='TouchableOpacity' />
+
 ```jsx
 import { Header, ScrollView, TopView, Form, TouchableOpacity, GroupList, Text } from '@/duxuiExample'
 

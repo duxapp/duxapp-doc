@@ -8,6 +8,10 @@ sidebar_position: 6
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Card' />
+
 ```jsx
 import { Card, Text } from '@/duxui'
 

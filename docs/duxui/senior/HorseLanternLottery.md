@@ -8,6 +8,10 @@ sidebar_position: 2
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='HorseLanternLottery' />
+
 ```jsx
 import { Column, Header, HorseLanternLottery, Text, TopView, duxappTheme, px, GroupList, ScrollView, confirm } from '@/duxuiExample'
 

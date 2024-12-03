@@ -17,6 +17,10 @@ sidebar_position: 7
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='List' />
+
 以售后列表说明，导出的List组件，将会这样进行使用  
 
 - 当用户切换 `navType` 时，将会自动重新获取数据

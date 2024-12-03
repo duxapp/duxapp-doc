@@ -8,6 +8,10 @@ sidebar_position: 9
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Calendar' />
+
 ```jsx
 import { Header, ScrollView, TopView, GroupList } from '@/duxuiExample'
 import { Calendar, Checkbox, dayjs, Radio, Row, Text, toast } from '@/duxui'

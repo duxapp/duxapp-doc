@@ -8,6 +8,10 @@ sidebar_position: 1
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Sign' />
+
 ```jsx
 import { Header, ScrollView, TopView, GroupList, Column } from '@/duxuiExample'
 import { Sign } from '@/duxui'

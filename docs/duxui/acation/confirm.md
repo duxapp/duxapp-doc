@@ -8,6 +8,10 @@ sidebar_position: 7
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='confirm' />
+
 ```jsx
 import { Header, ScrollView, TopView, GroupList, confirm, Button, toast } from '@/duxuiExample'
 

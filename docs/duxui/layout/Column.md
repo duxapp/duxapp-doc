@@ -8,6 +8,10 @@ sidebar_position: 1
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Column' />
+
 ```jsx
 import { Column, Text } from '@/duxui'
 

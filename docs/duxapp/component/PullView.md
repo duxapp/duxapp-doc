@@ -8,6 +8,10 @@ sidebar_position: 4
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='PullView' />
+
 ```jsx
 import { PullView } from '@/duxapp'
 

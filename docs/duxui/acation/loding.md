@@ -8,6 +8,10 @@ sidebar_position: 5
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='loadingUtil' />
+
 ```jsx
 import { Header, ScrollView, TopView, GroupList, loading, Button, Space } from '@/duxuiExample'
 import { useRef } from 'react'

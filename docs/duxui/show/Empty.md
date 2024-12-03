@@ -8,6 +8,10 @@ sidebar_position: 8
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Empty' />
+
 ```jsx
 <Empty />
 <Empty title='自定义标题' />

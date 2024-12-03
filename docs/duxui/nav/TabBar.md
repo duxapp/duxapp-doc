@@ -13,6 +13,10 @@ sidebar_position: 2
 
 ### 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='TabBar' />
+
 ```jsx
 import { TestIcon, TopView, Header, createTabBar, ScrollView, Text, duxappTheme, confirm } from '@/duxui'
 import { useEffect } from 'react'

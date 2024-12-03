@@ -20,6 +20,10 @@ sidebar_position: 1
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Form' />
+
 ```jsx
 import { 
   Header, ScrollView, TopView, Form, 

@@ -10,6 +10,10 @@ sidebar_position: 4
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='BoxShadow' />
+
 ```jsx
 import { BoxShadow, Text } from '@/duxui'
 

@@ -8,6 +8,10 @@ sidebar_position: 7
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Step' />
+
 ```jsx
 import { Header, ScrollView, TopView, Step, GroupList, Text } from '@/duxuiExample'
 

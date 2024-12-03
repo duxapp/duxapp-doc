@@ -8,6 +8,10 @@ sidebar_position: 3
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Textarea' />
+
 这个多行文本输入框默认会有一个背景颜色和圆角，你可以通过编写样式覆盖他
 
 ```jsx

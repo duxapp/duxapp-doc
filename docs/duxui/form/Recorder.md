@@ -17,6 +17,10 @@ formConfig.setConfig({
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Recorder' />
+
 ```jsx
 import { Header, ScrollView, TopView, Form, Card, Divider, Recorder, Button, Text, Column } from '@/duxui'
 

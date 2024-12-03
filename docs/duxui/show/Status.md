@@ -8,6 +8,10 @@ sidebar_position: 9
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Status' />
+
 ```jsx
 import { Status, Header, ScrollView, TopView, GroupList, px } from '@/duxuiExample'
 import { Text, View } from '@tarojs/components'

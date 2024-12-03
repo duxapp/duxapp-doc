@@ -16,6 +16,10 @@ TopView是作为页面的根组件使用的，在duxapp中，每个页面都需�
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='TopView' />
+
 在duxapp中有个示例页面，他常用的用法是作为高阶函数封装页面，并且导出
 
 ```jsx

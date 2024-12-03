@@ -8,6 +8,10 @@ sidebar_position: 9
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Layout' />
+
 ```jsx
 import { Header, ScrollView, TopView, Text, Space, Layout } from '@/duxui'
 import { useState } from 'react'

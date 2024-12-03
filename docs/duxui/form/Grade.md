@@ -6,6 +6,10 @@ sidebar_position: 10
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Grade' />
+
 ```jsx
 <Form.Item label='评分' field='grade' >
   <Grade />

@@ -12,6 +12,11 @@ sidebar_position: 14
 - `ModalForms` 弹出多个表单，独立内容，放在Form内任何位置
 
 ## 示例
+
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='ModalForm' />
+
 ```jsx
 import {
   Header, ScrollView, TopView, Form, Card, Divider,

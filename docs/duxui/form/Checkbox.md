@@ -6,6 +6,10 @@ sidebar_position: 7
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Checkbox' />
+
 ```jsx
 <Form.Item label='多选' field='checkbox1'>
   <Checkbox.Group>

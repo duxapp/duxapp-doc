@@ -8,6 +8,10 @@ sidebar_position: 3
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Elevator' />
+
 ```jsx
 import { Column, Empty, TopView, Header, Elevator } from '@/duxui'
 

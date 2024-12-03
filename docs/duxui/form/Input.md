@@ -8,6 +8,10 @@ sidebar_position: 2
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Input' />
+
 ```jsx
 <Form.Item label='输入框' field='input1'>
   <Input placeholder='请输入' grow />

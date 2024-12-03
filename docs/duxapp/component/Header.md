@@ -8,6 +8,10 @@ duxapp默认将头部设置为了自定义，每个页面面建议都使用一�
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Header' />
+
 ```jsx
 import { Header, ScrollView, TopView } from '@/duxapp'
 

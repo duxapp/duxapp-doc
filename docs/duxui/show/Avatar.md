@@ -8,6 +8,10 @@ sidebar_position: 5
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Avatar' />
+
 ```jsx
 import { Avatar, TestIcon, Header, ScrollView, TopView, GroupList, Space } from '@/duxuiExample'
 

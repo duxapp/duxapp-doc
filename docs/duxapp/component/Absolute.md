@@ -8,6 +8,10 @@ sidebar_position: 6
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Absolute' />
+
 示例中的代码将会显示在TopView相同层级的dom中
 
 ```jsx

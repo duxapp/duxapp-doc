@@ -17,6 +17,10 @@ formConfig.setConfig({
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Upload' />
+
 ```jsx
 import { Header, ScrollView, TopView, Form, Card, Divider, Upload } from '@/duxui'
 

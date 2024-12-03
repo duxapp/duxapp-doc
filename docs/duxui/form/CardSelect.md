@@ -10,6 +10,10 @@ sidebar_position: 12
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='CardSelect' />
+
 ```jsx
 import { GroupList } from '@/duxuiExample'
 import { CardSelect, Grid, Header, ScrollView, TopView, Form } from '@/duxui'
