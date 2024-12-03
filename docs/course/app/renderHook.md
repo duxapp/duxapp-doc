@@ -118,13 +118,13 @@ mallHook.add('mark', ({ children }) => {
 可以自定义插入到定位内容的前面还是后面
 
 ```jsx
-mallHook.addBefore('mark', () => {、
+mallHook.addBefore('mark', () => {
   return <Text>添加到默认内容之前</Text>
 })
-mallHook.add('mark', () => {、
+mallHook.add('mark', () => {
   return <Text>替换默认内容</Text>
 })
-mallHook.addAfter('mark', () => {、
+mallHook.addAfter('mark', () => {
   return <Text>添加到默认内容之后</Text>
 })
 ```
@@ -134,10 +134,10 @@ mallHook.addAfter('mark', () => {、
 同一个方法可以多次调用，插入多个内容，当你在不同的模块内都需要插入内容时，可以这样使用
 
 ```jsx
-mallHook.addBefore('mark', () => {、
+mallHook.addBefore('mark', () => {
   return <Text>项目1</Text>
 })
-mallHook.addBefore('mark', () => {、
+mallHook.addBefore('mark', () => {
   return <Text>项目2</Text>
 })
 ```
