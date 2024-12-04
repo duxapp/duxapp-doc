@@ -50,13 +50,13 @@ yarn app --app=moduleName
 ```js
 const config = {
   android: {
-    appid: 'com.duxapp.modulename',
+    appid: 'cn.duxapp.modulename',
     appName: 'APP名称',
     versionCode: 1,
     versionName: '1.0.0',
   },
   ios: {
-    BundleId: 'com.duxapp.modulename',
+    BundleId: 'cn.duxapp.modulename',
     appName: 'APP名称',
     versionCode: 1,
     versionName: '1.0.0',
@@ -98,7 +98,7 @@ yarn duxapp android keystore --config=moduleName
 ```js
 const config = {
   android: {
-    appid: 'com.duxapp.modulename',
+    appid: 'cn.duxapp.modulename',
     appName: 'APP名称',
     versionCode: 1,
     versionName: '1.0.0',
@@ -111,7 +111,7 @@ const config = {
     }
   },
   ios: {
-    BundleId: 'com.duxapp.modulename',
+    BundleId: 'cn.duxapp.modulename',
     appName: 'APP名称',
     versionCode: 1,
     versionName: '1.0.0',
@@ -237,7 +237,7 @@ export default config
 ```js
 const config = {
   android: {
-    appid: 'com.duxapp.modulename',
+    appid: 'cn.duxapp.modulename',
     appName: 'APP名称',
     versionCode: 1,
     versionName: '1.0.0',
@@ -249,7 +249,7 @@ const config = {
     }
   },
   ios: {
-    BundleId: 'com.duxapp.modulename',
+    BundleId: 'cn.duxapp.modulename',
     appName: 'APP名称',
     versionCode: 1,
     versionName: '1.0.0',

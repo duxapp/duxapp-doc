@@ -17,6 +17,12 @@ yarn duxapp app add duxui
 
 ## 示例
 
+- 在线示例  
+
+import { Preview } from '@site/src/components/Preview'
+
+<Preview />
+
 - 小程序  
 <img src="/img/weapp/duxui.jpg" width="200" />  
 

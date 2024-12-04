@@ -8,6 +8,10 @@ sidebar_position: 3
 
 ## 示例
 
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='ScrollView' />
+
 ```jsx
 import { Header, ScrollView, TopView } from '@/duxapp'
 import { useState } from 'react'

@@ -81,7 +81,7 @@ yarn app --app=moduleName
 
 ```js
 const config = {
-  appid: 'com.duxapp.modulename',
+  appid: 'cn.duxapp.modulename',
   appName: 'APP名称',
   versionCode: 1,
   versionName: '1.0.0',
