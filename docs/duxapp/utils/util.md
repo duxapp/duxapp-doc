@@ -83,3 +83,26 @@ import { stopPropagation } from '@/duxapp'
 `boolean` 常量，判断当前环境是不是各种小程序，包括这个数组内的平台 
 
 `['weapp', 'tt', 'alipay', 'swan', 'qq', 'jd', 'quickapp']`
+
+### transformStyle(obj)
+
+在编写 style 样式的时候，如果要写 `transform`，需要使用这个函数转换，用来支持多端
+
+```jsx
+<Animated.View
+  animation={an3}
+  className='bg-primary'
+  style={{
+    width: px(100),
+    height: px(100),
+    transform: transformStyle({
+      translateX: px(50),
+      translateY: px(50),
+    })
+  }}
+/>
+```
+
+### nextTick(callback)
+
+RN 端导入这个 Taro 的方法使用会报错，所以将这个方法封装了一下，使用方法同 Taro 的 nextTick

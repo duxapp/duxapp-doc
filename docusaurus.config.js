@@ -212,7 +212,8 @@ const config = {
           //   ],
           // },
         ],
-        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} duxapp. 
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">备案号：湘ICP备2024047001号</a>`,
       },
       prism: {
         // theme: themes.github,
