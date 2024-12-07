@@ -42,9 +42,11 @@ const Example = () => {
 
 从什么方向进行弹出
 
+center 是将组件弹出到屏幕中间
+
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| enum('bottom', 'top', 'left', 'right') | 否 | bottom |
+| enum('bottom', 'top', 'left', 'right', 'center') | 否 | bottom |
 
 ### overlayOpacity
 
@@ -71,6 +73,14 @@ const Example = () => {
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | boolean | 否 | true |
+
+### duration
+
+动画持续时长
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| number | 否 | 200 |
 
 ### group
 

@@ -178,3 +178,5 @@ export default function AnimatedExample() {
 - 目前仅支持 `Animated.View` 组件传入动画属性，请勿使用其他组件
 - 在 style 里面编写 `transform` 时，需要用 `transformStyle` 函数进行转换
 - 动画属性中的尺寸可以用 `pxNum` 函数转换
+- 建议优先使用 `transform` 和 `opacity` 进行动画处理，这样才能在 RN 端开发原生动画，提高动画性能
+- 小程序、H5端使用 transform 变换时 会覆盖你样式里面的 transform，因此你在进行动画的时候，需要把你用到其他的 transform 属性也设置到动画属性中

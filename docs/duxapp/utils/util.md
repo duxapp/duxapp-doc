@@ -106,3 +106,11 @@ import { stopPropagation } from '@/duxapp'
 ### nextTick(callback)
 
 RN 端导入这个 Taro 的方法使用会报错，所以将这个方法封装了一下，使用方法同 Taro 的 nextTick
+
+### useBackHandler(callback, status)
+
+使用 hook 可以阻止安卓端返回按钮
+
+当 status 为的时候，点击返回按钮会调用 callback
+
+如果不传入 status 默认为true
