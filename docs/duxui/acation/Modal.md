@@ -6,6 +6,10 @@ sidebar_position: 3
 
 将内容弹出，显示在屏幕中间
 
+:::warning
+这个组件即将停用，请改用 [PullView](/docs/duxapp/component/PullView)
+:::
+
 ## 示例
 
 import { Preview } from '@site/src/components/Preview'
