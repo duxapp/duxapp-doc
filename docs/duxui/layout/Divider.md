@@ -86,3 +86,19 @@ import { Divider } from '@/duxui'
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | enum('dotted', 'dashed', 'solid') | 否 | solid |
+
+### self
+
+对 `align-self` 的封装
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| enum('start', 'end', 'center', 'baseline', 'stretch') | 否 |  |
+
+### color
+
+线条的主题颜色类型
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| enum('default', 'primary', 'secondary', 'success', 'danger', 'warning', 'custom1', 'custom2', 'custom3') | 否 | default |

@@ -110,6 +110,8 @@ center 是将组件弹出到屏幕中间
 
 ## 实例方法
 
-### close()
+### close(change)
 
 用于关闭弹窗
+
+`change` 默认为 `true`，传入 `false`，可以让弹窗不触发 `onClose` 事件

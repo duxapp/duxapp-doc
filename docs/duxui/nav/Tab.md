@@ -138,6 +138,24 @@ import { Tab } from '@/duxui'
 | ---- | -------- | ------- |
 | boolean | 否 | false |
 
+### swiper
+
+是否开启幻灯片滑动功能
+
+开启这个选项你得给 Tab 组件设置高度或者使用其他方法让 Tab 具有高度，否则内容不会显示
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
+### swiperProps
+
+开启 `swiper` 后传递给 `Swiper` 的属性
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| [SwiperProps](https://nervjs.github.io/taro-docs/docs/components/viewContainer/swiper#swiperprops) | 否 |  |
+
 ### tabStyle
 
 tab的样式

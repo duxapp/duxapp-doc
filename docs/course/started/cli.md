@@ -66,6 +66,16 @@ duxapp app add 模块名称 1
 duxapp app create 模块名称 模块描述
 ```
 
+#### app check
+检查模块依赖的问题
+
+```bash
+# 检查指定模块
+duxapp app check 模块1 模块2
+# 检查依赖的所有模块
+duxapp app check --app=模块
+```
+
 ### user 用户操作
 
 #### user login
