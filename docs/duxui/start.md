@@ -13,7 +13,7 @@ sidebar_position: 0
 yarn duxapp app add duxui
 ```
 
-此模块需要在 [duxapp 框架](https://app.docs.dux.plus) 中运行
+此模块需要在 [duxapp 框架](https://duxapp.cn) 中运行
 
 ## 示例
 
