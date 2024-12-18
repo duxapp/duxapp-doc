@@ -59,7 +59,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          blogSidebarTitle: '全部博客',
+          blogSidebarTitle: '全部文章',
           blogSidebarCount: 'ALL',
           blogTitle: '博客',
           // Please change this to your repo.
@@ -123,17 +123,17 @@ const config = {
             label: '更新',
           },
           {
-            to: '/blog', label: '博客', position: 'right'
+            to: '/blog', label: '技术分享', position: 'right'
           },
           {
             type: 'doc',
             docId: 'contact/start',
             position: 'right',
-            label: '联系我们',
+            label: '问题反馈',
           },
           {
             href: 'https://www.dux.cn/page/apps',
-            label: '应用商店',
+            label: '模块中心',
             position: 'right'
           },
           {
@@ -161,6 +161,14 @@ const config = {
                 label: 'ReactNative',
                 to: '/docs/course/rn/start',
               },
+              {
+                label: '鸿蒙',
+                to: '/docs/course/harmony/start',
+              },
+              {
+                label: '视频教程',
+                to: '/docs/course/video/intro',
+              }
             ],
           },
           {
@@ -181,10 +189,10 @@ const config = {
             ],
           },
           {
-            title: '博客',
+            title: '技术',
             items: [
               {
-                label: '博客',
+                label: '技术分享',
                 to: '/blog',
               }
             ],
@@ -193,24 +201,15 @@ const config = {
             title: '入口',
             items: [
               {
-                label: 'DuxCms官网',
+                label: 'DuxCms文档',
                 href: 'https://www.dux.cn',
               },
               {
-                label: '应用商店',
+                label: '模块中心',
                 href: 'https://www.dux.cn/page/apps',
               }
             ],
           },
-          // {
-          //   title: '更多',
-          //   items: [
-          //     {
-          //       label: '日志',
-          //       to: '/blog',
-          //     }
-          //   ],
-          // },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} duxapp. 
       <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">备案号：湘ICP备2024047001号</a>`,
