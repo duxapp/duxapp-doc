@@ -169,7 +169,7 @@ yarn build:android --app=moduleName
 
 当你需要使用第三方原生插件时，`duxapp` 框架也提供了较为简单的方式，以微信(wechat)插件为例  
 这个插件在rn上集成的是 `react-native-wechat-lib` ，可以实现登录、分享、支付等功能  
-在H5端集成的是 `wechat-jssdk` 实现jssk相关的功能  
+在H5端集成的是 `wechat-jssdk` 实现jssdk相关的功能  
 
 只需要在模块配置文件中新增模块依赖，将 `wechat` 添加到 `dependencies` 中
 

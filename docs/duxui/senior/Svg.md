@@ -10,7 +10,15 @@ Taro系列中一直没有跨端的绘图工具，小程序端支持canvas但是�
 
 组件的功能极其属性完全模拟 [react-native-svg](https://github.com/software-mansion/react-native-svg) 实现，你可以查看此文档获得更多开发实例
 
-## 示例
+:::info
+- React Native 端使用 [react-native-svg](https://github.com/software-mansion/react-native-svg)
+- 其他端将使用Canvas开发一套组件来匹配Svg的功能
+- 小程序端其实也不是完全无法支持svg，例如，可以使用 Image 来显示svg字符串，或者使用 background: url() 也能实现
+但是这样会有一定的局限性，例如：这样无法将Svg内容转为本地图片、无法实现组件事件、无法很好的支持动画动能，当然后面这两个功能暂时还未实现
+- 使用这个Svg，你可以用来开发商品海报、分销海报等功能，可以开发图片编辑器、海报设计器、转盘抽奖、电路模拟器等功能（后期实现），且开发的这些功能都是跨端兼容的
+:::
+
+## 基本示例
 
 import { Preview } from '@site/src/components/Preview'
 
@@ -137,13 +145,209 @@ const generateRoundedRectPath = (x, y, w, h, radius) => {
     Z`.trim()
 }
 ```
-:::info
-- React Native 端使用 [react-native-svg](https://github.com/software-mansion/react-native-svg)
-- 其他端将使用Canvas开发一套组件来匹配Svg的功能
-- 小程序端其实也不是完全无法支持svg，例如，可以使用 Image 来显示svg字符串，或者使用 background: url() 也能实现
-但是这样会有一定的局限性，例如：这样无法将Svg内容转为本地图片、无法实现组件事件、无法很好的支持动画动能，当然后面这两个功能暂时还未实现
-- 使用这个Svg，你可以用来开发商品海报、分销海报等功能，可以开发图片编辑器、海报设计器、转盘抽奖、电路模拟器等功能（后期实现），且开发的这些功能都是跨端兼容的
-:::
+
+## 动画示例
+
+<Preview name='SvgAnimated' />
+
+```jsx
+import { Header, ScrollView, TopView, GroupList, pxNum, duxappTheme, Row, Button } from '@/duxuiExample'
+import {
+  Svg, Rect,
+  Animated, Easing
+} from '@/duxui/components/Svg'
+import { useEffect, useRef } from 'react'
+
+const AnimatedRect = Animated.createAnimatedComponent(Rect)
+
+export default TopView.HOC(function SvgAnimatedExample() {
+
+  return <>
+    <Header title='Svg动画' />
+    <ScrollView>
+      <GroupList>
+        <Fade />
+        <Color />
+        <Loop />
+        <Transform />
+      </GroupList>
+    </ScrollView>
+  </>
+})
+
+const Fade = () => {
+
+  const primary = duxappTheme.primaryColor
+  const secondary = duxappTheme.secondaryColor
+
+  const fadeAnim = useRef(new Animated.Value(1)).current
+
+  const width = pxNum(702)
+  const height = pxNum(180)
+
+  return <GroupList.Item title='淡入淡出'>
+    <Svg width={width} height={height}>
+      <AnimatedRect
+        x={(width - height) / 2}
+        opacity={fadeAnim}
+        width={height}
+        height={height}
+        rx={10} ry={10} stroke={secondary} fill={primary}
+      />
+    </Svg>
+    <Row className='mt-2 gap-3 justify-center'>
+      <Button type='primary'
+        onClick={() => {
+          Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 1000,
+          }).start()
+        }}
+      >淡入</Button>
+      <Button type='primary'
+        onClick={() => {
+          Animated.timing(fadeAnim, {
+            toValue: 0,
+            duration: 1000,
+            useNativeDriver: true
+          }).start()
+        }}
+      >淡出</Button>
+    </Row>
+  </GroupList.Item>
+}
+
+const Color = () => {
+
+  const primary = duxappTheme.primaryColor
+  const secondary = duxappTheme.secondaryColor
+
+  const colorAnim = useRef(new Animated.Value(0)).current
+
+  const width = pxNum(702)
+  const height = pxNum(180)
+
+  useEffect(() => {
+    setTimeout(() => {
+      Animated.loop(
+        Animated.timing(colorAnim, {
+          toValue: 3,
+          duration: 3000,
+          useNativeDriver: false
+        })
+      ).start()
+    }, 500)
+  }, [colorAnim])
+
+  return <GroupList.Item title='颜色'>
+    <Svg width={width} height={height}>
+      <AnimatedRect
+        x={(width - height) / 2}
+        width={height}
+        height={height}
+        rx={10} ry={10}
+        stroke={secondary}
+        fill={colorAnim.interpolate({
+          inputRange: [0, 1, 2, 3],
+          outputRange: [primary, secondary, duxappTheme.successColor, primary]
+        })}
+      />
+    </Svg>
+  </GroupList.Item>
+}
+
+const Loop = () => {
+
+  const primary = duxappTheme.primaryColor
+  const secondary = duxappTheme.secondaryColor
+
+  const x = useRef(new Animated.Value(0)).current
+
+  const size = 50
+
+  useEffect(() => {
+    setTimeout(() => {
+      Animated.loop(
+        Animated.timing(x, {
+          toValue: 4,
+          duration: 3000,
+          easing: Easing.bounce,
+          useNativeDriver: false
+        })
+      ).start()
+    }, 500)
+  }, [x])
+
+  const width = pxNum(702)
+  const height = pxNum(360)
+  return <GroupList.Item title='循环动画' desc='利用 interpolate 将动画值映射到任意范围'>
+    <Svg width={width} height={height}>
+      <AnimatedRect
+        x={x.interpolate({
+          inputRange: [0, 1, 2, 3, 4],
+          outputRange: [0, width - size, width - size, 0, 0]
+        })}
+        y={x.interpolate({
+          inputRange: [0, 1, 2, 3, 4],
+          outputRange: [0, 0, height - size, height - size, 0]
+        })}
+        width={size}
+        height={size}
+        rx={10} ry={10} stroke={secondary} fill={primary}
+      />
+    </Svg>
+  </GroupList.Item>
+}
+
+const Transform = () => {
+
+  const primary = duxappTheme.primaryColor
+  const secondary = duxappTheme.secondaryColor
+
+  const transformAnim = useRef(new Animated.Value(0)).current
+
+  const width = pxNum(702)
+  const height = pxNum(180)
+
+  const size = pxNum(100)
+
+  useEffect(() => {
+    setTimeout(() => {
+      Animated.loop(
+        Animated.timing(transformAnim, {
+          toValue: 2,
+          duration: 2000,
+          easing: Easing.circle,
+          useNativeDriver: true
+        })
+      ).start()
+    }, 500)
+  }, [transformAnim])
+
+  return <GroupList.Item title='变换动画' desc='在RN上似乎不生效'>
+    <Svg width={width} height={height}>
+      <AnimatedRect
+        x={(width - size) / 2}
+        y={(height - size) / 2}
+        width={size}
+        height={size}
+        rx={10} ry={10}
+        stroke={secondary}
+        fill={primary}
+        origin={[width / 2, height / 2]}
+        rotation={transformAnim.interpolate({
+          inputRange: [0, 1, 2],
+          outputRange: [0, 180, 360]
+        })}
+        scale={transformAnim.interpolate({
+          inputRange: [0, 1, 2],
+          outputRange: [1, 2, 1]
+        })}
+      />
+    </Svg>
+  </GroupList.Item>
+}
+```
 
 ## 组件
 
