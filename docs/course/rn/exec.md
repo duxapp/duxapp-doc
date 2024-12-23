@@ -21,12 +21,12 @@ sidebar_position: 3
 两个命令完全一样，都能启动meter代码编译功能
 
 :::info
-RN的metro服务缓存比较重，在下面这些情况下，你需要重启命令，并且在命令后盖面加上 `--reset-cahce`
+RN的metro服务缓存比较重，在下面这些情况下，你需要重启命令，并且在命令后盖面加上 `--reset-cache`
 
 如果你不这样做，你修改的内容将不会生效
 
 ```bash
-yarn start --app=modeName --reset-cahce
+yarn start --app=modeName --reset-cache
 ```
 - 切换项目 （就是当你的--app=参数不一样的时候）
 - 添加、修改、删除了模块路由
