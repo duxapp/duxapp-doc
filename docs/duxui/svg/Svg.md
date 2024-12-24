@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Svg 跨端Svg功能
+# 基础组件
 
 Taro系列中一直没有跨端的绘图工具，小程序端支持canvas但是不支持svg，RN端有 react-native-svg 支持svg，但是没有很好原生的canvas插件，社区的canvas都是基于WebView实现的，或者skia，这个插件的书写方式和canvas有较大的差异
 
@@ -18,19 +18,19 @@ Taro系列中一直没有跨端的绘图工具，小程序端支持canvas但是�
 - 使用这个Svg，你可以用来开发商品海报、分销海报等功能，可以开发图片编辑器、海报设计器、转盘抽奖、电路模拟器等功能（后期实现），且开发的这些功能都是跨端兼容的
 :::
 
-## 基本示例
+## 示例
 
 import { Preview } from '@site/src/components/Preview'
 
 <Preview name='Svg' />
 
 ```jsx
-import { Header, ScrollView, TopView, GroupList, pxNum, duxappTheme, Button, confirm } from '@/duxuiExample'
+import { Header, ScrollView, TopView, GroupList, pxNum, duxappTheme, Button, confirm, Column } from '@/duxuiExample'
 import {
   Svg, Rect, Circle, Ellipse, Line, Image, Text, TSpan,
   Polyline, Polygon, Path,
   Defs, Use, G,
-  LinearGradient, Stop, SvgToImage
+  LinearGradient, Stop, SvgToImage, SvgComponent
 } from '@/duxui/components/Svg'
 import { useRef } from 'react'
 import { saveImageToPhotosAlbum } from '@tarojs/taro'
@@ -50,12 +50,6 @@ export default TopView.HOC(function SvgExample() {
           <SvgToImage ref={toImage}>
             <Svg width={pxNum(702)} height={pxNum(1080)}>
               <Defs>
-                <Rect id='rect' width='20%' height='20%' rx={10} ry={10} stroke={secondary} fill={primary} />
-                <G id='shape'>
-                  <Circle cx={50} cy={50} r={50} style='fill: #000;' />
-                  <Rect x={50} y={50} width={50} height={50} style='fill: #000' />
-                  <Circle cx={50} cy={50} r={5} style='fill: blue;' />
-                </G>
                 <G id='items' stroke={primary}>
                   <Rect width={50} height={50} />
                   <Circle cx={75} cy={25} r={25} />
@@ -90,20 +84,7 @@ export default TopView.HOC(function SvgExample() {
                 rotation={10}
                 scale={0.9}
               />
-              <Use href='#shape' x={0} y={420} />
-              <Use href='#rect' x={120} y={420}
-                // 不支持百分比，位置从Svg原点开始计算
-                origin='120, 420'
-                // scale={[0.5, 0.6]}
-                scale={0.5}
-                rotation={45}
-                // RN上斜切效果在组合rotation后和其他端不一致，应该避免组合rotation使用
-                // skew={10}
-                // translate 写法在RN上不生效，需要分别写两个属性
-                // translate={[50, 50]}
-                translateX={30}
-                translateY={30}
-              />
+              <CustomSvg />
             </Svg>
           </SvgToImage>
           <Button type='primary' size='l'
@@ -125,6 +106,7 @@ export default TopView.HOC(function SvgExample() {
           >保存到相册</Button>
         </GroupList.Item>
       </GroupList>
+      <Column className='p-2' />
     </ScrollView>
   </>
 })
@@ -144,208 +126,43 @@ const generateRoundedRectPath = (x, y, w, h, radius) => {
     A ${r},${r} 0 0 1 ${x + r},${y}
     Z`.trim()
 }
-```
 
-## 动画示例
-
-<Preview name='SvgAnimated' />
-
-```jsx
-import { Header, ScrollView, TopView, GroupList, pxNum, duxappTheme, Row, Button } from '@/duxuiExample'
-import {
-  Svg, Rect,
-  Animated, Easing
-} from '@/duxui/components/Svg'
-import { useEffect, useRef } from 'react'
-
-const AnimatedRect = Animated.createAnimatedComponent(Rect)
-
-export default TopView.HOC(function SvgAnimatedExample() {
-
-  return <>
-    <Header title='Svg动画' />
-    <ScrollView>
-      <GroupList>
-        <Fade />
-        <Color />
-        <Loop />
-        <Transform />
-      </GroupList>
-    </ScrollView>
-  </>
-})
-
-const Fade = () => {
+/**
+ * 支持自定义组件
+ * 但是组件需要用 SvgComponent 进行包裹，否则自定义组件里面的内容不会渲染
+ */
+const CustomSvg = () => {
 
   const primary = duxappTheme.primaryColor
   const secondary = duxappTheme.secondaryColor
 
-  const fadeAnim = useRef(new Animated.Value(1)).current
-
-  const width = pxNum(702)
-  const height = pxNum(180)
-
-  return <GroupList.Item title='淡入淡出'>
-    <Svg width={width} height={height}>
-      <AnimatedRect
-        x={(width - height) / 2}
-        opacity={fadeAnim}
-        width={height}
-        height={height}
-        rx={10} ry={10} stroke={secondary} fill={primary}
-      />
-    </Svg>
-    <Row className='mt-2 gap-3 justify-center'>
-      <Button type='primary'
-        onClick={() => {
-          Animated.timing(fadeAnim, {
-            toValue: 1,
-            duration: 1000,
-          }).start()
-        }}
-      >淡入</Button>
-      <Button type='primary'
-        onClick={() => {
-          Animated.timing(fadeAnim, {
-            toValue: 0,
-            duration: 1000,
-            useNativeDriver: true
-          }).start()
-        }}
-      >淡出</Button>
-    </Row>
-  </GroupList.Item>
-}
-
-const Color = () => {
-
-  const primary = duxappTheme.primaryColor
-  const secondary = duxappTheme.secondaryColor
-
-  const colorAnim = useRef(new Animated.Value(0)).current
-
-  const width = pxNum(702)
-  const height = pxNum(180)
-
-  useEffect(() => {
-    setTimeout(() => {
-      Animated.loop(
-        Animated.timing(colorAnim, {
-          toValue: 3,
-          duration: 3000,
-          useNativeDriver: false
-        })
-      ).start()
-    }, 500)
-  }, [colorAnim])
-
-  return <GroupList.Item title='颜色'>
-    <Svg width={width} height={height}>
-      <AnimatedRect
-        x={(width - height) / 2}
-        width={height}
-        height={height}
-        rx={10} ry={10}
-        stroke={secondary}
-        fill={colorAnim.interpolate({
-          inputRange: [0, 1, 2, 3],
-          outputRange: [primary, secondary, duxappTheme.successColor, primary]
-        })}
-      />
-    </Svg>
-  </GroupList.Item>
-}
-
-const Loop = () => {
-
-  const primary = duxappTheme.primaryColor
-  const secondary = duxappTheme.secondaryColor
-
-  const x = useRef(new Animated.Value(0)).current
-
-  const size = 50
-
-  useEffect(() => {
-    setTimeout(() => {
-      Animated.loop(
-        Animated.timing(x, {
-          toValue: 4,
-          duration: 3000,
-          easing: Easing.bounce,
-          useNativeDriver: false
-        })
-      ).start()
-    }, 500)
-  }, [x])
-
-  const width = pxNum(702)
-  const height = pxNum(360)
-  return <GroupList.Item title='循环动画' desc='利用 interpolate 将动画值映射到任意范围'>
-    <Svg width={width} height={height}>
-      <AnimatedRect
-        x={x.interpolate({
-          inputRange: [0, 1, 2, 3, 4],
-          outputRange: [0, width - size, width - size, 0, 0]
-        })}
-        y={x.interpolate({
-          inputRange: [0, 1, 2, 3, 4],
-          outputRange: [0, 0, height - size, height - size, 0]
-        })}
-        width={size}
-        height={size}
-        rx={10} ry={10} stroke={secondary} fill={primary}
-      />
-    </Svg>
-  </GroupList.Item>
-}
-
-const Transform = () => {
-
-  const primary = duxappTheme.primaryColor
-  const secondary = duxappTheme.secondaryColor
-
-  const transformAnim = useRef(new Animated.Value(0)).current
-
-  const width = pxNum(702)
-  const height = pxNum(180)
-
-  const size = pxNum(100)
-
-  useEffect(() => {
-    setTimeout(() => {
-      Animated.loop(
-        Animated.timing(transformAnim, {
-          toValue: 2,
-          duration: 2000,
-          easing: Easing.circle,
-          useNativeDriver: true
-        })
-      ).start()
-    }, 500)
-  }, [transformAnim])
-
-  return <GroupList.Item title='变换动画' desc='在RN上似乎不生效'>
-    <Svg width={width} height={height}>
-      <AnimatedRect
-        x={(width - size) / 2}
-        y={(height - size) / 2}
-        width={size}
-        height={size}
-        rx={10} ry={10}
-        stroke={secondary}
-        fill={primary}
-        origin={[width / 2, height / 2]}
-        rotation={transformAnim.interpolate({
-          inputRange: [0, 1, 2],
-          outputRange: [0, 180, 360]
-        })}
-        scale={transformAnim.interpolate({
-          inputRange: [0, 1, 2],
-          outputRange: [1, 2, 1]
-        })}
-      />
-    </Svg>
-  </GroupList.Item>
+  return <SvgComponent>
+    <Defs>
+      <G id='shape'>
+        <Circle cx={50} cy={50} r={50} style='fill: #000;' />
+        <Rect x={50} y={50} width={50} height={50} style='fill: #000' />
+        <Circle cx={50} cy={50} r={5} style='fill: blue;' />
+      </G>
+    </Defs>
+    <Use href='#shape' x={0} y={420} />
+    <Rect
+      x={120} y={420}
+      width='20%' height='20%'
+      rx={10} ry={10}
+      stroke={secondary} fill={primary}
+      // 不支持百分比，位置从Svg原点开始计算
+      origin='120, 420'
+      // scale={[0.5, 0.6]}
+      scale={0.5}
+      rotation={45}
+      // RN上斜切效果在组合rotation后和其他端不一致，应该避免组合rotation使用
+      // skew={10}
+      // translate 写法在RN上不生效，需要分别写两个属性
+      // translate={[50, 50]}
+      translateX={30}
+      translateY={30}
+    />
+  </SvgComponent>
 }
 ```
 
@@ -434,6 +251,16 @@ const Transform = () => {
 - transform
 
 以及其他未列出的属性
+
+## 事件
+- onPress
+- onPressIn
+- onPressOut
+- onLongPress
+
+这些事件只能用于Svg的一级子元素，如果被嵌套，将无法获得事件
+
+关于触摸事件，请参考[事件结合](./SvgEvent.md)
 
 ## SvgToImage Props
 
