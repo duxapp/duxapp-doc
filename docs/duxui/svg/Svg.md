@@ -9,15 +9,6 @@ Taro系列中一直没有跨端的绘图工具，小程序端支持canvas但是�
 所以开发了这个兼容小程序、H5和React Native 的Svg组件，来实现跨端绘图
 
 组件的功能极其属性完全模拟 [react-native-svg](https://github.com/software-mansion/react-native-svg) 实现，你可以查看此文档获得更多开发实例
-
-:::info
-- React Native 端使用 [react-native-svg](https://github.com/software-mansion/react-native-svg)
-- 其他端将使用Canvas开发一套组件来匹配Svg的功能
-- 小程序端其实也不是完全无法支持svg，例如，可以使用 Image 来显示svg字符串，或者使用 background: url() 也能实现
-但是这样会有一定的局限性，例如：这样无法将Svg内容转为本地图片、无法实现组件事件、无法很好的支持动画动能，当然后面这两个功能暂时还未实现
-- 使用这个Svg，你可以用来开发商品海报、分销海报等功能，可以开发图片编辑器、海报设计器、转盘抽奖、电路模拟器等功能（后期实现），且开发的这些功能都是跨端兼容的
-:::
-
 ## 示例
 
 import { Preview } from '@site/src/components/Preview'
@@ -165,6 +156,15 @@ const CustomSvg = () => {
   </SvgComponent>
 }
 ```
+
+:::info
+- React Native 端使用 [react-native-svg](https://github.com/software-mansion/react-native-svg)
+- 其他端将使用Canvas开发一套组件来匹配Svg的功能
+- 小程序端其实也不是完全无法支持svg，例如，可以使用 Image 来显示svg字符串，或者使用 background: url() 也能实现
+但是这样会有一定的局限性，例如：这样无法将Svg内容转为本地图片、无法实现组件事件、无法很好的支持动画动能，当然后面这两个功能暂时还未实现
+- 使用这个Svg，你可以用来开发商品海报、分销海报等功能，可以开发图片编辑器、海报设计器、转盘抽奖、电路模拟器等功能（后期实现），且开发的这些功能都是跨端兼容的
+:::
+
 
 ## 组件
 

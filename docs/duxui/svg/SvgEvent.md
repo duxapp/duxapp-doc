@@ -34,8 +34,8 @@ export default TopView.HOC(function SvgEventExample() {
 
 const Event = () => {
 
-  return <GroupList.Item title='组件事件' desc='蓝色拖拽，红色拖拽后回弹'>
-    <Svg width={pxNum(200)} height={pxNum(200)}>
+  return <GroupList.Item title='组件事件' desc='点击对应的图形会有对应的点击事件'>
+    <Svg width={100} height={100}>
       <Circle
         cx='50%'
         cy='50%'
@@ -67,9 +67,6 @@ const TouchEvent = () => {
   const movePan = useRef(new Animated.ValueXY({ x: 10, y: 10 }, { useNativeDriver: false })).current
 
   const moveEvent = useRef(PanResponder.create({
-    onStartShouldSetPanResponderCapture: () => true,
-    onStartShouldSetPanResponder: () => true,
-    onMoveShouldSetPanResponderCapture: () => true,
     onMoveShouldSetPanResponder: () => true,
     onPanResponderGrant: () => {
       movePan.setOffset({
@@ -85,16 +82,16 @@ const TouchEvent = () => {
     }
   })).current
 
-  const moveOriginPan = useRef(new Animated.ValueXY({ x: 0, y: 0 }, { useNativeDriver: true })).current
+  const moveOriginPan = useRef(new Animated.ValueXY({ x: 150, y: 50 }, { useNativeDriver: true })).current
 
   const moveOriginEvent = useRef(PanResponder.create({
     onMoveShouldSetPanResponder: () => true,
     onPanResponderMove: (e, gestureState) => {
-      moveOriginPan.setValue({ x: gestureState.dx, y: gestureState.dy })
+      moveOriginPan.setValue({ x: gestureState.dx + 150, y: gestureState.dy + 50 })
     },
     onPanResponderRelease: () => {
       Animated.timing(moveOriginPan, {
-        toValue: { x: 0, y: 0 },
+        toValue: { x: 150, y: 50 },
         duration: 600,
         easing: Easing.bounce,
         useNativeDriver: true
@@ -118,10 +115,10 @@ const TouchEvent = () => {
         height={50}
         fill={primary}
         {...moveOriginEvent.panHandlers}
-        x={150}
-        y={50}
-        translateX={moveOriginPan.x}
-        translateY={moveOriginPan.y}
+        x={moveOriginPan.x}
+        y={moveOriginPan.y}
+      // translateX={moveOriginPan.x}
+      // translateY={moveOriginPan.y}
       />
     </Svg>
   </GroupList.Item>
@@ -130,4 +127,4 @@ const TouchEvent = () => {
 
 ## PanResponder
 
-这个API的功能都支持，使用方法和RN端一致，参考RN文档，或者上面的示例
+这个API的功能基本都支持，使用方法和RN端一致，参考RN文档，或者上面的示例
