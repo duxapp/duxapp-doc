@@ -8,7 +8,7 @@ Taro系列中一直没有跨端的绘图工具，小程序端支持canvas但是�
 
 所以开发了这个兼容小程序、H5和React Native 的Svg组件，来实现跨端绘图
 
-组件的功能极其属性完全模拟 [react-native-svg](https://github.com/software-mansion/react-native-svg) 实现，你可以查看此文档获得更多开发实例
+组件的功能及属性完全模拟 [react-native-svg](https://github.com/software-mansion/react-native-svg) 实现，你可以查看此文档获得更多开发实例
 ## 示例
 
 import { Preview } from '@site/src/components/Preview'
