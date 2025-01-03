@@ -94,7 +94,7 @@ duxapp icon create UiIcon duxui https://at.alicdn.com/t/c/font_4643878_n6necu7zt
 如上所示的命令将为duxui模块创建组件名为`UiIcon`的组件，此组件将会放在`src/duxui/components`目录下，用户可根据情况使用。  
 多次使用此命令，将会覆盖组件创建
 
-默认创建的是在线图标，图标是从线上加载的，你可以指定为创建本地图标，像下面这样，在最后加上个1
+默认创建的是本地图标，你可以指定为创建本地在线图标图标，像下面这样，在最后加上个1
 
 ```bash
 duxapp icon create UiIcon duxui https://at.alicdn.com/t/c/font_4643878_n6necu7zt7p.css 1
