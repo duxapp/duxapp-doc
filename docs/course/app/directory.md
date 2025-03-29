@@ -24,7 +24,8 @@ sidebar_position: 2
 │   │   ├── index.js            导出工具库
 │   │   └── ...you util.js
 │   ├── update                  模块安装目录
-│   │   ├── copy                需要复制到项目的文件，这里面现在只支持放 patches（路径固定）
+│   │   ├── copy                需要复制到项目的文件（路径固定）
+│   │   ├── copy.build.complete 需要在编译结束后，复制到项目的文件（路径固定）
 │   │   ├── copy.rn             编译 RN 的时候需要复制到项目的文件（路径固定）
 │   │   ├── copy.harmony        运行鸿蒙端需要复制到鸿蒙项目的文件（路径固定）
 │   │   ├── rn.js               RN 端安装脚本 插件安装方法（路径固定）
@@ -262,7 +263,10 @@ export default {
 这个文件是将用户配置或者默认配置的主题，转换为scss变量，方便在scss中调用
 
 ## update/copy
-这个文件夹下的内容会被复制到项目对应的文件夹下面，目前仅支持 patches 布丁文件，后续亏考虑支持其他文件
+这个文件夹下的内容会被复制到项目对应的文件夹下面
+
+## update/copy.build.complete
+在编译结束后，这个文件夹下的内容会被复制到项目对应的文件夹下面，例如小程序的 `code_obfuscation_config.json` 配置文件，用来配置文件加密的，你需要等待编译结束后，再把文件复制进去，否则，会被Taro的编译逻辑给删除
 
 ## update/rn.js
 

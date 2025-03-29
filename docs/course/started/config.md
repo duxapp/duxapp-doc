@@ -97,6 +97,26 @@ option字段就是模块配置，每个模块都可能拥有自己不一样的�
 
 具体模块提供提供了哪些配置请前往具体模块查看。
 
+## 文件复制
+
+可以将一些自定义文件复制到对应文件夹下
+
+### copy.build.complete
+
+在编译结束后，这个文件夹下的内容会被复制到项目对应的文件夹下面，例如小程序的 code_obfuscation_config.json 配置文件，用来配置文件加密的，你需要等待编译结束后，再把文件复制进去，否则，会被Taro的编译逻辑给删除
+
+:::info
+这里的优先级高于模块中的 [`copy.build.complete`](/docs/course/app/directory#updatecopybuildcomplete) 复制功能
+:::
+
+### copy.rn
+
+在编译APP的时候，将这个文件夹下的内容复制到对应位置
+
+### copy.harmony
+
+在编译鸿蒙端的时候，将这个文件夹下的内容复制到 `dist/harmony` 对应位置
+
 ## 小程序配置
 
 在用户配置文件夹下还能放 `project.config.json`，配置文件内容和小程序的配置文件一样，通常用来给不同的项目指定 `appid`，这样就不用每次编译不同的项目后还需要手动更新 `appid`

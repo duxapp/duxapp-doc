@@ -141,18 +141,5 @@ app版本号
 
 模块处理结束回调
 
-## qiniu
-
-7牛云上传配置，此配置并非用于RN使用，而是用于创建Icon命令上传字体文件使用
-
-### accessKey
-key
-
-### bucket
-存储空间
-
-### cdn
-访问域名
-
 ## option
 模块自定义配置，例如微信模块在编译ios时需要用到appid，就配置在`option.wechat.appid`
