@@ -246,9 +246,7 @@ const CustomSvg = () => {
 - skew (RN上斜切效果在组合rotation后和其他端不一致，应该避免组合rotation使用)
 - skewX
 - skewY
-
-未支持：
-- transform
+- transform (如果要使用变换动画，需要使用这个属性实现，其他变换属性RN端不支持动画)
 
 以及其他未列出的属性
 
