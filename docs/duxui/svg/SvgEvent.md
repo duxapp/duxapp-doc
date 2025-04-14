@@ -128,3 +128,5 @@ const TouchEvent = () => {
 ## PanResponder
 
 这个API的功能基本都支持，使用方法和RN端一致，参考RN文档，或者上面的示例
+
+[RN PanResponder 文档](https://reactnative.cn/docs/panresponder)
