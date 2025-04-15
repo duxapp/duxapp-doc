@@ -201,17 +201,16 @@ const CustomSvg = () => {
 `cx` `cy` `rx` `ry` `fx` `fy`
 - Stop  
 `offset` `stopColor` `stopOpacity`
+- ClipPath
 - SvgToImage 非Svg组件，是将Svg转图片的组件
 
 未支持：
 
 - TextPath
 - Symbol
-- ClipPath
 - Mask
 - Pattern
 - Marker
-- Pattern
 - SvgXml
 - SvgUri
 - SvgCss
