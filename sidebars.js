@@ -28,6 +28,7 @@ const sidebars = {
   ],
   update: [
     { type: 'doc', id: 'update/start' },
+    { type: 'doc', id: 'update/2025-04-16' },
     { type: 'doc', id: 'update/2025-03-29' },
     { type: 'doc', id: 'update/2025-03-05' },
     { type: 'doc', id: 'update/2025-01-13' },

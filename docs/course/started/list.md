@@ -13,6 +13,10 @@ sidebar_position: 8
 - RN端使用 `@shopify/flash-list` 实现，拥有更好的性能
 - 多列支持
 
+:::info
+2025-04-16 开始的版本中，这个组件从 duxapp 模块移动到 duxui 模块中，请注意修改
+:::
+
 ## 创建
 
 之前的章节中讲到了如何创建 `usePageData`，在此处将会用到，如果你尚未创建，请先去查看[请求上传](/docs/course/started/net)文档  

@@ -6,6 +6,10 @@ sidebar_position: 7
 
 在duxapp中写样式为了兼容React Native，我们需要采取flex的布局方式，因此，为了和RN端获得一致的布局方式，默认会给小程序和h5的标签赋予默认样式，像下面这样  
 
+:::info
+如果你仅依赖了 `duxapp` 这个基础模块，将不会有这些默认样式，因为 2505-04-16 的更新中将这些默认样式用到了独立的模块中
+:::
+
 对于h5：
 ```css
 taro-view-core {
@@ -148,11 +152,10 @@ px方法是 Taro.pxTransform 的简写，为了看起来更简洁一些，并且
 
 前往下一章节查看 [使用UI库](duxui)
 
-## duxapp模块提供的全局样式
+## duxappStyle模块提供的全局样式
 
 ```css
-
-/*  #ifdef weapp  */
+/*  #ifdef weapp qq  */
 .button-clean {
   position: relative;
   display: flex;
@@ -198,10 +201,12 @@ px方法是 Taro.pxTransform 的简写，为了看起来更简洁一些，并且
 }
 
 .inset-0 {
-  top: 0;
-  bottom: 0;
-  right: 0;
   left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  // bottom: 0;
+  // right: 0;
 }
 
 .top-0 {
@@ -313,6 +318,10 @@ px方法是 Taro.pxTransform 的简写，为了看起来更简洁一些，并且
 
 .items-center {
   align-items: center;
+}
+
+.items-stretch {
+  align-items: stretch;
 }
 
 .items-baseline {
@@ -609,7 +618,7 @@ px方法是 Taro.pxTransform 的简写，为了看起来更简洁一些，并且
   margin-top: 24px;
 }
 
-.mt-3 {
+.mt-4 {
   margin-top: 32px;
 }
 
