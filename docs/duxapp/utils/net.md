@@ -59,7 +59,7 @@ option参数
 
 ### usePageData(option, config)
 
-当你有使用page分页请求的列表是就可以用这个hook进行请求，这个个hook一般是作为[List组件](/docs/duxapp/component/List)的hook请求使用
+当你有使用page分页请求的列表是就可以用这个hook进行请求，这个个hook一般是作为[List组件](/docs/duxui/base/List)的hook请求使用
 
 | 名称 | 类型 | 说明 |
 | ---- | ---- | ------- |

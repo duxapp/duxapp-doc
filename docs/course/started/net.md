@@ -275,4 +275,4 @@ const [list, action] = usePageData('mall/list', {
 
 ## 扩展
 
-`useRequest` `usePageData`，可以用于进一步创建 [`List`](/docs/duxapp/component/List) 和 `Detail` 组件
+`useRequest` `usePageData`，可以用于进一步创建 [`List`](/docs/duxui/base/List) 和 `Detail` 组件
