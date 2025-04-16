@@ -116,7 +116,7 @@ module.exports = config
 
 - 全局样式
 
-全局样式文件 `app.json` 复制到模块之后将自动可用
+全局样式文件 `app.scss` 复制到模块之后将自动可用
 
 - app.config.js
 
