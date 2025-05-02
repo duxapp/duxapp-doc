@@ -21,16 +21,14 @@ sidebar_position: 8
 
 之前的章节中讲到了如何创建 `usePageData`，在此处将会用到，如果你尚未创建，请先去查看[请求上传](/docs/course/started/net)文档  
 
-从之前创建`usePageData`的地方导入`useRequest usePageData`
+从之前创建`usePageData`的地方导入`usePageData`
 ```js
-import { useRequest, usePageData } from '@/duxcms/utils'
-import { createDetail, createList } from '@/duxapp'
+import { usePageData } from '@/duxcms/utils'
+import { createList } from '@/duxapp'
 
-const Detail = createDetail(useRequest)
 const List = createList(usePageData)
 
 export {
-  Detail,
   List
 }
 ```

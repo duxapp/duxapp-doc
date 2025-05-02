@@ -7,6 +7,10 @@ sidebar_position: 10
 duxapp模块提供了全局样式，可以用于快速布局，如果你还不知到如何使用全局样式，请查看这篇文章
 [使用全局样式布局](/docs/course/started/layout#使用全局样式布局)
 
+:::info
+2025-04-16的更新中这些全局样式已经移动到了独立的duxappStyle模块中
+:::
+
 下面是duxapp模块中的全局样式
 
 ```css

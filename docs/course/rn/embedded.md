@@ -220,7 +220,7 @@ post_install 的结束位置
 - appDelegate  
 接口内容
 
-- ios/duxapp/AppDelegate.mm  
+### ios/duxapp/AppDelegate.mm  
 
 - import  
 依赖导入位置
