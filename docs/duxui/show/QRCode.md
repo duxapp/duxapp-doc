@@ -13,8 +13,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='QRCode' />
 
 ```jsx
-import { Header, ScrollView, TopView, GroupList, pxNum } from '@/duxuiExample'
-import { QRCode } from '@/duxui/components/QRCode'
+import { Header, ScrollView, TopView, GroupList, pxNum, QRCode } from '@/duxuiExample'
 
 export default function QRCodeExample() {
 
@@ -43,13 +42,13 @@ export default function QRCodeExample() {
         <GroupList.Item title='Logo'>
           <QRCode
             value='http://duxapp.com'
-            logo='https://duxapp.com/img/logo.jpg'
+            logo={require('./static/logo.jpg')}
           />
         </GroupList.Item>
         <GroupList.Item title='尺寸、边距、Logo圆角' desc='组件需要从 @/duxui/components/QRCode 导入'>
           <QRCode
             value='http://duxapp.com'
-            logo='https://duxapp.com/img/logo.jpg'
+            logo={require('./static/logo.jpg')}
             size={pxNum(300)}
             logoSize={pxNum(100)}
             logoBorderRadius={pxNum(20)}
