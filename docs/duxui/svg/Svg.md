@@ -170,7 +170,7 @@ const CustomSvg = () => {
 
 已支持：
 - Svg  
-`width` `height` `viewBox`
+`width` `height` `viewBox` `preserveAspectRatio`
 - Rect  
 `x` `y` `width` `height`
 - Circle  
