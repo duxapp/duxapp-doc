@@ -232,6 +232,7 @@ const CustomSvg = () => {
 - strokeLinejoin
 - strokeDasharray
 - strokeDashoffset
+- clipPath
 - origin
 - originX
 - originY
