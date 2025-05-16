@@ -255,6 +255,7 @@ const CustomSvg = () => {
 - onPressIn
 - onPressOut
 - onLongPress
+- onLayout
 
 这些事件只能用于Svg的一级子元素，如果被嵌套，将无法获得事件
 
