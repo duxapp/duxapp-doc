@@ -46,8 +46,10 @@ const config = {
   }
 }
 
+import { createRequest, createUpload } from '@/duxapp/utils'
+
 const { request, throttleRequest, middle: requestMiddle } = createRequest(config)
-const { upload, uploadTempFile, middle: uploadMiddle } = createRequest(config)
+const { upload, uploadTempFile, middle: uploadMiddle } = createUpload(config)
 
 export {
   request,
@@ -155,6 +157,7 @@ requestMiddle.result(async (res) => {
 ```jsx
 import { createRequestHooks } from '@/duxapp'
 
+// request 是上面的请求中创建的请求函数
 const { useRequest, usePageData } = createRequestHooks(request)
 
 // 将他们和请求一起导出
@@ -275,4 +278,4 @@ const [list, action] = usePageData('mall/list', {
 
 ## 扩展
 
-`useRequest` `usePageData`，可以用于进一步创建 [`List`](/docs/duxui/base/List) 和 `Detail` 组件
+`useRequest` `usePageData`，可以用于进一步创建 [`List`](/docs/duxui/base/List) 组件，使用这个组件，可以快速构建列表页面，还支持虚拟列表功能
