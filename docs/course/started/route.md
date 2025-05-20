@@ -137,5 +137,13 @@ route.nav('map:point', {
   name: '地点名称',
   address: '地点位置'
 })
+
+// 打开小程序（H5端不能使用） APP端项目需要包含wechat模块
+route.nav('mini:wx00000000') // 小程序端跳转
+route.nav('mini:wx00000000|gh_0000') // 同时要支持APP跳转需要加入原始id
+route.nav('mini:wx00000000|gh_0000|2') // 打开体验版小程序 0正式版 1开发版 2体验版
+route.nav('mini:wx00000000|gh_0000|pages/index/page2') // 指定打开页面
+route.nav('mini:wx00000000|gh_0000|pages/index/page2?a=1') // 指定打开页面和参数
+route.nav('mini:gh_0000|pages/index/page2?a=1') // 只有APP端可以只传入原始id
 ```
 查看[路由](/docs/duxapp/utils/route)获取更多细节
