@@ -26,7 +26,7 @@ const config = {
     result: {
       code: 'statusCode',
       data: ['data', 'data'],
-      succesCode: 200,
+      successCode: 200,
       message: res => {
         if (res.statusCode === 200) {
           return res.data.message

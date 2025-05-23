@@ -80,7 +80,7 @@ option参数
   - **getData** (`object | (() => void)`): 要携带在请求 URL 上的参数，即使使用 POST 请求时，也在 GET 参数上，可以传入函数或对象，函数需返回一个对象
 
 - **result** (`object`): 返回结果配置
-  - **succesCode** (`number`): 成功的 code，code 对不上，请求将会走 `catch` 方法
+  - **successCode** (`number`): 成功的 code，code 对不上，请求将会走 `catch` 方法
   - **errorCode** (`number`): 请求失败的标准 code，用于内部使用
   - **code** (`string | string[] | (() => void)`): 返回值获取 code 字段，多级请用数组表示，可以传入函数处理数据
   - **message** (`string | string[] | (() => void)`): 返回值获取提示信息的字段，多级请用数组表示，可以传入函数处理数据

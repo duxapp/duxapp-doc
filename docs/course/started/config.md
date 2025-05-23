@@ -67,7 +67,7 @@ export default config
 
 某些情况下你可能希望能更快的取得配置参数，而不是等待option的回调函数，duxapp模块导出整个配置文件，名称为 `userConfig`，按照下面的方法导入使用
 ```js
-inport { userConfig } from '@/duxapp'
+import { userConfig } from '@/duxapp'
 ```
 
 :::info
