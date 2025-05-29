@@ -72,7 +72,7 @@ module.exports = () => {
 ```
 
 :::info
-文件路径中不需要`ios`
+文件路径中不需要`dist/harmony`
 :::
 
 ## onStart
