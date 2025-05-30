@@ -158,3 +158,7 @@ back http https tel map 这几个协议不会触发次事件
 ### getQueryVariable()
 
 获取h5端的参数返回一个对象，这不包含hash参数
+
+## 路由配置
+
+如何配置路由请查看[路由配置](/docs/course/app/route)章节

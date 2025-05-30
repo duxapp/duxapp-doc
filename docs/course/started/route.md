@@ -147,3 +147,7 @@ route.nav('mini:wx00000000|gh_0000|pages/index/page2?a=1') // 指定打开页面
 route.nav('mini:gh_0000|pages/index/page2?a=1') // 只有APP端可以只传入原始id
 ```
 查看[路由](/docs/duxapp/utils/route)获取更多细节
+
+## 路由配置
+
+如何配置路由请查看[路由配置](/docs/course/app/route)章节
