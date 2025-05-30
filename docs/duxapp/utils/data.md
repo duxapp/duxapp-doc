@@ -8,6 +8,42 @@ sidebar_position: 7
 
 如果你还不了解这个工具的用途，请在入门教程中[全局状态管理](/docs/course/started/globalState#全局状态管理)查看教程
 
+## 示例
+```js
+import { ObjectManage } from '@/duxapp'
+
+class UserManage extends ObjectManage {
+  
+  constructor() {
+    super({
+      cacheKey: 'userInfo',
+      cache: true
+    })
+  }
+
+  data = {
+    // 登录状态
+    status: false,
+    // ...其他模块的用户信息
+  }
+}
+
+/**
+ * 实例化这个用户管理对象并且导出
+ */
+export const user = new UserManage()
+
+// 设置数据
+user.set({ status: true })
+user.set(old => ({ ...old, status: true }))
+
+// 在hook中取数据
+const data = user.useData()
+
+// 在非hook中取数据
+const data = user.data
+```
+
 ## 属性
 
 ### data

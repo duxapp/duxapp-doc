@@ -14,7 +14,7 @@ import { Preview } from '@site/src/components/Preview'
 
 ```jsx
 import { Header, ScrollView, TopView, GroupList, Animated, px, Button, transformStyle, duxappTheme, pxNum } from '@/duxuiExample'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
 export default function AnimatedExample() {
 
@@ -26,15 +26,6 @@ export default function AnimatedExample() {
   const [an3, setAn3] = useState(Animated.defaultState)
 
   const [an4, setAn4] = useState(Animated.defaultState)
-
-  const an = useRef()
-
-  useEffect(() => {
-    an.current = Animated.create({
-      duration: 500,
-      timingFunction: 'ease-in-out'
-    })
-  }, [])
 
   return <TopView>
     <Header title='Animated' />
@@ -50,7 +41,10 @@ export default function AnimatedExample() {
             }}
           />
           <Button onClick={() => {
-            setAn1(an.current
+            setAn1(Animated.create({
+              duration: 400,
+              timingFunction: 'ease-in-out'
+            })
               .translate(50, 50).scale(2).rotateZ(90).step()
               .translate(100, 0).scale(1).rotateZ(0).step()
               .translate(50, -50).scale(2).rotateZ(90).step()
@@ -70,7 +64,10 @@ export default function AnimatedExample() {
             }}
           />
           <Button onClick={() => {
-            setAn2(an.current
+            setAn2(Animated.create({
+              duration: 400,
+              timingFunction: 'ease-in-out'
+            })
               .backgroundColor(duxappTheme.successColor).step()
               .backgroundColor(duxappTheme.warningColor).step()
               .backgroundColor(duxappTheme.textColor2).step()
@@ -100,7 +97,10 @@ export default function AnimatedExample() {
           />
           <Button onClick={() => {
             setAn3(
-              an.current
+              Animated.create({
+                duration: 400,
+                timingFunction: 'ease-in-out'
+              })
                 .translate(pxNum(50), pxNum(50))
                 .rotate(180)
                 .step()
@@ -112,13 +112,10 @@ export default function AnimatedExample() {
           }}
           >测试</Button>
         </GroupList.Item>
-        <GroupList.Item title='变换原点和延迟' desc=''>
+        <GroupList.Item title='变换原点和延迟' desc='PullView confirm message 等功能的动画效果是使用这个库实现的，可以查看对应组件'>
           <Animated.View
             animation={an4}
             className='bg-primary'
-            // onClick={() => {
-            //   console.log('click')
-            // }}
             style={{
               width: px(100),
               height: px(100)
@@ -126,7 +123,10 @@ export default function AnimatedExample() {
           />
           <Button onClick={() => {
             setAn4(
-              an.current
+              Animated.create({
+                duration: 400,
+                timingFunction: 'ease-in-out'
+              })
                 .rotate(180)
                 .step({
                   transformOrigin: '100% 100% 0'

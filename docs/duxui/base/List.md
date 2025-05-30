@@ -28,72 +28,66 @@ import { Preview } from '@site/src/components/Preview'
 - renderItem需要传入一个组件，而非传染之后的内容
 
 ```jsx
-import { Column, Empty, Header, Image, Row, Tab, Text, TopView, nav, px, useRoute } from '@/duxui'
-import { List } from '@/duxcmsOrder'
-import { useState } from 'react'
+import { Header, ScrollView, TopView, GroupList, Column, Image, Form, Menu, Empty, Text, Row } from '@/duxuiExample'
+import { List, px } from '@/duxcms'
+import classNames from 'classnames'
 
-export default function RefundList() {
-  const { params } = useRoute()
-
-  const [navType, setNavType] = useState(params.type | 0)
+export default function ListExample() {
 
   return <TopView>
-    <Header title='退款/售后' />
-    <Tab value={navType} onChange={setNavType} className='bg-white rb-3'>
-      {
-        navList.map(item => <Tab.Item key={item.value} paneKey={item.value} title={item.text} />)
-      }
-    </Tab>
-    <List
-      url='order/refund'
-      data={{
-        type: navType,
-      }}
-      renderItem={Item}
-      renderEmpty={<Empty title='暂无售后' />}
-    />
+    <Header title='List' />
+    <Form>
+      {({ values }) => <>
+        <Menu>
+          <Form.Item field='sort'>
+            <Menu.Item title='排序' options={[{ name: '新品', value: 1 }, { name: '价格', value: 2 }]} />
+          </Form.Item>
+          <Form.Item field='class'>
+            <Menu.Item title='分类' options={[{ name: '全部', value: 0 }, { name: '分类1', value: 1 }, { name: '分类2', value: 10 }]} />
+          </Form.Item>
+        </Menu>
+        <ScrollView>
+          <GroupList>
+            <GroupList.Item title='数据列表' desc='此组件不可单独使用，需配合接口请求数据实现，此组件封装了分页，下拉刷新、上拉加载等功能，可以快速的实现一个列表页面。配合Form，可以实现快速筛选数据。列表需要放在一个具有一定高度的容器中，否则不会渲染。'>
+              <Column
+                style={{ height: px(1000) }}
+              >
+                <List
+                  url='mall'
+                  data={values}
+                  columns={2}
+                  // 样式对非RN端生效
+                  listStyle={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}
+                  renderItem={Item}
+                  renderEmpty={<Empty title='暂无数据' />}
+                />
+              </Column>
+            </GroupList.Item>
+          </GroupList>
+        </ScrollView>
+      </>}
+    </Form>
   </TopView>
 }
 
-const navList = [
-  { text: '全部', value: 0 },
-  { text: '待审核', value: 1 },
-  { text: '待退货', value: 2 },
-  { text: '退货中', value: 3 },
-  { text: '已退款', value: 4 }
-]
+const Item = ({ item, index, action }) => {
 
-const Item = ({ item, index }) => {
+  // action.reload() 可以用于数据刷新
+
   return <Column
-    className='m-3 r-2 bg-white p-3 gap-3'
-    style={index ? { marginTop: 0 } : {}}
-    onClick={() => nav('duxcmsOrder/refund/detail', { id: item.id })}
+    className={classNames('bg-white r-2', index > 1 && 'mt-3')}
+    style={{ width: px(339) }}
   >
-    <Row justify='between'>
-      <Text size={1} >{item.refund_no}</Text>
-      <Text size={1}>{item.state_name}</Text>
-    </Row>
-    {
-      item.goods.map(good => <GoodsItem key={good.id} item={good} />)
-    }
-    <Text self='end' className='mv-1'>退款：￥{item.price} 退运费：￥{item.freight}</Text>
-  </Column>
-}
-
-const GoodsItem = ({ item }) => {
-  return <Row className='gap-3'>
-    <Image src={item.goods_image} className='r-2' square style={{ width: px(160) }} />
-    <Column grow justify='between' className='pv-1 overflow-hidden'>
-      <Row items='center' justify='between'>
-        <Text bold size={2} numberOfLines={1} grow>{item.goods_name}</Text>
-        <Text bold size={2}><Text size={1}>￥</Text>{item.goods_price}</Text>
-      </Row>
-      <Row items='center' justify='between'>
-        <Text size={2} color={3} numberOfLines={1}>{item.goods_spec}</Text>
-        <Text bold size={2} color={2}>x{item.goods_num}</Text>
+    <Image src={item.image} className='r-2 w-full' square />
+    <Column className='p-2 gap-2'>
+      <Text numberOfLines={2}>{item.title}</Text>
+      {!!item.activity && <Text size={1} color={2}>{item.activity}</Text>}
+      <Row className='gap-1' items='center'>
+        <Text size={6} bold>{item.sell_price}</Text>
+        <Text delete color={3} grow>{item.market_price}</Text>
       </Row>
     </Column>
-  </Row>
+  </Column>
 }
 ```
 

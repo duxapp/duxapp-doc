@@ -13,7 +13,7 @@ sidebar_position: 0
 yarn duxapp app add duxui
 ```
 
-此模块需要在 [duxapp 框架](https://duxapp.cn) 中运行
+此模块需要在 [duxapp 框架](https://duxapp.com) 中运行
 
 ## 示例
 
@@ -27,7 +27,7 @@ import { Preview } from '@site/src/components/Preview'
 <img src="/img/weapp/duxui.jpg" width="200" />  
 
 - APP https://app.share.dux.plus/cn.duxapp.duxui
-- H5 https://duxui.duxapp.cn/
+- H5 https://duxui.duxapp.com/
 - 鸿蒙 需要自行运行代码并编译查看
 
 ## 示例代码

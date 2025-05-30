@@ -6,10 +6,15 @@
 yarn duxapp app add echarts
 ```
 
-## 使用
+## 示例
+
+import { Preview } from '@site/src/components/Preview'
+
+<Preview name='Chart' />
+
 ```jsx
-import { Chart } from '@/duxui/components/Chart'
-import { Header, ScrollView, TopView, GroupList } from '@/duxuiExample'
+import { Chart } from '@/echarts'
+import { Header, ScrollView, TopView, GroupList, px } from '@/duxuiExample'
 
 import {
   PieChart,
@@ -23,8 +28,6 @@ import {
   TitleComponent,
   LegendComponent
 } from 'echarts/components'
-
-import './Chart.scss'
 
 const options = {
   line: {
@@ -94,7 +97,6 @@ const options = {
   }
 }
 
-
 export default function CellExample() {
 
   return <TopView>
@@ -103,21 +105,21 @@ export default function CellExample() {
       <GroupList>
         <GroupList.Item title='折线图'>
           <Chart
-            className='ChartItem'
+            style={{ height: px(400) }}
             option={options.line}
             components={[LineChart, TooltipComponent, GridComponent, TitleComponent, LegendComponent]}
           />
         </GroupList.Item>
         <GroupList.Item title='柱状图'>
           <Chart
-            className='ChartItem'
+            style={{ height: px(400) }}
             option={options.bar}
             components={[BarChart, TooltipComponent, GridComponent]}
           />
         </GroupList.Item>
         <GroupList.Item title='饼图'>
           <Chart
-            className='ChartItem'
+            style={{ height: px(400) }}
             option={options.pie}
             components={[PieChart, TooltipComponent, GridComponent]}
           />

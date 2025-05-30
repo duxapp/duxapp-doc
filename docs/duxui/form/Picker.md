@@ -13,7 +13,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Picker' />
 
 ```jsx
-import { Header, ScrollView, TopView, Form, Card, Divider, PickerSelect, PickerMultiSelect } from '@/duxui'
+import { Header, ScrollView, TopView, Form, Card, Divider, PickerSelect, PickerMultiSelect } from '@/duxuiExample'
 
 const selectorData = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -40,6 +40,10 @@ export default function PickerExample() {
 
             <Form.Item label='单列选择' field='picker1'>
               <PickerSelect placeholder='请选择' range={selectorData} grow title='请选择' />
+            </Form.Item>
+
+            <Form.Item label='单列选择启用搜索' field='pickerSearch'>
+              <PickerSelect placeholder='请选择' search range={selectorData} grow title='请选择' />
             </Form.Item>
 
             <Form.Item label='多列选择' field='picker2'>

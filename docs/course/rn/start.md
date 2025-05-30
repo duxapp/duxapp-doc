@@ -223,7 +223,7 @@ const config = {
       app: {
         appid: 'wxxxxxxxxxx',
         // 此配置在ios上使用，安卓端无用
-        universalLink: 'https://www.duxapp.cn/app/'
+        universalLink: 'https://www.duxapp.com/app/'
       }
     },
   }

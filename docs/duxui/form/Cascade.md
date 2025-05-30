@@ -11,7 +11,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Cascade' />
 
 ```jsx
-import { Header, ScrollView, TopView, Form, Card, Divider, Cascade } from '@/duxui'
+import { Header, ScrollView, TopView, Form, Card, Divider, Cascade } from '@/duxuiExample'
 
 const cascadeData = [
   {
@@ -59,6 +59,9 @@ export default function CascadeExample() {
               <Cascade data={cascadeData} level={2} mode='checkbox' anyLevel />
             </Form.Item>
             <Form.Item label='只允许最后一级选中' field='cascade4' direction='vertical' >
+              <Cascade data={cascadeData} level={2} mode='checkbox' />
+            </Form.Item>
+            <Form.Item label='非受控模式' direction='vertical' >
               <Cascade data={cascadeData} level={2} mode='checkbox' />
             </Form.Item>
           </Divider.Group>

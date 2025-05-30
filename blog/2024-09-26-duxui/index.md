@@ -19,7 +19,7 @@ duxui已经被我用于很多项目中，其中包含APP的项目就开发了几
 - 小程序  
   ![小程序](./images/weapp.jpg)
 - APP [https://app.share.dux.plus/cn.duxapp.duxui](https://app.share.dux.plus/cn.duxapp.duxui)
-- H5 [https://duxui.duxapp.cn](https://duxui.duxapp.cn)
+- H5 [https://duxui.duxapp.com](https://duxui.duxapp.com)
 
 如果你想通过项目来查看这些组件的运行效果或者组件源码，使用下面这个命令创建一个UI库的示例代码
 
@@ -31,9 +31,9 @@ npx duxapp-cli create projectName duxuiExample
 
 ## 使用
 
-这是duxapp的一个模块，需要在duxapp中使用才能使用这个模块，UI库的文档请查看[https://duxapp.cn/docs/duxui/start](https://duxapp.cn/docs/duxui/start)
+这是duxapp的一个模块，需要在duxapp中使用才能使用这个模块，UI库的文档请查看[https://duxapp.com/docs/duxui/start](https://duxapp.com/docs/duxui/start)
 
-如果你还没有这个模块，需要先安装duxui模块，如果你还不知道什么是[duxapp框架](https://duxapp.cn/)，请先查看[这篇文章](https://duxapp.cn/blog/intro)了解
+如果你还没有这个模块，需要先安装duxui模块，如果你还不知道什么是[duxapp框架](https://duxapp.com/)，请先查看[这篇文章](https://duxapp.com/blog/intro)了解
 
 ```bash
 yarn duxapp app add duxui
@@ -345,6 +345,6 @@ duxapp默认将头部设置为了自定义，每个页面面建议都使用一�
 
 详细的使用方法，请前往开发文档查看
 
-开发文档：[http://duxapp.cn](http://duxapp.cn)
+开发文档：[http://duxapp.com](http://duxapp.com)
 
 GitHub：[https://github.com/duxapp](https://github.com/duxapp)

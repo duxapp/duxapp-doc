@@ -168,7 +168,7 @@ module.exports = {
 
 创建工程文件的过程中，可以通过配置或脚本对工程文件进行处理，例如鸿蒙端需要包名、版本号、app 名称等信息，都是通过配置文件来生成的
 
-这里就不详细展开了，可以查看文档了解 [鸿蒙入门文档](https://duxapp.cn/docs/course/harmony/start)
+这里就不详细展开了，可以查看文档了解 [鸿蒙入门文档](https://duxapp.com/docs/course/harmony/start)
 
 ### 5、组件库兼容
 
@@ -193,7 +193,7 @@ module.exports = {
 
 > 当 flex 的 alitn-items 为 stretch 或者 daseline 时，需要给当前元素指定尺寸，在任何能不用 alitn-items 的这两个属性的时候，都不要用这两个属性。如果要使用stretch，建议父元素使用 alitn-items: flex-start，子元素使用 align-self: stretch，这样的形式
 
-当然，除了 Flex 布局这个最大的问题之外，还有很多与标准不太一样的地方，我整理总结了放在 [兼容性章节](https://duxapp.cn/docs/course/harmony/compatible)，在开发的时候需要特别注意
+当然，除了 Flex 布局这个最大的问题之外，还有很多与标准不太一样的地方，我整理总结了放在 [兼容性章节](https://duxapp.com/docs/course/harmony/compatible)，在开发的时候需要特别注意
 
 可以说我在兼容鸿蒙的过程中，大部分时间都是在做组件库的兼容，和这些样式斗智斗勇
 
@@ -219,7 +219,7 @@ yarn dev:harmony --app=duxuiExample
 
 打开项目后，右上角工具栏区域，选择已经开启的虚拟机，并且点击右侧的运行按钮（三角符号），开始编译，编译后，会自动在虚拟机上启动这个 app
 
-如果想继续开发项目，请查看[鸿蒙入门文档](https://duxapp.cn/docs/course/harmony/start)
+如果想继续开发项目，请查看[鸿蒙入门文档](https://duxapp.com/docs/course/harmony/start)
 
 > 当前版本在 windows 系统上，仍然存在问题，能编译成功，但是启动 app 会报错，你可以先尝试使用其他系统进行编译，例如 Mac，这个问题将会在不久后修复
 
@@ -239,7 +239,7 @@ Taro 目前开发中的版本，将放弃使用鸿蒙的 Flex 布局方式，转
 
 如果你有兴趣，请继续查看文档了解详情吧
 
-[开发文档](https://duxapp.cn)  
+[开发文档](https://duxapp.com)  
 [GitHub](https://github.com/duxapp)
 
 
@@ -262,7 +262,7 @@ yarn dev:harmony --app=duxuiExample
 
 编译完成后，使用 DevEco Studio 打开 `dist/harmony` 目录，这个目录就是一个原生鸿蒙项目
 
-- 如果你还不了解鸿蒙开发基础知识，或者想继续深入了解如何开发，可以查看这篇[入门教程](https://duxapp.cn/docs/course/harmony/start/)
+- 如果你还不了解鸿蒙开发基础知识，或者想继续深入了解如何开发，可以查看这篇[入门教程](https://duxapp.com/docs/course/harmony/start/)
 
 ## duxapp 做了些什么
 
@@ -278,7 +278,7 @@ yarn dev:harmony --app=duxuiExample
 
 我们将鸿蒙端的支持封装到了 `duxapp` 的一个模块 `duxappHarmony` 中，只要你依赖了这个模块，就能实现对鸿蒙端的兼容
 
-如果你还不是很了解 duxapp 的模块化，可以查看[模块化介绍](https://duxapp.cn/docs/course/app/intro)
+如果你还不是很了解 duxapp 的模块化，可以查看[模块化介绍](https://duxapp.com/docs/course/app/intro)
 
 ### UI组件库 
 
@@ -288,6 +288,6 @@ yarn dev:harmony --app=duxuiExample
 
 如果你对这个项目有兴趣，可以查看文档，继续了解详情
 
-开发文档：[http://duxapp.cn](http://duxapp.cn)
+开发文档：[http://duxapp.com](http://duxapp.com)
 
 GitHub：[https://github.com/duxapp](https://github.com/duxapp) -->

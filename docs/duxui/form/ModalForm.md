@@ -23,6 +23,7 @@ import {
   Cascade, ModalForm, ModalForms, DatePicker, Input, Text, CardSelect, duxappTheme, Space, Row, Column,
   px
 } from '@/duxuiExample'
+import { getSystemInfoSync } from '@tarojs/taro'
 
 const cascadeData = [
   {
@@ -56,7 +57,7 @@ const defaultValues = {
 }
 
 const PullForm = () => <Card shadow={false}>
-  <Column style={{ height: global.systemInfo.statusBarHeight + (process.env.TARO_ENV === 'weapp' ? 22 : 0) }} />
+  <Column style={{ height: getSystemInfoSync().statusBarHeight + (process.env.TARO_ENV === 'weapp' ? 22 : 0) }} />
   <Form.Item label='输入框' field='pull1' direction='vertical'>
     <Input placeholder='请输入' />
   </Form.Item>
@@ -84,7 +85,7 @@ export default function ModalFormExample() {
       <ScrollView>
         <Card margin verticalPadding={false}>
           <Divider.Group>
-            <Form.Item label='日期' field='date' >
+            <Form.Item label='日期' field='date'>
               <ModalForm
                 renderForm={<DatePicker />}
                 placeholder='请选择日期'
@@ -92,7 +93,7 @@ export default function ModalFormExample() {
                 title='请选择日期'
               />
             </Form.Item>
-            <Form.Item label='日期时间' field='datetime' >
+            <Form.Item label='日期时间' field='datetime'>
               <ModalForm
                 renderForm={<DatePicker mode='datetime' />}
                 placeholder='请选择日期时间'
@@ -100,7 +101,7 @@ export default function ModalFormExample() {
                 title='请选择日期时间'
               />
             </Form.Item>
-            <Form.Item label='弹出级联选择' field='cascade3' >
+            <Form.Item label='弹出级联选择' field='cascade3'>
               <ModalForm
                 renderForm={<Cascade data={cascadeData} level={2} mode='checkbox' theme='fill' anyLevel style={{ height: px(800) }} />}
                 placeholder='请选择等级'
@@ -110,6 +111,15 @@ export default function ModalFormExample() {
 
               </ModalForm>
             </Form.Item>
+            <Form.Item label='非受控模式'>
+              <ModalForm
+                renderForm={<Cascade data={cascadeData} level={2} mode='checkbox' theme='fill' anyLevel style={{ height: px(800) }} />}
+                placeholder='请选择等级'
+                grow
+                title='级联选择'
+              >
+              </ModalForm>
+            </Form.Item>
             <ModalForms
               side='right'
               renderForm={<ScrollView>
@@ -117,25 +127,6 @@ export default function ModalFormExample() {
               </ScrollView>}
             >
               <Text style={{ padding: 20 }}>弹出多个表单</Text>
-            </ModalForms>
-            <ModalForms
-              side='right'
-              renderForm={<>
-                <ScrollView>
-                  <PullForm />
-                </ScrollView>
-                <Row>
-                  <ModalForms.Reset>
-                    <Text>重制</Text>
-                  </ModalForms.Reset>
-                  <ModalForms.Submit>
-                    <Text>提交</Text>
-                  </ModalForms.Submit>
-                </Row>
-              </>}
-              showButton={false}
-            >
-              <Text style={{ padding: 20 }}>弹出多个表单 自定义按钮</Text>
             </ModalForms>
           </Divider.Group>
         </Card>

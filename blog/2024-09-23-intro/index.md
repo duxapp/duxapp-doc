@@ -10,7 +10,7 @@ duxapp是基于Taro二次开发的模块化框架
 
 使用这个框架，结合框架提供的UI库和工具库，能帮助你快速且高质量的完成项目，且能实现同时开发小程序、H5、APP（React Native），并且保证各个端的一致性
 
-duxapp还针对APP开发（React Native）做了大量优化，大大降低了APP发开的难度，你可以阅读[React Native教程](http://duxapp.cn/docs/course/rn/start)，了解详情
+duxapp还针对APP开发（React Native）做了大量优化，大大降低了APP发开的难度，你可以阅读[React Native教程](http://duxapp.com/docs/course/rn/start)，了解详情
 
 下面让我来详细介绍如何使用duxapp
 
@@ -144,7 +144,7 @@ npx duxapp-cli create projectName
 │   └── readme.md               自述文件（必须 如果发布）
 ```
 
-关于模块目录的详细内容查看这个 [模块结构](http://duxapp.cn/docs/course/app/directory) 获取
+关于模块目录的详细内容查看这个 [模块结构](http://duxapp.com/docs/course/app/directory) 获取
 
 ## 模块配置
 
@@ -459,6 +459,6 @@ export default config
 
 请前往开发文档查看详细教程
 
-开发文档：[http://duxapp.cn/](http://duxapp.cn/)
+开发文档：[http://duxapp.com/](http://duxapp.com/)
 
 GitHub：[https://github.com/duxapp](https://github.com/duxapp)

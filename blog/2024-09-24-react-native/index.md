@@ -109,7 +109,7 @@ yarn duxapp rn logo --config=duxuiExample
 
 ## 三方模块
 
-你的项目或多或少都要用一些第三方的插件，`React Native`基础模块中已经包含了很多基础常用插件，你可以通过[三方模块](http://duxapp.cn/docs/app/duxappReactNative/start#三方模块)查看到，包含的基础插件
+你的项目或多或少都要用一些第三方的插件，`React Native`基础模块中已经包含了很多基础常用插件，你可以通过[三方模块](http://duxapp.com/docs/app/duxappReactNative/start#三方模块)查看到，包含的基础插件
 
 传统的方法是将他们添加到 `package.json` 依赖中，然后根据文档内容修改安卓或者ios文件夹对应的内容，在duxapp中提供了另外一种方式来实现第三方插件的使用
 
@@ -289,7 +289,7 @@ public class WXPayEntryActivity extends Activity {
         },
         'duxapp/duxapp.entitlements': {
           'com.apple.developer.associated-domains': [
-            `applinks:${option?.wechat?.applinks || 'duxapp.cn'}`
+            `applinks:${option?.wechat?.applinks || 'duxapp.com'}`
           ]
         }
       }
@@ -336,7 +336,7 @@ yarn duxapp app add wechat
 
 ## 总结
 
-通过上面的说明，你已经基本了解了duxapp是如何处理RN端开发的，还有很多的详细的内容，还需要前往文档查看[http://duxapp.cn/docs/course/rn/start](http://duxapp.cn/docs/course/rn/start)
+通过上面的说明，你已经基本了解了duxapp是如何处理RN端开发的，还有很多的详细的内容，还需要前往文档查看[http://duxapp.com/docs/course/rn/start](http://duxapp.com/docs/course/rn/start)
 
 再结合duxapp提供的ui库、工具库、全局样式等方法，就能很快的完成你的APP项目了
 

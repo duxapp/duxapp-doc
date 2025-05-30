@@ -12,24 +12,33 @@ import { Preview } from '@site/src/components/Preview'
 
 <Preview name='Absolute' />
 
-示例中的代码将会显示在TopView相同层级的dom中
-
 ```jsx
-import { Header, ScrollView, TopView, Absolute } from '@/duxapp'
+import { Header, ScrollView, TopView, GroupList, Text, Absolute, Column, px } from '@/duxuiExample'
 
-export default TopView.HOC(function Duxapp() {
+export default function AbsoluteExample() {
 
-  return <>
-    <Header title='页面标题' />
+  return <TopView>
+    <Header title='Absolute' />
     <ScrollView>
-      <Absolute>
-        <View className='absolute w-full bg-white p-3 bottom-0'>
-          <Text>显示在最外层</Text>
-        </View>
-      </Absolute>
+      <GroupList>
+        <GroupList.Item title='绝对定位' desc='此容器的children将会被渲染到TopView的内部，而不是当前位置'>
+          <Absolute>
+            <Column className='p-3 bg-white items-start'>
+              <Text>这是Absolute的子元素，但是最终渲染位置在这里</Text>
+            </Column>
+          </Absolute>
+        </GroupList.Item>
+        <GroupList.Item title='浮动' desc='加上绝对定位的css样式即可浮动'>
+          <Absolute>
+            <Column style={{ top: px(600) }} className='absolute left-0 p-3 bg-white items-start'>
+              <Text>这是Absolute的子元素，但是最终渲染位置在这里</Text>
+            </Column>
+          </Absolute>
+        </GroupList.Item>
+      </GroupList>
     </ScrollView>
-  </>
-})
+  </TopView>
+}
 ```
 
 ## Props

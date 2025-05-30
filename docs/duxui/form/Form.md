@@ -25,11 +25,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Form' />
 
 ```jsx
-import { 
-  Header, ScrollView, TopView, Form, 
-  Card, Divider, Input, PickerDate, 
-  PickerSelect, Textarea, Row 
-} from '@/duxui'
+import { Header, ScrollView, TopView, Form, Card, Divider, Input, PickerDate, PickerSelect, Textarea, Row } from '@/duxuiExample'
 
 const defaultValues = {
 

@@ -16,8 +16,7 @@ import { Preview } from '@site/src/components/Preview'
 
 ```jsx
 import { GroupList } from '@/duxuiExample'
-import { CardSelect, Grid, Header, ScrollView, TopView, Form } from '@/duxui'
-import { Text } from '@tarojs/components'
+import { CardSelect, Grid, Header, ScrollView, TopView, Form, Text } from '@/duxui'
 
 const list = [
   { value: 1, title: '标题1', desc: '简介1' },

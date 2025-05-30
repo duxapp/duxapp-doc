@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-const baseUrl = 'https://duxui.duxapp.cn/'
+const baseUrl = 'https://duxui.duxapp.com/'
 
 const path = '#/duxuiExample/example/'
 

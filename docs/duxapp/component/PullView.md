@@ -13,26 +13,72 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='PullView' />
 
 ```jsx
-import { PullView } from '@/duxapp'
+import { Header, ScrollView, TopView, GroupList, Text, Button, PullView, Space, px } from '@/duxuiExample'
+import { useRef, useState } from 'react'
 
-const Example = () => {
+const sides = {
+  'top': '上',
+  'bottom': '下',
+  'left': '左',
+  'right': '右',
+  'center': '弹出到中间'
+}
+
+const PullData = ({ side, ...props }) => {
+
+  const pull = useRef(null)
 
   const [show, setShow] = useState(false)
 
-  const pullView = useRef()
+  const isRow = ['left', 'right'].includes(side)
 
   return <>
-    <Text onClick={() => setShow(true)}>弹窗</Text>
-    {show && <PullView ref={pullView} onClose={() => setShow(false)}>
-      <Column className='bg-page r-3 gap-2' style={{ height: px(1200) }}>
-        <Text align='center' className='mt-3' bold>说明</Text>
-        <Text onClick={() => pullView.current.close()}>使用实例方法关闭</Text>
-        <ScrollView>
-          ... 内容
-        </ScrollView>
-      </Column>
+    <Button onClick={() => setShow(!show)} type='primary'>{sides[side] || '弹出'}</Button>
+    {show && <PullView ref={pull} onClose={() => setShow(false)} side={side} {...props}>
+      <Space
+        className='bg-white p-3'
+        style={isRow || side === 'center'
+          ? { width: px(500) }
+          : { height: px(400) }
+        }
+      >
+        <Text>内容1</Text>
+        <Text color={2}>调用关闭方法时</Text>
+        <Text color={2}>点击阴影部分也可以关闭</Text>
+        <Button onClick={() => pull.current.close()} type='danger'>内部关闭</Button>
+      </Space>
     </PullView>}
   </>
+}
+
+export default function PullViewExample() {
+  return <TopView>
+    <Header title='PullView' />
+    <ScrollView>
+      <GroupList>
+        <GroupList.Item title='弹出容器'>
+          <PullData />
+        </GroupList.Item>
+        <GroupList.Item title='中间弹出' desc='弹出到中间建议自行给弹出内容设置宽度'>
+          <PullData side='center' />
+        </GroupList.Item>
+        <GroupList.Item title='禁止点进阴影关闭'>
+          <PullData mask />
+        </GroupList.Item>
+        <GroupList.Item title='不显示阴影部分'>
+          <PullData masking={false} />
+        </GroupList.Item>
+        <GroupList.Item title='方向'>
+          <Space row>
+            <PullData side='top' />
+            <PullData side='bottom' />
+            <PullData side='left' />
+            <PullData side='right' />
+          </Space>
+        </GroupList.Item>
+      </GroupList>
+    </ScrollView>
+  </TopView>
 }
 ```
 

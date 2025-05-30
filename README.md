@@ -1,3 +1,3 @@
 # duxapp文档
 
-[文档地址](https://duxapp.cn/)
+[文档地址](https://duxapp.com/)

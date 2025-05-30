@@ -252,7 +252,7 @@ module.exports = ({ config }) => {
         },
         'duxapp/duxapp.entitlements': {
           'com.apple.developer.associated-domains': [
-            `applinks:${option?.wechat?.applinks || 'duxapp.cn'}`
+            `applinks:${option?.wechat?.applinks || 'duxapp.com'}`
           ]
         }
       }
