@@ -87,7 +87,7 @@ duxapp app check --app=模块
 ### icon 图标组件管理
 #### icon create
 
-iconfont的图标库创建为一个React组件的工具
+[iconfont](https://www.iconfont.cn/) 的图标库创建为一个React组件的工具
 ```bash
 duxapp icon create UiIcon duxui https://at.alicdn.com/t/c/font_4643878_n6necu7zt7p.css
 ```
@@ -95,6 +95,11 @@ duxapp icon create UiIcon duxui https://at.alicdn.com/t/c/font_4643878_n6necu7zt
 多次使用此命令，将会覆盖组件创建
 
 默认创建的是本地图标，你可以指定为创建本地在线图标图标，像下面这样，在最后加上个1
+
+:::info
+- 这个参数上面的css地址是iconfont项目的css地址，地址不包含后面的参数部分
+- 项目设置里面字体格式要包含 `Base64` 这个选项，默认项目未启用这个选项，需要在项目设置里面开启
+:::
 
 ```bash
 duxapp icon create UiIcon duxui https://at.alicdn.com/t/c/font_4643878_n6necu7zt7p.css 1
