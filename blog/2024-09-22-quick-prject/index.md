@@ -166,7 +166,7 @@ const DateChild = ({ value, onClick }) => {
 以下面这个列表页面为例，List组件帮你完成了数据请求、自动分页、下拉刷新、自动刷新等功能，你只需要关注你列表中的每一项是如何编写的
 
 ```jsx
-import { TopView, Header, Card, Tab, Row, Image, Column, Text, px, Empty, DatePicker, SelectorPicker, ModalForm, Button } from '@/duxui'
+import { TopView, Header, Card, Tab, TabItem, Row, Image, Column, Text, px, Empty, DatePicker, SelectorPicker, ModalForm, Button } from '@/duxui'
 import { ArecaIcon, List, usePageData, nav } from '@/arecaShop'
 import { useState } from 'react'
 
@@ -182,8 +182,8 @@ export default function DeliveryList() {
     <TopView>
       <Header title='配送记录' />
       <Tab className='bg-white' value={type} onChange={setType}>
-        <Tab.Item title='门店配送' paneKey={0} />
-        <Tab.Item title='门店退货' paneKey={1} />
+        <TabItem title='门店配送' paneKey={0} />
+        <TabItem title='门店退货' paneKey={1} />
       </Tab>
       <Row className='ph-3 mt-3' items='center' justify='between'>
 

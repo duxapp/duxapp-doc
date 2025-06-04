@@ -75,7 +75,7 @@ export default function DividerExample() {
 | ---- | -------- | ------- |
 | enum('dotted', 'dashed', 'solid') | 否 | solid |
 
-## Divider.Group Props
+## DividerGroup Props
 
 这个组件是将分割线应用于子元素，这是用循环`children`的方式添加的，所以你的子元素需要有实体，才能更好的显示分割线
 

@@ -11,7 +11,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Switch' />
 
 ```jsx
-import { Header, ScrollView, TopView, Form, Card, Divider, Switch } from '@/duxuiExample'
+import { Header, ScrollView, TopView, Form, FormItem, Card, Divider, DividerGroup, Switch } from '@/duxuiExample'
 
 export default function SwitchExample() {
   return <TopView>
@@ -19,17 +19,17 @@ export default function SwitchExample() {
     <Form onSubmit={console.log}>
       <ScrollView>
         <Card margin verticalPadding={false}>
-          <Divider.Group>
-            <Form.Item label='开关' field='switch'>
+          <DividerGroup>
+            <FormItem label='开关' field='switch'>
               <Switch onChange={console.log} />
-            </Form.Item>
-            <Form.Item label='自定义选中值' field='custom'>
+            </FormItem>
+            <FormItem label='自定义选中值' field='custom'>
               <Switch values={[0, 1]} onChange={console.log} />
-            </Form.Item>
-            <Form.Item label='非受控模式'>
+            </FormItem>
+            <FormItem label='非受控模式'>
               <Switch onChange={console.log} />
-            </Form.Item>
-          </Divider.Group>
+            </FormItem>
+          </DividerGroup>
         </Card>
       </ScrollView>
     </Form>

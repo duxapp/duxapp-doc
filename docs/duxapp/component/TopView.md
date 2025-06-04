@@ -132,7 +132,7 @@ const { remove } = TopView.add([
 这是一种常用的用法，用来将全局弹窗封装成Promise的方式进行调用
 
 ```jsx
-import { Card, Column, Form, PullView, Row, Text, TopView, UploadImages, loading, toast } from '@/duxui'
+import { Card, CardTitle, Column, Form, FormItem, FormSubmit, PullView, Row, Text, TopView, UploadImages, loading, toast } from '@/duxui'
 import { useCallback, useRef } from 'react'
 import { request } from '@/chiananke'
 
@@ -160,14 +160,14 @@ export const LedgerSubmit = ({ onClose, onSubmit, id }) => {
         <Row items='center' justify='between'>
           <Text color={3} onClick={() => pullView.current.close()}>取消</Text>
           <Text bold>整改照片</Text>
-          <Form.Submit>
+          <FormSubmit>
             <Text>确认</Text>
-          </Form.Submit>
+          </FormSubmit>
         </Row>
-        <Card.Title className='mt-3'>上传附件</Card.Title>
-        <Form.Item field='images'>
+        <CardTitle className='mt-3'>上传附件</CardTitle>
+        <FormItem field='images'>
           <UploadImages />
-        </Form.Item>
+        </FormItem>
         <Column className='mt-3 pv-3' />
       </Column>
     </Form>

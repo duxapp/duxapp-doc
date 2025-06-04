@@ -16,7 +16,7 @@ import { Preview } from '@site/src/components/Preview'
 
 ```jsx
 import { GroupList } from '@/duxuiExample'
-import { CardSelect, Grid, Header, ScrollView, TopView, Form, Text } from '@/duxui'
+import { CardSelect, CardSelectGroup, Grid, Header, ScrollView, TopView, Form, FormItem, Text } from '@/duxui'
 
 const list = [
   { value: 1, title: '标题1', desc: '简介1' },
@@ -36,8 +36,8 @@ export default function CardSelectExample() {
       <Form>
         <GroupList>
           <GroupList.Item title='基础用法'>
-            <Form.Item field='field1'>
-              <CardSelect.Group>
+            <FormItem field='field1'>
+              <CardSelectGroup>
                 <Grid center={false} gap={24} column={3}>
                   {
                     list.map(({ title, desc, ...props }) => {
@@ -48,12 +48,12 @@ export default function CardSelectExample() {
                     })
                   }
                 </Grid>
-              </CardSelect.Group>
-            </Form.Item>
+              </CardSelectGroup>
+            </FormItem>
           </GroupList.Item>
           <GroupList.Item title='圆角'>
-            <Form.Item field='field2'>
-              <CardSelect.Group>
+            <FormItem field='field2'>
+              <CardSelectGroup>
                 <Grid center={false} gap={24} column={3}>
                   {
                     list.slice(0, 3).map(({ title, desc, value }, index) => {
@@ -65,12 +65,12 @@ export default function CardSelectExample() {
                     })
                   }
                 </Grid>
-              </CardSelect.Group>
-            </Form.Item>
+              </CardSelectGroup>
+            </FormItem>
           </GroupList.Item>
           <GroupList.Item title='多选'>
-            <Form.Item field='field3'>
-              <CardSelect.Group checkbox>
+            <FormItem field='field3'>
+              <CardSelectGroup RadioGroup>
                 <Grid center={false} gap={24} column={3}>
                   {
                     list.slice(0, 3).map(({ title, desc, value }) => {
@@ -82,12 +82,12 @@ export default function CardSelectExample() {
                     })
                   }
                 </Grid>
-              </CardSelect.Group>
-            </Form.Item>
+              </CardSelectGroup>
+            </FormItem>
           </GroupList.Item>
           <GroupList.Item title='定制选中的样式'>
-            <Form.Item field='field4'>
-              <CardSelect.Group checkedProps={{ plain: true, border: true, color: '#3162C9' }}>
+            <FormItem field='field4'>
+              <CardSelectGroup checkedProps={{ plain: true, border: true, color: '#3162C9' }}>
                 <Grid center={false} gap={24} column={3}>
                   {
                     list.slice(0, 3).map(({ title, desc, value }) => {
@@ -98,12 +98,12 @@ export default function CardSelectExample() {
                     })
                   }
                 </Grid>
-              </CardSelect.Group>
-            </Form.Item>
+              </CardSelectGroup>
+            </FormItem>
           </GroupList.Item>
           <GroupList.Item title='定制样式'>
-            <Form.Item field='field5'>
-              <CardSelect.Group checkedProps={{ plain: true, border: true, color: '#3162C9' }}>
+            <FormItem field='field5'>
+              <CardSelectGroup checkedProps={{ plain: true, border: true, color: '#3162C9' }}>
                 <Grid center={false} gap={24} column={3}>
                   {
                     list.slice(0, 3).map(({ title, desc, value }) => {
@@ -114,8 +114,8 @@ export default function CardSelectExample() {
                     })
                   }
                 </Grid>
-              </CardSelect.Group>
-            </Form.Item>
+              </CardSelectGroup>
+            </FormItem>
           </GroupList.Item>
         </GroupList>
       </Form>
@@ -212,9 +212,9 @@ export default function CardSelectExample() {
 | ---- | -------- | ------- |
 | enum('square', 'round', 'round-min') | 否 | round-min |
 
-## CardSelect.Group Props
+## CardSelectGroup Props
 
-这个用于将多个 CardSelect 组合成一个表单的组件，类似于 Radio.Group
+这个用于将多个 CardSelect 组合成一个表单的组件，类似于 RadioGroup
 
 ### value
 
@@ -232,7 +232,7 @@ export default function CardSelectExample() {
 | ---- | -------- | ------- |
 | (string \| number \| (string \| number)[]) => void | 否 |  |
 
-### checkbox
+### RadioGroup
 
 是否多选
 

@@ -22,7 +22,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Recorder' />
 
 ```jsx
-import { Header, ScrollView, TopView, Form, Card, Divider, Recorder, Button, Text, Column } from '@/duxuiExample'
+import { Header, ScrollView, TopView, Form, FormItem, Card, Divider, DividerGroup, Recorder,  recorderStart, Button, Text, Column } from '@/duxuiExample'
 
 export default function RecorderExample() {
   return <TopView>
@@ -30,23 +30,23 @@ export default function RecorderExample() {
     <Form onSubmit={console.log}>
       <ScrollView>
         <Card margin verticalPadding={false}>
-          <Divider.Group>
-            <Form.Item label='录音' field='recorder1' vertical desc='单个录音类型为字符串'>
+          <DividerGroup>
+            <FormItem label='录音' field='recorder1' vertical desc='单个录音类型为字符串'>
               <Recorder />
-            </Form.Item>
-            <Form.Item label='多个录音' field='recorder2' vertical desc='多个录音类型为数组'>
+            </FormItem>
+            <FormItem label='多个录音' field='recorder2' vertical desc='多个录音类型为数组'>
               <Recorder max={9} />
-            </Form.Item>
+            </FormItem>
             <Column className='gap-2 pv-3'>
               <Button size='l' type='primary'
                 onClick={async () => {
-                  const res = await Recorder.start()
+                  const res = await recorderStart()
                   console.log('本地录音结果', res)
                 }}
               >弹出录音</Button>
               <Text size={1} color={2}>直接通过静态方法调用录音接口，并返回录音结果</Text>
             </Column>
-          </Divider.Group>
+          </DividerGroup>
         </Card>
       </ScrollView>
     </Form>
@@ -126,7 +126,7 @@ export default function RecorderExample() {
 
 ## 方法
 
-### start()
+### recorderStart()
 
 异步弹出录音界面，并异步返回本地录音结果
 

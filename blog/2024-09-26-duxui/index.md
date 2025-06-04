@@ -42,7 +42,7 @@ yarn duxapp app add duxui
 安装之后在你的模块中导入即可使用，像下面这样
 
 ```jsx
-import { Column, Header, Image, px, Row, ScrollView, Tab, Text, TopView } from '@/duxui'
+import { Column, Header, Image, px, Row, ScrollView, Tab, TabItem, Text, TopView } from '@/duxui'
 import { GridIcon } from '@/gridOperator'
 
 export default function LedgerDetail() {
@@ -61,7 +61,7 @@ export default function LedgerDetail() {
       <Column className='mt-3'>
         <Tab>
           {
-            tabs.map(item => <Tab.Item key={item.value} title={item.name} paneKey={item.value} />)
+            tabs.map(item => <TabItem key={item.value} title={item.name} paneKey={item.value} />)
           }
         </Tab>
       </Column>
@@ -189,14 +189,14 @@ duxapp默认将头部设置为了自定义，每个页面面建议都使用一�
 表单包含了一系列的组件或者方法，包括下面这些
 
 - Form 表单
-- Form.Item 表单项
-- Form.Submit 表单提交
-- Form.Reset 表单重置
-- Form.Object 对象表单
-- Form.Array 数组表单
-- Form.ArrayAction 数组表单操作管理
-- Form.useFormContext 获取表单上下文
-- Form.useFormItemProxy 给表单代理值和事件
+- FormItem 表单项
+- FormSubmit 表单提交
+- FormReset 表单重置
+- FormObject 对象表单
+- FormArray 数组表单
+- FormArrayAction 数组表单操作管理
+- useFormContext 获取表单上下文
+- useFormItemProxy 给表单代理值和事件
 
 ### Input 输入框
 
@@ -252,7 +252,7 @@ duxapp默认将头部设置为了自定义，每个页面面建议都使用一�
 
 这里包含了
 
-- ModalForm 单出单个表单，作为一个表单使用，放在 Form.Item 中
+- ModalForm 单出单个表单，作为一个表单使用，放在 FormItem 中
 - ModalForms 弹出多个表单，独立内容，放在Form内任何位置
 
 ### NumberKeyboard 数字键盘

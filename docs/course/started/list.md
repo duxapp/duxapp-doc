@@ -42,7 +42,7 @@ export {
 - renderItem需要传入一个组件，而非传染之后的内容
 
 ```jsx
-import { Column, Empty, Header, Image, Row, Tab, Text, TopView, nav, px, useRoute } from '@/duxui'
+import { Column, Empty, Header, Image, Row, Tab, TabItem, Text, TopView, nav, px, useRoute } from '@/duxui'
 import { List } from '@/duxcmsOrder'
 import { useState } from 'react'
 
@@ -55,7 +55,7 @@ export default function RefundList() {
     <Header title='退款/售后' />
     <Tab value={navType} onChange={setNavType} className='bg-white rb-3'>
       {
-        navList.map(item => <Tab.Item key={item.value} paneKey={item.value} title={item.text} />)
+        navList.map(item => <TabItem key={item.value} paneKey={item.value} title={item.text} />)
       }
     </Tab>
     <List

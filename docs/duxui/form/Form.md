@@ -9,14 +9,14 @@ sidebar_position: 1
 表单包含了一系列的组件或者方法，包括下面这些
 
 - Form 表单
-- Form.Item 表单项
-- Form.Submit 表单提交
-- Form.Reset 表单重置
-- Form.Object 对象表单
-- Form.Array 数组表单
-- Form.ArrayAction 数组表单操作管理
-- Form.useFormContext 获取表单上下文
-- Form.useFormItemProxy 给表单代理值和事件
+- FormItem 表单项
+- FormSubmit 表单提交
+- FormReset 表单重置
+- FormObject 对象表单
+- FormArray 数组表单
+- FormArrayAction 数组表单操作管理
+- useFormContext 获取表单上下文
+- useFormItemProxy 给表单代理值和事件
 
 ## 示例
 
@@ -25,7 +25,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Form' />
 
 ```jsx
-import { Header, ScrollView, TopView, Form, Card, Divider, Input, PickerDate, PickerSelect, Textarea, Row } from '@/duxuiExample'
+import { Header, ScrollView, TopView, Form, FormItem, FormSubmit, FormReset, Card, Divider, DividerGroup, Input, PickerDate, PickerSelect, Textarea, Row } from '@/duxuiExample'
 
 const defaultValues = {
 
@@ -54,27 +54,27 @@ export default function FormExample() {
     <Form onSubmit={console.log} defaultValues={defaultValues}>
       <ScrollView>
         <Card margin verticalPadding={false}>
-          <Divider.Group>
-            <Form.Item label='输入框' field='name' rules={rules.name}>
+          <DividerGroup>
+            <FormItem label='输入框' field='name' rules={rules.name}>
               <Input placeholder='请输入' align='right' grow />
-            </Form.Item>
-            <Form.Item label='介绍的输入' field='tel' desc='输入框介绍，这是输入框介绍' rules={rules.tel}>
+            </FormItem>
+            <FormItem label='介绍的输入' field='tel' desc='输入框介绍，这是输入框介绍' rules={rules.tel}>
               <Input placeholder='请输入' />
-            </Form.Item>
-            <Form.Item label='日期' field='date'>
+            </FormItem>
+            <FormItem label='日期' field='date'>
               <PickerDate title='日期' placeholder='请选择日期' grow />
-            </Form.Item>
-            <Form.Item label='选择' field='sex'>
+            </FormItem>
+            <FormItem label='选择' field='sex'>
               <PickerSelect title='选择' placeholder='请选择性别' range={['男', '女']} grow />
-            </Form.Item>
-            <Form.Item label='介绍' field='desc' direction='vertical' >
+            </FormItem>
+            <FormItem label='介绍' field='desc' direction='vertical' >
               <Textarea placeholder='请输入介绍' maxlength={100} />
-            </Form.Item>
-          </Divider.Group>
+            </FormItem>
+          </DividerGroup>
         </Card>
         <Row className='p-3 gap-3'>
-          <Form.Reset className='flex-grow'>重置</Form.Reset>
-          <Form.Submit className='flex-grow' type='primary'>提交</Form.Submit>
+          <FormReset className='flex-grow'>重置</FormReset>
+          <FormSubmit className='flex-grow' type='primary'>提交</FormSubmit>
         </Row>
       </ScrollView>
     </Form>
@@ -102,7 +102,7 @@ export default function FormExample() {
 
 ### onSubmit
 
-表单提交事件，通常是由 `Form.Submit` 提交的
+表单提交事件，通常是由 `FormSubmit` 提交的
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -183,7 +183,7 @@ export const Input = ({
   ...props
 }) => {
 
-  const [val, setVal] = Form.useFormItemProxy({ value, onChange })
+  const [val, setVal] = useFormItemProxy({ value, onChange })
 
   return <TaroInput
     onInput={setVal}
@@ -260,7 +260,7 @@ props参数
 
 验证表单
 
-## Form.Item Props
+## FormItem Props
 
 表单项，需要放在Form内，其子元素需要是一个表单，且只能有一个子元素
 
@@ -388,7 +388,7 @@ props参数
 | ---- | -------- | ------- |
 | [SchemaRuleType[]](https://github.com/PengJiyuan/b-validate) | 否 |  |
 
-## Form.Submit Props
+## FormSubmit Props
 
 放在Form内部，用于表单提交
 
@@ -404,7 +404,7 @@ props参数
 | ---- | -------- | ------- |
 | string \| ReactElement | 否 |  |
 
-## Form.Reset Props
+## FormReset Props
 
 放在Form内部，用于表单重置
 
@@ -420,21 +420,21 @@ props参数
 | ---- | -------- | ------- |
 | string \| ReactElement | 否 |  |
 
-## Form.Object Props
+## FormObject Props
 
-用于将某个字段创造一个对象，将这个组件作为`Form.Item`的子元素使用
+用于将某个字段创造一个对象，将这个组件作为`FormItem`的子元素使用
 
 ```jsx
-import { Form, Input } from '@/duxui'
+import { Form, FormObject, Input } from '@/duxui'
 
 <Form>
-  <Form.Item field='obj'>
-    <Form.Object>
-      <Form.Item label='姓名' field='name'>
+  <FormItem field='obj'>
+    <FormObject>
+      <FormItem label='姓名' field='name'>
         <Input />
-      </Form.Item>
-    </Form.Object>
-  </Form.Item>
+      </FormItem>
+    </FormObject>
+  </FormItem>
 </Form>
 ```
 
@@ -464,24 +464,24 @@ import { Form, Input } from '@/duxui'
 | ---- | -------- | ------- |
 | (values: object) => void | 否 |  |
 
-## Form.Array Props
+## FormArray Props
 
-用于将某个字段创造一个数组，将这个组件作为`Form.Item`的子元素使用
+用于将某个字段创造一个数组，将这个组件作为`FormItem`的子元素使用
 
 ```jsx
-import { Form, Input } from '@/duxui'
+import { Form, FormArray, Input } from '@/duxui'
 
 <Form>
-  <Form.Item field='arr'>
-    <Form.Array>
-      <Form.Item label='姓名' field={0}>
+  <FormItem field='arr'>
+    <FormArray>
+      <FormItem label='姓名' field={0}>
         <Input />
-      </Form.Item>
-      <Form.Item label='电话' field={1}>
+      </FormItem>
+      <FormItem label='电话' field={1}>
         <Input />
-      </Form.Item>
-    </Form.Array>
-  </Form.Item>
+      </FormItem>
+    </FormArray>
+  </FormItem>
 </Form>
 ```
 用这个表单提交将得到一个这样的数据
@@ -492,36 +492,36 @@ import { Form, Input } from '@/duxui'
 }
 ```
 
-可以将他结合 `Form.Object` 使用
+可以将他结合 `FormObject` 使用
 
 ```jsx
 import { Form, Input } from '@/duxui'
 
 <Form>
-  <Form.Item field='arr'>
-    <Form.Array>
-      <Form.Item label='项目1' field={0}>
-        <Form.Object>
-          <Form.Item label='姓名' field='name'>
+  <FormItem field='arr'>
+    <FormArray>
+      <FormItem label='项目1' field={0}>
+        <FormObject>
+          <FormItem label='姓名' field='name'>
             <Input />
-          </Form.Item>
-          <Form.Item label='电话' field='tel'>
+          </FormItem>
+          <FormItem label='电话' field='tel'>
             <Input />
-          </Form.Item>
-        </Form.Object>
-      </Form.Item>
-      <Form.Item label='项目1' field={1}>
-        <Form.Object>
-          <Form.Item label='姓名' field='name'>
+          </FormItem>
+        </FormObject>
+      </FormItem>
+      <FormItem label='项目1' field={1}>
+        <FormObject>
+          <FormItem label='姓名' field='name'>
             <Input />
-          </Form.Item>
-          <Form.Item label='电话' field='tel'>
+          </FormItem>
+          <FormItem label='电话' field='tel'>
             <Input />
-          </Form.Item>
-        </Form.Object>
-      </Form.Item>
-    </Form.Array>
-  </Form.Item>
+          </FormItem>
+        </FormObject>
+      </FormItem>
+    </FormArray>
+  </FormItem>
 </Form>
 ```
 那么将会得到这样的数据
@@ -563,7 +563,7 @@ import { Form, Input } from '@/duxui'
 
 这是传入一个组件，而非组件实例
 
-这个方法通常需要结合 `Form.ArrayAction` 来使用，这个组件可以用于数组表单的添加、删除等操作 [去查看](#formarrayaction-props)
+这个方法通常需要结合 `FormArrayAction` 来使用，这个组件可以用于数组表单的添加、删除等操作 [去查看](#formarrayaction-props)
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -605,56 +605,56 @@ import { Form, Input } from '@/duxui'
 | ---- | -------- | ------- |
 | ReactElement | 否 |  |
 
-## Form.ArrayAction Props
+## FormArrayAction Props
 
 用于实现对数组表单的新增、删除等操作
 
-`Form.ArrayAction` 需要放在 `Form.Array` 的子元素范围内，才能正常工作
+`FormArrayAction` 需要放在 `FormArray` 的子元素范围内，才能正常工作
 
 这个示例演示了如何使用这个组件
 
 ```jsx
-import { Space, Header, ScrollView, TopView, Form, Card, Divider, Input, PickerDate, Text, Row } from '@/duxui'
+import { Space, Header, ScrollView, TopView, Form, FormObject, FormArray, FormArrayAction, Card, Divider, Input, PickerDate, Text, Row } from '@/duxui'
 
 const ArrayItem = ({ value, index, values }) => {
   return <>
     <Card margin verticalPadding={false}>
-      <Form.Item field={index}>
-        <Form.Object>
-          <Divider.Group>
-            <Form.Item label='项目' field='name'>
+      <FormItem field={index}>
+        <FormObject>
+          <DividerGroup>
+            <FormItem label='项目' field='name'>
               <Row grow justify='end'>
-                <Form.ArrayAction
+                <FormArrayAction
                   action={list => {
                     list.splice(index, 1)
                     return list
                   }}
                 >
                   <Text>删除</Text>
-                </Form.ArrayAction>
+                </FormArrayAction>
               </Row>
-            </Form.Item>
-            <Form.Item label='名称' field='name'>
+            </FormItem>
+            <FormItem label='名称' field='name'>
               <Input placeholder='名称' align='right' grow />
-            </Form.Item>
-            <Form.Item label='内容' field='tel'>
+            </FormItem>
+            <FormItem label='内容' field='tel'>
               <Input placeholder='内容' align='right' grow />
-            </Form.Item>
-            <Form.Item label='生产日期' field='date'>
+            </FormItem>
+            <FormItem label='生产日期' field='date'>
               <PickerDate placeholder='请选择日期' />
-            </Form.Item>
-          </Divider.Group>
-        </Form.Object>
-      </Form.Item>
+            </FormItem>
+          </DividerGroup>
+        </FormObject>
+      </FormItem>
     </Card>
     {
-      index === values?.length - 1 && <Form.ArrayAction action={list => [...list, {}]}>
+      index === values?.length - 1 && <FormArrayAction action={list => [...list, {}]}>
         <Card margin>
           <Space row>
             <Text>添加</Text>
           </Space>
         </Card>
-      </Form.ArrayAction>
+      </FormArrayAction>
     }
   </>
 }
@@ -669,10 +669,10 @@ export default function FormComplexExample() {
     <Header title='FormComplex' />
     <Form onSubmit={console.log} defaultValues={defaultValues}>
       <ScrollView>
-        <Form.Item field='array'>
-          <Form.Array renderItem={ArrayItem} />
-        </Form.Item>
-        <Form.Submit>提交</Form.Submit>
+        <FormItem field='array'>
+          <FormArray renderItem={ArrayItem} />
+        </FormItem>
+        <FormSubmit>提交</FormSubmit>
       </ScrollView>
     </Form>
   </TopView>
@@ -684,14 +684,14 @@ export default function FormComplexExample() {
 当用户点击action的时候，对这个当前数组的操作，会传入当前的数组，你需要自行决定返回什么样的数据
 
 ```jsx
-<Form.ArrayAction
+<FormArrayAction
   action={list => {
     list.push('默认值')
     return list
   }}
 >
   <Text size={48}>新增</Text>
-</Form.ArrayAction>
+</FormArrayAction>
 ```
 
 | 类型 | 必填 | 默认值 |

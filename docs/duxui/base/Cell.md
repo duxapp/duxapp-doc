@@ -13,7 +13,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Cell' />
 
 ```jsx
-import { Cell, Header, ScrollView, TopView, GroupList } from '@/duxuiExample'
+import { Cell, CellGroup, Header, ScrollView, TopView, GroupList } from '@/duxuiExample'
 
 export default function CellExample() {
   return <TopView>
@@ -30,12 +30,12 @@ export default function CellExample() {
           <Cell title='菜单' subTitle='这是副标题' desc='简介' />
         </GroupList.Item>
         <GroupList.Item title='组'>
-          <Cell.Group>
+          <CellGroup>
             <Cell title='菜单1' />
             <Cell title='菜单2' />
             <Cell title='菜单3' />
             <Cell title='菜单4' />
-          </Cell.Group>
+          </CellGroup>
         </GroupList.Item>
       </GroupList>
     </ScrollView>
@@ -89,9 +89,9 @@ export default function CellExample() {
 | ---- | -------- | ------- |
 | number | 否 | 16 |
 
-## Cell.Group Props
+## CellGroup Props
 
-Cell.Group用于将多个Cell进行包装，包装后他们将成为一个整体
+CellGroup用于将多个Cell进行包装，包装后他们将成为一个整体
 
 继承自[BoxShadow Props](BoxShadow)
 

@@ -15,7 +15,7 @@ import { Preview } from '@site/src/components/Preview'
 这个多行文本输入框默认会有一个背景颜色和圆角，你可以通过编写样式覆盖他
 
 ```jsx
-import { Header, ScrollView, TopView, Form, Card, Divider, Textarea } from '@/duxuiExample'
+import { Header, ScrollView, TopView, Form, FormItem, Card, Divider, DividerGroup, Textarea } from '@/duxuiExample'
 
 export default function TextareaExample() {
   return <TopView>
@@ -23,17 +23,17 @@ export default function TextareaExample() {
     <Form onSubmit={console.log}>
       <ScrollView>
         <Card margin verticalPadding={false}>
-          <Divider.Group>
-            <Form.Item label='输入框' field='input1'>
+          <DividerGroup>
+            <FormItem label='输入框' field='input1'>
               <Textarea placeholder='请输入' grow />
-            </Form.Item>
-            <Form.Item label='上下布局' field='input2' vertical>
+            </FormItem>
+            <FormItem label='上下布局' field='input2' vertical>
               <Textarea placeholder='请输入' />
-            </Form.Item>
-            <Form.Item label='限制文本和高度' field='input3' vertical>
+            </FormItem>
+            <FormItem label='限制文本和高度' field='input3' vertical>
               <Textarea placeholder='请输入' maxlength={120} line={10} />
-            </Form.Item>
-          </Divider.Group>
+            </FormItem>
+          </DividerGroup>
         </Card>
       </ScrollView>
     </Form>

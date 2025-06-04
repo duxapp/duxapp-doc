@@ -96,12 +96,12 @@ CustomKey说明
 
 ## 方法
 
-### useController(option)
+### useNumberKeyboardController(option)
 
 这个方法用于将键盘输入的内容进行拼接或者转换为数字的处理
 
 ```jsx
-const [value, props] = NumberKeyboard.useController()
+const [value, props] = useNumberKeyboardController()
 
 <Text>{value}</Text>
 <NumberKeyboard {...props} />

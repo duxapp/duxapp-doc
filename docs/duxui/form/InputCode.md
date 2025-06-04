@@ -13,11 +13,11 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='InputCode' />
 
 ```jsx
-import { Header, ScrollView, TopView, GroupList, InputCode, NumberKeyboard } from '@/duxuiExample'
+import { Header, ScrollView, TopView, GroupList, InputCode, NumberKeyboard, useNumberKeyboardController } from '@/duxuiExample'
 
 export default function InputCodeExample() {
 
-  const [value, props] = NumberKeyboard.useController()
+  const [value, props] = useNumberKeyboardController()
 
   return <TopView>
     <Header title='InputCode' />

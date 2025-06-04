@@ -14,11 +14,11 @@ import { Preview } from '@site/src/components/Preview'
 
 ```jsx
 import { getMedia } from '@/duxapp/utils/net/util'
-import { Header, TopView, Column, SvgEditor, SvgEditorController, px } from '@/duxuiExample'
+import { Header, TopView, Column, SvgEditor, SvgEditorController, useSvgEditorController, px } from '@/duxuiExample'
 
 export default function SvgEditorExample() {
 
-  const context = SvgEditorController.useController()
+  const context = useSvgEditorController()
 
   return <TopView>
     <Header title='SvgEditor' />
@@ -134,8 +134,8 @@ const selectImage = async () => {
 | ---- | -------- | ------- |
 | () => Promise\<string\> | 否 |  |
 
-## SvgEditorController 静态方法
+## 方法
 
-### useController()
+### useSvgEditorController()
 
 React钩子，返回的数据分别用于编辑器和控制器，使用方法，请查看上面的示例

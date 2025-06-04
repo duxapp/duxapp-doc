@@ -13,7 +13,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Elevator' />
 
 ```jsx
-import { Column, Empty, TopView, Header, Elevator } from '@/duxui'
+import { Column, Empty, TopView, Header, Elevator, ElevatorSearch } from '@/duxui'
 
 const list = [
   {
@@ -82,7 +82,7 @@ export default function ElevatorExample() {
       <Elevator
         onItemClick={item => console.log('项目点击', item)}
         renderTop={<>
-          <Elevator.Search placeholder='输入名称进行搜索' />
+          <ElevatorSearch placeholder='输入名称进行搜索' />
         </>}
         renderEmpty={<Empty title='没有内容' />}
         list={list}
@@ -130,7 +130,7 @@ export default function ElevatorExample() {
 
 ### renderTop
 
-在滚动区域之外，头部要渲染的内容，通常这个地方用来放 `Elevator.Search`
+在滚动区域之外，头部要渲染的内容，通常这个地方用来放 `ElevatorSearch`
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -152,7 +152,7 @@ export default function ElevatorExample() {
 | ---- | -------- | ------- |
 | ReactElement | 否 |  |
 
-## Elevator.Search Props
+## ElevatorSearch Props
 
 继承自Taro的[View Props](https://nervjs.github.io/taro-docs/docs/components/viewContainer/view#viewprops)
 

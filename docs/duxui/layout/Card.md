@@ -13,7 +13,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Card' />
 
 ```jsx
-import { Card, Divider, Image, Header, ScrollView, TopView, GroupList, Space, Button, px, Column, Text } from '@/duxuiExample'
+import { Card, CardTitle, Divider, Image, Header, ScrollView, TopView, GroupList, Space, Button, px, Column, Text } from '@/duxuiExample'
 
 export default function CardExample() {
   return <TopView>
@@ -23,7 +23,7 @@ export default function CardExample() {
         <GroupList.Item title='基础用法' desc='Card 组件是一个有背景颜色、阴影效果、内外边距的容器，其中的内容需要自己编写'>
           <Card>
             <Space>
-              <Card.Title>【长沙-杜鹃万达广场店】</Card.Title>
+              <CardTitle>【长沙-杜鹃万达广场店】</CardTitle>
               <Space row>
                 <Image
                   style={{ width: px(200) }}
