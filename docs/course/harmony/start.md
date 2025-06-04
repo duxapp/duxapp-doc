@@ -114,4 +114,4 @@ yarn dev:harmony --app=moduleName
 
 鸿蒙端的 duxui 组件库，仍然有一些功能是不完善的，例如 Pikcer 选择器，你可以去查看开发进度
 
-查看 [开发进度](progress) 章节了解细节
+查看 [开发进度](/docs/course/harmony/start) 章节了解细节
