@@ -11,6 +11,10 @@ sidebar_position: 1
 在开始之前，需要根据RN中文网搭建好需要的开发环境，即便我们的框架大大降低了RN的难度，但是打包的环境还是需要的
 [搭建开发环境](https://reactnative.cn/docs/environment-setup)
 
+:::info
+如果你不想安装开发环境，也可以先选择使用官方提供的[通用调试包](/docs/course/rn/debug)，就可以先跳过环境安装过程
+:::
+
 ## 准备
 
 在[新手教程](/docs/course/started/intro)中，你已经创建了一个全新模块，并且添加了 `duxui` 模块的依赖，要兼容RN，还需要添加 `duxappReactNative` 模块作为依赖，在添加依赖之前你需要安装
@@ -123,24 +127,37 @@ module.exports = config
 ```
 ## 开始打包
 
+:::info
+如果你没有安装开发环境，先用官方提供的[通用调试包](/docs/course/rn/debug)，跳过这个步骤
+:::
+
 接下来就能执行打包命令了
 
 ```bash
+# 安卓端编译app命名，命令同时会弹出一个窗口启动RN代码服务
 yarn android --app=moduleName
 ```
 
 如果一切顺利，将会打包成功一个调试版本的安装包，如果你手机开启开发者选项，并且链接到电脑，将会把app打包安装到你的手机上  
 
-启动app，设置你电脑的ip地址+端口8081，比如: `192.168.1.10:8081`，然后使用命令启动RN服务
+## 开始调试
 
-```bash
-yarn start --app=moduleName
-```
+启动app，设置你电脑的ip地址+端口8081，比如: `192.168.1.10:8081`，步骤如下
 
-服务启动后在手机上 `reload` 即可加载代码，其他流程和Taro开发一致
+- 启动app，摇一摇弹出开发者菜单，点击 `Settings`
+- 选择 `Debug server host & port for device`
+- 输入 `电脑端ip:8081` 如 `192.168.1.10:8081` 确定，并返回
+- APP摇一摇弹出开发者菜单，点击 `Reload` 加载代码
+- 首次启动加载完成大概率不会正常显示，需要结束APP进程重新启动
+
+其他流程和Taro开发一致
 
 :::info
-使用这个 `yarn android --app=moduleName` 编译安卓的时候会自动启动RN服务，但是大多数情况下还是需要使用 `yarn start --app=moduleName` 启动服务
+使用这个 `yarn android --app=moduleName` 编译安卓的时候会自动启动RN服务，如果你没有编译过APP，而是使用的官方调试包，需要使用下面的命令启动RN服务
+
+`yarn start --app=moduleName`
+
+如果 `yarn android --app=moduleName` 弹出的代码服务加载异常，也可以尝试关闭那个弹出的命令行窗口，然后使用这个`yarn start --app=moduleName`命令启动RN代码服务
 :::
 
 ## 自定义app图标
