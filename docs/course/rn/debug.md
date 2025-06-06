@@ -11,7 +11,7 @@ sidebar_position: 2
 ## 如何使用
 
 - 将APP装在手机上
-- 启动app，摇一摇弹出开发者菜单，点击 `Settings`
+- 启动app，摇一摇弹出开发者菜单，点击 `Settings` (首次启动出现红屏警告是正常)
 - 选择 `Debug server host & port for device`
 - 输入 `电脑端ip:8081` 如 `192.168.1.10:8081` 确定，并返回
 - 在项目目录，使用命令行启动项目 `yarn start --app=模块`
