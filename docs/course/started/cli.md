@@ -97,6 +97,7 @@ duxapp icon create UiIcon duxui https://at.alicdn.com/t/c/font_4643878_n6necu7zt
 :::info
 - 这个参数上面的css地址是iconfont项目的css地址，地址不包含后面的参数部分
 - 项目设置里面字体格式要包含 `Base64` 这个选项，默认项目未启用这个选项，需要在项目设置里面开启
+- 在项目设置里面，字体名称需要设置，不能保持默认 `iconfont`，否则当你一个项目，存在多个图标库的时候，在RN ios端，只会有其中一个图标库生效
 :::
 
 默认创建的是本地图标，你可以指定为创建本地在线图标图标，像下面这样，在最后加上个1
@@ -124,64 +125,6 @@ duxapp rn logo --config=配置名称
 # 或者指定图标位置 相对于配置目录
 duxapp rn logo logo.png --config=配置名称
 ```
-
-#### rn codepushInit
-初始化项目的codepushapp和分支
-```bash
-duxapp rn codepushInit android或者ios
-```
-
-:::info
-使用codepush相关的功能需要提供以下配置
-
-```javascript
-  /**
-   * 热更新上传控制
-   * 安卓和ios独立控制 设置common为公共参数
-   * {
-   *  token：账户设置中心生成的token
-   *  account：上传的账号
-   *  version：当前代码需要的原生app版本
-   *  name：appcenter上的应用名称 不填写默认为package.json的 name + '-' + (ios或者android)
-   * }
-   */
-  option: {
-    codepush: {
-      common: {
-        token: '',
-        account: '',
-        version: '^1.0.1'
-      },
-      android: {
-        // 必填
-        name: 'name-android'
-      },
-      ios: {
-        // 必填
-        name: 'name-ios'
-      }
-    }
-  }
-```
-:::
-#### rn codepushDeploymentKey
-查看当前项目分支和对应的key
-```bash
-duxapp rn codepushDeploymentKey android或者ios
-```
-
-#### rn codepush
-发布热更新代码
-```bash
-duxapp rn codepush android或者ios
-```
-
-:::info
-发布热更新需要用户使用下面的命令，先在全局安装`appcenter-cli`命令工具
-```bash
-npm i appcenter-cli -g
-```
-:::
 
 ### android RN安卓端操作
 
