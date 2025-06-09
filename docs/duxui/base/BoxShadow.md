@@ -8,6 +8,10 @@ sidebar_position: 4
 
 在RN端是使用 [`react-native-fast-shadow`](https://github.com/alan-eu/react-native-fast-shadow) 实现的
 
+:::info
+新版本组件即将停用，从RN0.76开始原生支持 `box-shadow` css，请使用css样式
+:::
+
 ## 示例
 
 import { Preview } from '@site/src/components/Preview'

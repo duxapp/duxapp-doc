@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # 预埋点查询
 
-预埋点是用于 cli 处理原生模块时插入或者替换内容使用的，预埋点可以访问 https://github.com/duxapp/duxapp-cli/tree/main/rnTemplate 进行查看
+预埋点是用于 cli 处理原生模块时插入或者替换内容使用的，预埋点可以访问 `src/duxappReactNative/template` 进行查看（文件在 `duxappReactNative` 模块内）
 
 ## 内容替换 replace
 
@@ -69,11 +69,6 @@ gradle 下载地址，此项一般通过配置更新，请勿通过更新程序�
 
 - fabricEnabled  
 开启新架构
-
-### ios/duxapp/AppDelegate.mm
-
-- appDelegate.sourceURLForBridge  
-用于返回在发布模式下返回 `bundleURL`，默认 `return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];`
 
 ### ios/duxapp.xcodeproj/project.pbxproj
 - versionCode  
@@ -209,18 +204,15 @@ post_install 的结束位置
 - content  
 添加env内容
 
-### ios/duxapp/AppDelegate.h
+### ios/duxapp/BridgingHeader.h
 
 - import  
 依赖导入位置
 
-- appDelegate.protocol  
-微信插件有此需求
+- content
+放内容位置
 
-- appDelegate  
-接口内容
-
-### ios/duxapp/AppDelegate.mm  
+### ios/duxapp/AppDelegate.swift
 
 - import  
 依赖导入位置
@@ -228,5 +220,25 @@ post_install 的结束位置
 - appDelegate.didFinishLaunchingWithOptions  
 启动要执行的代码
 
-- appDelegate  
-添加其他方法
+- app.delegate  
+类继承更多方法的位置,例如微信模块的
+```js
+'app.delegate': ', WXApiDelegate'
+```
+
+- app.application.start
+入口函数开始位置
+
+- app.application.end
+入口函数结束位置
+
+- app
+app内其他方法
+
+- duxappReactNative
+
+填写方法用于覆盖 ReactNativeDelegate 的方法
+
+- content
+
+文件内其他内容

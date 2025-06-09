@@ -367,10 +367,6 @@ const config = {
         }
       }
     },
-    codepush: {
-      androidKey: '',
-      iosKey: '',
-    },
     wechat: {
       // 分享组件配置
       share: {

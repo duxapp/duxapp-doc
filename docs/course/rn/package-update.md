@@ -69,18 +69,7 @@ module.exports = () => {
 
 ## replace 替换内容
 
-用于替换一些关键配置，这个项目一般使用不会很多，只有一些特殊第三方模块中需要使用，如`react-natice-code-push`，用于替换bundleURL的地址
-
-```js
-module.exports = () => {
-  return {
-    replace: {
-      'ios/duxapp/AppDelegate.mm': {
-        'appDelegate.sourceURLForBridge': 'return [CodePush bundleURL];'
-      }
-    }
-  }
-}
+用于替换一些关键配置，这个项目一般使用不会很多，只有一些特殊第三方模块中需要使用
 ```
 
 ## android 安卓端处理
