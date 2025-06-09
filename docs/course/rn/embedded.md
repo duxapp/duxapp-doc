@@ -209,7 +209,7 @@ post_install 的结束位置
 - import  
 依赖导入位置
 
-- content
+- content  
 放内容位置
 
 ### ios/duxapp/AppDelegate.swift
@@ -226,19 +226,17 @@ post_install 的结束位置
 'app.delegate': ', WXApiDelegate'
 ```
 
-- app.application.start
+- app.application.start  
 入口函数开始位置
 
-- app.application.end
+- app.application.end  
 入口函数结束位置
 
-- app
+- app  
 app内其他方法
 
-- duxappReactNative
-
+- duxappReactNative  
 填写方法用于覆盖 ReactNativeDelegate 的方法
 
-- content
-
+- content  
 文件内其他内容
