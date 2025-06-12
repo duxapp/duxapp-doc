@@ -106,6 +106,23 @@ duxapp icon create UiIcon duxui https://at.alicdn.com/t/c/font_4643878_n6necu7zt
 duxapp icon create UiIcon duxui https://at.alicdn.com/t/c/font_4643878_n6necu7zt7p.css 1
 ```
 
+### npm 管理模块的npm依赖
+
+用于管理模块的npm依赖相关的命令
+
+#### npm add
+
+给模块添加依赖，添加依赖规则将会以 `~` 的形式添加进去
+
+```bash
+# 给 duxui 模块添加 dayjs 插件
+duxapp npm add dayjs --app duxui
+# 指定版本号添加
+duxapp npm add dayjs@1.0.0 --app duxui
+# 一次性添加多个依赖
+duxapp npm add dayjs@1.0.0 duxapp-cli --app duxui
+```
+
 ### rn React Native 端操作
 
 ####  rn create

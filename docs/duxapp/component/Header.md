@@ -155,6 +155,8 @@ show=false的情况下时候显示status状态栏
 
 返回按钮组件，当你使用了`renderHeader`属性的时候，返回按钮将不在header上，你可以使用这个组件替代返回按钮的位置。
 
+这个组件只能出现在Header组件的内部，例如 renderHeader 属性内
+
 ```jsx
 import { Header } from '@/duxapp'
 

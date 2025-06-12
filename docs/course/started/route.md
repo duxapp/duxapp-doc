@@ -13,7 +13,7 @@ sidebar_position: 3
 - 返回传参
 - 封装返回主页方法
 
-## 路由跳转
+## 基础路由跳转
 
 ```js
 import { route } from '@/duxapp'
@@ -78,9 +78,9 @@ route.onNavAfter(params => {
 })
 ```
 
-## 使用nav跳转
+## 更多路由跳转
 
-nav 是一个集成了多种跳转方式的方法，采用协议解析的方法进行跳转
+nav 是一个集成了多种跳转方式的方法，采用协议解析的方法进行跳转，方便后台控制跳转地址
 
 ```js
 import { route }  from '@/duxapp'
@@ -103,6 +103,7 @@ route.redirect('duxcmsMall/goods/list', { name: '张三' })
 route.nav('redirect:duxcmsMall/goods/list', { name: '张三' })
 
 // 重启程序
+route.relaunch()
 route.nav('relaunch:')
 
 // 打开小程序插件
@@ -125,20 +126,39 @@ route.back(2, { name: '姓名' })
 route.nav('back:2', { name: '姓名' })
 
 // 拨打电话
+route.tel('10086')
 route.nav('tel:10086')
 
 // 打开一个网址
 route.nav('https://www.baidu.com')
 
 // 打开地图
+route.mapPoint({
+  longitude: 122.22,
+  latitude: 23.33,
+  name: '地点名称',
+  address: '地点位置'
+})
 route.nav('map:point', {
   longitude: 122.22,
   latitude: 23.33,
   name: '地点名称',
   address: '地点位置'
 })
+route.nav('map:point?longitude=122.22&latitude=23.33&name=地点名称&address=地点位置')
 
-// 打开小程序（H5端不能使用） APP端项目需要包含wechat模块
+// 打开小程序 APP端项目需要包含wechat模块（H5端不能使用）
+route.mini({
+  appid: 'wx00000000',
+  userName: 'gh_0000',
+  path: 'pages/index/page2',
+  type: 1,
+  query: {
+    a: 1,
+    b: 2
+  }
+})
+// 使用字符串模板打开小程序
 route.nav('mini:wx00000000') // 小程序端跳转
 route.nav('mini:wx00000000|gh_0000') // 同时要支持APP跳转需要加入原始id
 route.nav('mini:wx00000000|gh_0000|2') // 打开体验版小程序 0正式版 1开发版 2体验版
