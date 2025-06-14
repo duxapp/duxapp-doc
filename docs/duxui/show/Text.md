@@ -123,6 +123,14 @@ export default function TextExample() {
 | ---- | -------- | ------- |
 | 1 \| 2 \| 3 \| 4 \| 5 \| 6 \| 7 \| number | 否 | 3 |
 
+### lineHeight
+
+行距倍数
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| number | 否 | 1.4 |
+
 ### bold
 
 是否加粗

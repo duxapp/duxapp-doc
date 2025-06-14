@@ -14,60 +14,56 @@ duxapp模块提供了全局样式，可以用于快速布局，如果你还不�
 下面是duxapp模块中的全局样式
 
 ```css
-/*  #ifndef rn h5  */
-page {
-  height: 100vh;
-}
-
-/*  #endif  */
-
 /*  #ifdef h5  */
-.taro_page {
-  height: 100vh;
-}
-
-/*  #endif  */
-
-
-/*  #ifdef h5  */
-taro-view-core {
+taro-view-core,
+.swiper-wrapper .swiper-slide {
   display: flex;
   flex-direction: column;
   position: relative;
   border-style: solid;
   border-width: 0;
 }
+
 input,
 textarea,
-taro-view-core {
+taro-view-core,
+taro-swiper-item-core {
   box-sizing: border-box;
 }
+
 taro-view-core,
 taro-text-core {
   line-height: 1;
 }
+
 taro-image-core {
   width: auto;
   height: auto;
 }
+
 /*  #endif  */
-/*  #ifndef rn h5  */
-view {
+/*  #ifndef rn h5 harmony  */
+view,
+swiper-item {
   display: flex;
   flex-direction: column;
   position: relative;
   border-style: solid;
   border-width: 0;
 }
+
 input,
 textarea,
-view {
+view,
+swiper-item {
   box-sizing: border-box;
 }
+
 view,
 text {
   line-height: 1;
 }
+
 /*  #endif  */
 
 /*  #ifdef h5  */
@@ -83,7 +79,7 @@ taro-input-core {
 
 /*  #endif  */
 
-/*  #ifdef weapp  */
+/*  #ifdef weapp qq  */
 .button-clean {
   position: relative;
   display: flex;
@@ -129,10 +125,12 @@ taro-input-core {
 }
 
 .inset-0 {
-  top: 0;
-  bottom: 0;
-  right: 0;
   left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  // bottom: 0;
+  // right: 0;
 }
 
 .top-0 {
@@ -246,6 +244,10 @@ taro-input-core {
   align-items: center;
 }
 
+.items-stretch {
+  align-items: stretch;
+}
+
 .items-baseline {
   align-items: baseline;
 }
@@ -320,11 +322,11 @@ taro-input-core {
 }
 
 .text-black {
-  color: #000;
+  color: $duxappBlackColor;
 }
 
 .text-white {
-  color: #fff;
+  color: $duxappWhiteColor;
 }
 
 .text-c1 {
@@ -416,11 +418,11 @@ taro-input-core {
 
 /* 边框颜色 */
 .border-black {
-  border-color: #000;
+  border-color: $duxappBlackColor;
 }
 
 .border-white {
-  border-color: #fff;
+  border-color: $duxappWhiteColor;
 }
 
 .border-primary {
@@ -540,7 +542,7 @@ taro-input-core {
   margin-top: 24px;
 }
 
-.mt-3 {
+.mt-4 {
   margin-top: 32px;
 }
 
@@ -619,7 +621,7 @@ taro-input-core {
 
 // 背景
 .bg-white {
-  background-color: white;
+  background-color: $duxappWhiteColor;
 }
 
 .bg-primary {
@@ -650,5 +652,4 @@ taro-input-core {
 .square {
   aspect-ratio: 1;
 }
-
 ```

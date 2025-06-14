@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 主题配置
 
-用户的主题配置在 `option.duxapp.theme`
+用户的主题配置在 `option.duxapp.theme` 如果配置了动态主题切换 则配置在 `option.duxapp.themes`,具体使用防范请查看[主题系统](/docs/course/started/theme)
 
 配置duxapp的主题，这里面包含了基础配置和组件配置，组件配置请前往组件查看具体的使用方法
 
@@ -14,10 +14,14 @@ sidebar_position: 1
   // General
   primaryColor: '#337ab7', // 主色
   secondaryColor: '#5bc0de', // 辅色
-  successColor: '#34a853', // 成功颜色
-  dangerColor: '#ea4335', // 错误颜色
-  warningColor: '#fbbc05', // 警告颜色
-  pageColor: '#fafbf8', // 页面背景颜色
+  successColor: '#34a853',
+  dangerColor: '#ea4335',
+  warningColor: '#fbbc05',
+
+  pageColor: '#fafbf8',
+  whiteColor: '#fff',
+  blackColor: '#000',
+  lineColor: '#f5f5f5',
 
   //用户自定义颜色1
   customColor1: '#337ab7',
@@ -62,6 +66,11 @@ sidebar_position: 1
     showWap: true, // h5是否显示header
   },
 
+  loading: {
+    dark: '#7a7a7a',
+    blank: '#fff'
+  },
+
   topView: {
     weappRem: false
   }
@@ -70,13 +79,18 @@ sidebar_position: 1
 
 ## 全局scss变量
 
-```scss
+```css
 $duxappPrimaryColor: #337ab7;
 $duxappSecondaryColor: #5bc0de;
 $duxappSuccessColor: #34a853;
 $duxappDangerColor: #ea4335;
 $duxappWarningColor: #fbbc05;
 $duxappPageColor: #fafbf8;
+
+$duxappWhiteColor: #fff;
+$duxappBlackColor: #000;
+$duxappLineColor: #f5f5f5;
+
 $duxappCustomColor1: #337ab7;
 $duxappCustomColor2: #337ab7;
 $duxappCustomColor3: #337ab7;
