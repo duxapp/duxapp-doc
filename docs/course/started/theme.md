@@ -126,6 +126,10 @@ $模块OtherColor: ${theme.otherColor || '#fff'};
 
 ## 升级动态主题
 
+:::info
+如果你要同时兼容RN端，请阅读 [RN端](#rn-端) 注意事项
+:::
+
 为了减少最小的升级成本，系统未对之前的主题系统进行大改，而是在当前的主题系统模式上进行简单调整就能使用
 
 之前所有的内容在新的主题系统中都是生效的，如果你要切换到动态主题，只需要在用户配置中，配置多套主题即可
@@ -263,3 +267,18 @@ export default function ThemeExample() {
   </TopView>
 }
 ```
+
+## RN 端
+
+在RN使用动态主题之前，需要保证满足以下条件，其他流程和小程序、H5端一致
+
+- 所有页面和组件均使用函数式组件编写，如果包含类组件，类组件内的 `className` 样式将会失效
+- 所有组件或者页面都具有名称，且符合React组件名称大写开头的规则
+- 如果是匿名函数，仅支持这几种高阶函数包裹的情况 `memo()` `forwardRef()` `lazy()`
+- 如果使用了scss变量的属性，不支持简写：`border: 1px solid $duxappLineColor;`，需要单独编写属性 `border-color: $duxappLineColor;`，如果你不知道改哪里，运行时会有如下报错信息
+
+```
+error: src/duxui/components/Form/Upload.scss: Unexpected token type: function Failed to parse declaration "border: 1px solid var(--duxapp-line-color)"
+```
+
+如果你还遇到其他问题，欢迎提供反馈

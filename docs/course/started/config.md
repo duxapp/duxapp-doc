@@ -117,7 +117,7 @@ option字段就是模块配置，每个模块都可能拥有自己不一样的�
 
 在编译鸿蒙端的时候，将这个文件夹下的内容复制到 `dist/harmony` 对应位置
 
-## 小程序配置
+## 小程序配置 project.config.json
 
 在用户配置文件夹下还能放 `project.config.json`，配置文件内容和小程序的配置文件一样，通常用来给不同的项目指定 `appid`，这样就不用每次编译不同的项目后还需要手动更新 `appid`
 
@@ -126,3 +126,7 @@ option字段就是模块配置，每个模块都可能拥有自己不一样的�
   "appid": "填写自己项目的appid"
 }
 ```
+
+## 入口配置 app.config.js
+
+同模块的 [`app.config.js`](/docs/course/app/directory#appconfigjs) 文件，此处的优先级最高
