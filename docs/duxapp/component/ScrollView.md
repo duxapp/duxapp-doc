@@ -16,7 +16,7 @@ import { Preview } from '@site/src/components/Preview'
 import { Header, ScrollView, TopView, Column, Text, px, PullView, Button } from '@/duxui'
 import { useState } from 'react'
 
-export default TopView.HOC(function ScrollViewExample() {
+export default TopView.page(function ScrollViewExample() {
 
   const [show, setShow] = useState(false)
 

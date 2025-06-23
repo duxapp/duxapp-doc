@@ -10,7 +10,11 @@ sidebar_position: 1
 
 ## 默认配置
 ```js
-{
+/**
+ * 默认主题配置
+ */
+
+export default {
   // General
   primaryColor: '#337ab7', // 主色
   secondaryColor: '#5bc0de', // 辅色
@@ -43,25 +47,11 @@ sidebar_position: 1
   textSize6: 34,
   textSize7: 36,
 
-  // 公共配置
-  common: {
-    get radius() {
-      if (!getConfig.radiusPxValue) {
-        getConfig.radiusPxValue = px(getConfig.radiusValue)
-      }
-      return getConfig.radiusPxValue
-    },
-    set radius(value) {
-      getConfig.radiusValue = value
-    },
-    get radiusValue() {
-      return getConfig.radiusValue
-    }
-  },
+  radius: 16,
 
   header: {
-    color: '#fff', // 仅支持rgb hex值，请勿使用纯单词 设置为数组将显示一个渐变按钮
-    textColor: '#000', // 文本颜色
+    color: '#000', // 仅支持rgb hex值，请勿使用纯单词 设置为数组将显示一个渐变按钮
+    bgColor: undefined,
     showWechat: false, // 微信公众号是否显示header
     showWap: true, // h5是否显示header
   },
@@ -107,4 +97,10 @@ $duxappTextSize4: 30px;
 $duxappTextSize5: 32px;
 $duxappTextSize6: 34px;
 $duxappTextSize7: 36px;
+
+$duxappRadius: 16px;
+
+// Header组件
+$duxappHeaderColor: #fff;
+$duxappHeaderTextColor: #000;
 ```

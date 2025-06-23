@@ -12,7 +12,7 @@ import { Header, ScrollView, TopView } from '@/duxapp'
 
 import './index.scss'
 
-export default TopView.HOC(function Page() {
+export default TopView.page(function Page() {
 
   return <>
     <Header title='duxapp' titleCenter />
@@ -47,7 +47,7 @@ export default function Page() {
 ```
 
 :::info
-某些功能必须要使用 `TopView.HOC` 包装才能实现，例如微信模块的分享功能
+某些功能必须要使用 `TopView.page` 包装才能实现，例如微信模块的分享功能
 :::
 
 一个页面中，请不要使用多个TopView组件实例，否则这会影响一些功能的实现  

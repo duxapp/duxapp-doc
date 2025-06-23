@@ -60,11 +60,27 @@ h5端显示在头部的标题 默认等于title 设置为空将不会产生变�
 
 设置导航标题的颜色，返回按钮是用的图片，标题颜色设置为深色，那么放回按钮是黑色，反之则是白色
 
-如果要设置导航单的背景颜色通过 style 的 `backgroundColor` 进行设置（不支持通过css）
+如果要设置导航单的背景颜色通过 `bgColor` 进行设置（不支持通过css）
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | string | 否 |  |
+
+### bgColor
+
+覆盖默认的背景颜色
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 |  |
+
+### transparent
+
+是否将背景设置为透明
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 |  |
 
 ### absolute
 
@@ -75,7 +91,7 @@ h5端显示在头部的标题 默认等于title 设置为空将不会产生变�
 ```jsx
 import { Header, ScrollView, TopView } from '@/duxapp'
 
-export default TopView.HOC(function Duxapp() {
+export default TopView.page(function Duxapp() {
 
   return <>
     <Header absolute color='#000' style={{ backgroundColor: 'transparent' }} />
@@ -177,7 +193,7 @@ Header.Back 基本只有这一种用法，这个组件不可单独使用，使�
 
 header的主题配置在 `theme.header`
 
-### color
+### bgColor
 
 默认背景颜色，仅支持rgb hex值，请勿使用纯单词 设置为数组将显示一个渐变按钮
 
@@ -185,7 +201,7 @@ header的主题配置在 `theme.header`
 | ---- | ------- |
 | string \| string[] | #fff |
 
-### textColor
+### color
 
 默认文字颜色
 

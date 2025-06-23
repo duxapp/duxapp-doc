@@ -25,8 +25,8 @@ import { Preview } from '@site/src/components/Preview'
 ```jsx
 import { Header, ScrollView, TopView, GroupList, Text, Button, Column, confirm, toast } from '@/duxuiExample'
 
-export default function TopViewExample() {
-  return <TopView>
+export default TopView.page(function TopViewExample() {
+  return <>
     <Header title='TopView' />
     <ScrollView>
       <GroupList>
@@ -68,8 +68,8 @@ export default function TopViewExample() {
         </GroupList.Item>
       </GroupList>
     </ScrollView>
-  </TopView>
-}
+  </>
+})
 ```
 
 ## Props
@@ -94,9 +94,13 @@ export default function TopViewExample() {
 
 ## 方法
 
-### HOC(comp, option)
+### page(comp, option)
 
 高阶函数，用于创建页面的高阶组件，在上面的示例中有演示过，传入的option参数和组件本身的Props完全相同
+
+:::info
+你应该一直使用 TopView.page() 包裹你的页面组件，就像上面的示例一样，这样，你的所有依赖TopView实现的功能都不会有问题
+:::
 
 ### add(el, option)
 
@@ -232,6 +236,13 @@ TopView.addContainer(({ children }) => {
 | ---- | ---- | -------- | ------- | ------- |
 | comp | Component | 是 |  | 传入一个组件 |
 | props | object | 否 |  | 传给这个组件的props |
+
+
+### HOC(comp, option)
+
+:::danger Deprecated
+此方法已弃用，使用 [`page()`](#pagecomp-option) 替代。
+:::
 
 ## 主题配置
 

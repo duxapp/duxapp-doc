@@ -16,7 +16,7 @@ import { Preview } from '@site/src/components/Preview'
 import { Header, ScrollView, TopView, GroupList, ProgressCircle, duxappTheme, Row, Text, Button, colorLighten } from '@/duxuiExample'
 import { useState } from 'react'
 
-export default TopView.HOC(function ProgressCircleExample() {
+export default TopView.page(function ProgressCircleExample() {
 
   const [val, setVal] = useState(30)
 
