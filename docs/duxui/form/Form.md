@@ -25,21 +25,24 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Form' />
 
 ```jsx
-import { Header, ScrollView, TopView, Form, FormItem, FormSubmit, FormReset, Card, Divider, DividerGroup, Input, PickerDate, PickerSelect, Textarea, Row } from '@/duxuiExample'
+import { Header, ScrollView, TopView, Form, Card, Input, PickerDate, PickerSelect, Textarea, Row, DividerGroup, FormItem, FormSubmit, FormReset, confirm, route } from '@/duxuiExample'
 
-const defaultValues = {
-
+// 默认值支持多种形式 会直接定义值 函数返回值 异步函数返回值
+const defaultValues = async () => {
+  return {
+    text: '这是默认值'
+  }
 }
 
 const rules = {
-  name: [
+  text: [
     {
       required: true,
       type: 'string',
       message: '输入框为必填字段'
     }
   ],
-  tel: [
+  desc: [
     {
       required: true,
       type: 'string',
@@ -49,25 +52,36 @@ const rules = {
 }
 
 export default function FormExample() {
+
+  const submit = async data => {
+    console.log(data)
+    await confirm({
+      title: '提交成功',
+      content: '表单缓存将被清除，再次进入表单需要重新填写'
+    })
+    route.back()
+    return true
+  }
+
   return <TopView>
     <Header title='Form' />
-    <Form onSubmit={console.log} defaultValues={defaultValues}>
+    <Form cache='duxui-form' onSubmit={submit} defaultValues={defaultValues}>
       <ScrollView>
         <Card margin verticalPadding={false}>
           <DividerGroup>
-            <FormItem label='输入框' field='name' rules={rules.name}>
+            <FormItem label='输入框' name='text' rules={rules.text}>
               <Input placeholder='请输入' align='right' grow />
             </FormItem>
-            <FormItem label='介绍的输入' field='tel' desc='输入框介绍，这是输入框介绍' rules={rules.tel}>
+            <FormItem label='介绍的输入' name='desc' desc='输入框介绍，这是输入框介绍' rules={rules.desc}>
               <Input placeholder='请输入' />
             </FormItem>
-            <FormItem label='日期' field='date'>
+            <FormItem label='日期' name='date'>
               <PickerDate title='日期' placeholder='请选择日期' grow />
             </FormItem>
-            <FormItem label='选择' field='sex'>
+            <FormItem label='选择' name='sex'>
               <PickerSelect title='选择' placeholder='请选择性别' range={['男', '女']} grow />
             </FormItem>
-            <FormItem label='介绍' field='desc' direction='vertical' >
+            <FormItem label='介绍' name='info' direction='vertical' >
               <Textarea placeholder='请输入介绍' maxlength={100} />
             </FormItem>
           </DividerGroup>
@@ -90,7 +104,7 @@ export default function FormExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| `object \| () => Promise<{}>` | 否 |  |
+| `object \| () => Promise<{}> \| Promise<{}>` | 否 |  |
 
 ### onChange
 
@@ -106,7 +120,25 @@ export default function FormExample() {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| `(values: object) => void` | 否 |  |
+| `(values: object) => void \| boolean \| Promise<boolean>` | 否 |  |
+
+### cache
+
+是否开启表单填写缓存
+
+填写一个用于保存缓存的字段名，即表示开启
+
+开启后，会将当前填写的数据进行缓存，如果未提交保存，下次打开使用这个缓存加载
+
+在 onSubmit 事件返回true的时候将会把这个缓存清除
+
+如果 onSubmit 提交事件之后，表单继续被编辑，表单还会被保存，请处理这个逻辑
+
+如果读取到 cache，优先级高于 defaultValues
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 | |
 
 ### disabled
 

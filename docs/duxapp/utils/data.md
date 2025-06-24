@@ -67,6 +67,31 @@ this.event.on((data, type) => {
 })
 ```
 
+## 静态方法
+
+### getInstance()
+
+获取当前唯一实例  
+使用这个方法，就不需要 new 一个对象导出  
+可以用作优化：在使用时才读取缓存，会在第一次调用 `getInstance()` 方法的时候初始化对象实例
+
+```js
+class MyData extends ObjectManage {
+  constructor() {
+    super({
+      cache: true,
+      cacheKey: 'my-data-key'
+    })
+  }
+}
+// 异步获取数据，因为获取本地缓存是异步的，所以需要使用异步获取，而不是直接读取data
+MyData.getInstance().getDataAsync().then(data => {})
+// hook中调用数据
+const data = MyData.getInstance().useData()
+// 合并数据
+MyData.getInstance().merge({ test: 1 })
+```
+
 ## 方法
 
 ### ObjectManage(option)
@@ -127,3 +152,7 @@ this.event.onSet((data, type) => {
 | 名称 | 类型 | 必填 | 默认值 | 说明 |
 | ---- | ---- | -------- | ------- | ------- |
 | key | string | 否 |  | 传入参数和指定使用数据的某个字段 |
+
+### getDataAsync()
+
+异步获取data数据，主要用于在缓存还未读取之前调用的话，确保返回缓存data
