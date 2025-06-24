@@ -131,11 +131,15 @@ export default function ImagedExample() {
 
 ### square
 
-将图片显示为正方形，需要指定 width 属性
+将图片显示为正方形
+
+传入数字可直接指定宽度
+
+如果传入true，需要通过其他方式指定图片宽度
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| boolean | 否 | false |
+| boolean \| number | 否 | false |
 
 ## ImageGroup Props
 

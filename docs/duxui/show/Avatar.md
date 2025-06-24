@@ -93,7 +93,7 @@ export default function AvatarExample() {
 | ---- | -------- | ------- |
 | string | 否 | #eee |
 
-### url
+### src
 
 头像图片地址
 
@@ -203,8 +203,14 @@ export default function AvatarExample() {
 | ---- | -------- | ------- |
 | AvatarProps | 否 |  |
 
+### url
 
+:::danger Deprecated
+此属性已弃用，使用 [`src`](#src) 替代。
+:::
 
+头像图片地址
 
-
-
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 |  |

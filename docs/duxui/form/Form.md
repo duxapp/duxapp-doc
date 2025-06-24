@@ -266,19 +266,21 @@ props参数
 
 继承自[ColumnProps](../layout/Column#props)
 
-### field
+### name
 
-表单字段
+字段名称
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | string \| number | 否 |  |
 
-### fields
+### wholeForm
 
-如果一个表单需要控制多个字段则传入此参数  
-此参数和field不能同时使用  
-开启之后 子表单 value将是整个表单的值 onChange 相当于 setValues
+控制是否管理整个表单的值
+
+开启后，子表单的 value 将是整个表单的值，onChange 相当于 setValues
+
+此参数和 `name` 不能同时使用
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -303,6 +305,25 @@ props参数
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | [TextProps](../show/Text#props) | 否 |  |
+
+### form
+
+如果子元素是多个组件，或者嵌套，用于指定表单项目
+
+会在所有子元素中递归查找到这个类型的元素作为表单项
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| ComponentType\<any\> | 否 |  |
+
+```jsx
+<FormItem name='g' form={Input}>
+  <Column className='gap-3 p-3 mv-3'>
+    <Input placeholder='输入重量' type='digitpad' align='center' />
+    <Divider size={4} color='primary' />
+  </Column>
+</FormItem>
+```
 
 ### containerProps
 
@@ -387,6 +408,32 @@ props参数
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | [SchemaRuleType[]](https://github.com/PengJiyuan/b-validate) | 否 |  |
+
+### field
+
+:::danger Deprecated
+此属性已弃用，使用 [`name`](#name) 替代。
+:::
+
+表单字段
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string \| number | 否 |  |
+
+### fields
+
+:::danger Deprecated
+此属性已弃用，使用 [`wholeform`](#wholeform) 替代。
+:::
+
+如果一个表单需要控制多个字段则传入此参数  
+此参数和field不能同时使用  
+开启之后 子表单 value将是整个表单的值 onChange 相当于 setValues
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
 
 ## FormSubmit Props
 
