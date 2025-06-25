@@ -61,10 +61,16 @@ duxapp app add 模块名称 1
 :::
 
 #### app create
-快速创建一个模块
+
+快速创建一个模块，从多个模板中选择一个进行创建
+
 ```bash
 duxapp app create 模块名称 模块描述
 ```
+
+:::info
+如果没有合适你的模板，你可以将你的模板 PR 提交到 [github](https://github.com/duxapp/duxapp-app-templates)，等待合并后即可使用
+:::
 
 #### app check
 检查模块依赖的问题
@@ -75,6 +81,18 @@ duxapp app check 模块1 模块2
 # 检查依赖的所有模块
 duxapp app check --app=模块
 ```
+
+#### app checkIntegrity
+检查从应用商店安装的模块是否被修改过
+```bash
+# 检查特定模块
+yarn duxapp app checkIntegrity duxui
+
+# 检查所有已安装模块
+yarn duxapp app checkIntegrity
+```
+此命令会验证模块文件是否被修改，并显示具体哪些文件发生了变化。
+
 
 ### user 用户操作
 
