@@ -7,7 +7,7 @@ sidebar_position: 1
 `duxapp` 通过框架和模块组合，实现了鸿蒙端的支持，现在 duxui 这个 ui 库已经基本兼容了鸿蒙端。
 
 :::info
-- 2026-05-29 的更新中，鸿蒙已经支持新的C-API方案，大幅降低了入门门槛 [更新日志](/docs/update/2025-05-29)
+- 2025-05-29 的更新中，鸿蒙已经支持新的C-API方案，大幅降低了入门门槛 [更新日志](/docs/update/2025-05-29)
 - 在 windows 未测试是否能调试，后续跟进完善（目前是基于Mac开发环境进行调试的）
 :::
 
@@ -114,4 +114,4 @@ yarn dev:harmony --app=moduleName
 
 鸿蒙端的 duxui 组件库，仍然有一些功能是不完善的，例如 Pikcer 选择器，你可以去查看开发进度
 
-查看 [开发进度](/docs/course/harmony/start) 章节了解细节
+查看 [开发进度](/docs/course/harmony/progress) 章节了解细节
