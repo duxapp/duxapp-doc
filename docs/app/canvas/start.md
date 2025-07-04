@@ -134,7 +134,7 @@ export default function CanvasExample() {
 
 ### ref
 
-获取组件实例，通过上面的示例出去详情
+获取组件实例，通过上面的示例获取详情
 
 ## 方法
 
