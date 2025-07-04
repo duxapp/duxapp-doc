@@ -8,12 +8,12 @@
 ## 安装
 
 ```bash
-yarn duxapp app add codepush
+yarn duxapp app add react-native-code-push
 ```
 
 ## 使用
 
-配置 `index.js` 的 `option.codepush`, 分别为安卓端和ios端的热更新 key
+配置 `index.js` 的 `option['react-native-code-push']`, 分别为安卓端和ios端的热更新 key
 
 ```jsx
 {

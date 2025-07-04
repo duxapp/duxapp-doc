@@ -118,3 +118,7 @@ RN 端导入这个 Taro 的方法使用会报错，所以将这个方法封装�
 ### useForceUpdate()
 
 用于函数组件里面的 forceUpdate，hook 返回一个函数，执行这个函数就能刷新界面
+
+### throttle(fn, delay, immediate)
+
+创建一个节流函数

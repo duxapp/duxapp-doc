@@ -12,7 +12,7 @@
 ## <a name='install'></a>安装
 
 ```bash
-yarn duxapp app add design
+yarn duxapp app add duxappDesign
 ```
 此模块需要在 [duxapp 框架](https://duxapp.com) 中运行
 

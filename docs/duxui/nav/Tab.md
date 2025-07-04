@@ -297,9 +297,21 @@ const getItemStyle = useCallback(({ select }) => {
 | ---- | -------- | ------- |
 | string | 否 |  |
 
+### value
+
+项目对应的key 如果不传入将使用项目索引作为key
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| number \| string | 否 |  |
+
 ### paneKey
 
-项目对应的key 如果不穿入将使用项目索引作为key
+:::danger Deprecated
+此属性已弃用，使用 [`value`](#value) 替代。
+:::
+
+项目对应的key 如果不传入将使用项目索引作为key
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

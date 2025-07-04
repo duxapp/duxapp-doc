@@ -163,9 +163,19 @@ show=false的情况下时候显示status状态栏
 
 左侧按钮点击事件 点击左侧按钮时，如果传入了点击事件 则点击按钮时不会触发返回操作
 
+如果返回 `true` 会执行默认返回操作
+
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| () => void | 否 | |
+| (option) => boolean \| Promise\<boolean\> | 否 | |
+
+option 参数可以获取当前的返回状态
+```ts
+{
+  isBack: boolean
+  isBackHome: boolean
+}
+```
 
 ## Header.Back Props
 

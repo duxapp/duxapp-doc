@@ -3,7 +3,7 @@
 ## 安装
 
 ```bash
-yarn duxapp app add amap
+yarn duxapp app add react-native-amap
 ```
 
 ## 使用

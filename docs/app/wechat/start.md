@@ -3,7 +3,7 @@
 ## 安装
 
 ```bash
-yarn duxapp app add wechat
+yarn duxapp app add duxappWechatShare
 ```
 
 ## RN端微信组件
@@ -13,7 +13,7 @@ yarn duxapp app add wechat
 ## 分享组件使用
 
 ### 添加配置位于
-`index.js` 的 `option.wechat.share`
+`index.js` 的 `option.duxappWechatShare`
 
 ```js
 {

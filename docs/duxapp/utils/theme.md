@@ -68,6 +68,10 @@ export default function ThemeExample() {
 
 切换主题 如果传入 `null` 则是切换为跟随系统 或者 自动选择
 
+### isDark(mode)
+
+判断当前使用的或者传入的主题是否是暗黑模式
+
 ### useIsDark(mode)
 
 判断当前使用的或者传入的主题是否是暗黑模式

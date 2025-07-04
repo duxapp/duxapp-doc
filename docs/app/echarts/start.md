@@ -3,7 +3,7 @@
 ## 安装
 
 ```bash
-yarn duxapp app add echarts
+yarn duxapp app add duxappEcharts
 ```
 
 ## 示例
@@ -13,7 +13,7 @@ import { Preview } from '@site/src/components/Preview'
 <Preview name='Chart' />
 
 ```jsx
-import { Chart } from '@/echarts'
+import { Chart } from '@/duxappEcharts'
 import { Header, ScrollView, TopView, GroupList, px } from '@/duxuiExample'
 
 import {

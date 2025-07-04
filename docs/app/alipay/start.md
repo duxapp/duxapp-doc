@@ -3,7 +3,7 @@ APP端支付宝支付组件
 ## 安装
 
 ```bash
-yarn duxapp app add alipay
+yarn duxapp app add react-native-alipay@uiw
 ```
 
 ## 使用

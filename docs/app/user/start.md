@@ -8,6 +8,12 @@ sidebar_position: 1
 
 如果你的项目中有用户信息管理或者登录这样的功能，那么可以使用这个模块来管理
 
+## 安装
+
+```bash
+yarn duxapp app add duxappUser
+```
+
 ## 注册
 
 需要在你的模块中调用注册方法，注册一个用户管理信息
@@ -15,7 +21,7 @@ sidebar_position: 1
 mark为当前模块的标识，当你一个项目中有多个用户信息管理时有用
 
 ```jsx
-import { user } from '@/user'
+import { user } from '@/duxappUser'
 
 user.register('mark', {
   // 需要实现登录页面的内容，登录成功后触发 onLogin事件
@@ -55,7 +61,7 @@ user.register('mark', {
 注册后就能使用了
 
 ```jsx
-import { user } from '@/user'
+import { user } from '@/duxappUser'
 
 // 去登录 异步方法，如果登录成功，可以继续执行后面的逻辑
 await user.login()
@@ -106,7 +112,7 @@ user.setKey('nickname', '李四')
 在你的项目入口文件中调用下面的方法
 
 ```jsx
-import { user, UserLogin } from '@/user'
+import { user, UserLogin } from '@/duxappUser'
 
 // 请先执行 register 注册后在执行Start
 user.register(...)
@@ -117,7 +123,7 @@ UserLogin.start()
 如果你无法确定先后顺序，请直接将register注册中的 `UserLogin` 组件传入 `UserLogin.start()` 中
 
 ```jsx
-import { user, UserLogin } from '@/user'
+import { user, UserLogin } from '@/duxappUser'
 
 UserLogin.start(({ onLogin }) => {
   // 在用户登录成功后执行，type是登录方式 data是用户信息

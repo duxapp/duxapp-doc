@@ -3,7 +3,7 @@ APP端云闪付支付组件
 ## 安装
 
 ```bash
-yarn duxapp app add unionpay
+yarn duxapp app add react-native-unionpay@shaogong
 ```
 
 ## 使用

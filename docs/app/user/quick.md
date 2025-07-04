@@ -7,7 +7,7 @@ sidebar_position: 2
 这里一般是调用小程序，获取用户手机号的方式，进行快捷登录，不需要用户设置密码或者输入密码
 
 ```jsx
-import { user } from '@/user'
+import { user } from '@/duxappUser'
 
 user.register('mark', {
   // ... 之前的配置

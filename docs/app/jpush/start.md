@@ -5,7 +5,7 @@
 ## 安装
 
 ```bash
-yarn duxapp app add jpush
+yarn duxapp app add react-native-jpush
 ```
 
 ## 使用
@@ -18,7 +18,7 @@ yarn duxapp app add jpush
 
 用户配置文件内容如下 `index.js` 
 ```js
-// option.jpush
+// option['react-native-jpush']
 {
   // 是否自动初始化，会自动调用极光的初始化接口，这样就能收到消息
   autoInit: true,
