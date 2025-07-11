@@ -109,11 +109,17 @@ export default function ImagedExample() {
 
 是否点击图片进行预览
 
+直接传入数组可以预览指定的列表
+
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| boolean | 否 | false |
+| boolean \| string[] | 否 | false |
 
 ### images
+
+:::danger Deprecated
+此属性已弃用，使用 [`preview`](#preview) 替代。
+:::
 
 单图预览时的多图片
 

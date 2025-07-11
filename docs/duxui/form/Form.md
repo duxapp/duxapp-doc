@@ -288,9 +288,11 @@ props参数
 
 重置表单
 
-### validate()
+### validate(checkAll)
 
 验证表单
+
+checkAll 是否检查全部表单项目 默认 true，传入false可以在检查到验证未通过的时候终止检查
 
 ## FormItem Props
 

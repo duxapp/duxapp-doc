@@ -105,6 +105,43 @@ export default TopView.page(function ConfirmFormExample() {
 | ---- | -------- | ------- |
 | (val: any) => boolean \| Promise\<boolean\> | 否 | |
 
+### multiple
+
+是否多字段表单
+
+开启后可以传入Form的任意子表单
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | |
+
+```jsx
+const res = await confirmForm({
+  title: '信息',
+  multiple: true,
+  defaultValue: {
+    images: ['https://picsum.photos/200']
+  },
+  form: <Column className='gap-3'>
+    <FormItem name='price' label='价格'>
+      <Input placeholder='请输入价格' grow type='digitpad' />
+    </FormItem>
+    <FormItem name='images' label='凭证图' vertical>
+      <Upload max={3} />
+    </FormItem>
+  </Column>,
+  verify: vals => {
+    if (!vals.weight_price) {
+      return toast('请输入价格')
+    }
+    if (!vals.images?.length) {
+      return toast('请上传凭证')
+    }
+    return true
+  }
+})
+```
+
 ### cancel
 
 是否显示取消按钮

@@ -45,6 +45,17 @@ duxapp app add duxui
 发布模块会需要在[https://www.dux.cn/](https://www.dux.cn/)注册账号，并登录
 :::
 
+#### app update
+
+更新模块依赖，任意模块都可以，会检查当前模块所依赖的模块是否在应用商店发布
+
+如果不传入任何参数，会更新所有可更新的模块
+
+```bash
+duxapp app update <模块1> <模块2>
+duxapp app update
+```
+
 #### app publish
 发布模块到应用市场
 ```bash
