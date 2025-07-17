@@ -134,7 +134,7 @@ export default function FormExample() {
 
 如果 onSubmit 提交事件之后，表单继续被编辑，表单还会被保存，请处理这个逻辑
 
-如果读取到 cache，优先级高于 defaultValues
+如果读取到 cache，优先级高于 非函数返回的 defaultValues
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
@@ -476,6 +476,16 @@ checkAll 是否检查全部表单项目 默认 true，传入false可以在检查
 默认使用 [`Button`](../base/Button) 渲染按钮，如果你要自定义按钮内容，请使用一个可点击的元素作为子元素
 
 继承自[ButtonProps](../base/Button#props)
+
+### data
+
+这个data会在点击提交的时候和表单值合并提交，在onSubmit事件内接收到
+
+通常用于内部有多个提交按钮时，区分按钮
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| object | 否 |  |
 
 ### children
 

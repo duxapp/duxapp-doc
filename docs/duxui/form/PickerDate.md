@@ -59,13 +59,24 @@ export default function DateExample() {
 | ---- | -------- | ------- |
 | string | 否 |  |
 
+### format
+时间格式 YYYY-MM-DD HH:mm:ss 从这个格式中组合
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| string | 否 | YYYY-MM-DD |
+
 ### mode
+
+:::danger Deprecated
+此属性已弃用，使用 [`format`](#format) 替代。
+:::
 
 日期选择的模式
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| enum('datetime', 'date', 'time', 'month', 'year') | 否 | datetime |
+| enum('datetime', 'date', 'time', 'month', 'year') | 否 | date |
 
 ### minDate
 

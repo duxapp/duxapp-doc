@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 const baseUrl = 'https://duxui.duxapp.com/'
 
-const path = '#/duxuiExample/example/'
+const path = '#/'
 
 export const Preview = ({ name }) => {
 

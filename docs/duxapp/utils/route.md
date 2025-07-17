@@ -34,6 +34,10 @@ route.push('duxcmsMall/goods/list', {
 route.redirect('duxcmsMall/goods/list', { name: '张三' })
 route.nav('redirect:duxcmsMall/goods/list', { name: '张三' })
 
+// 使用相对路径上面的几个方法都可以使用
+route.nav('./page')
+route.push('../group/page')
+
 // 重启程序
 route.relaunch()
 route.nav('relaunch:')

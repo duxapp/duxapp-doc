@@ -259,7 +259,17 @@ reloadForShow={{
 | ---- | -------- | ------- |
 | () => void | 否 |  |
 
+### ref
+
+usePageData 的 action 回调  
+
+获取这个回调之后你可以用来手动刷新数据  
+
 ### onAction
+
+:::danger Deprecated
+此属性已弃用，使用 [`ref`](#ref) 替代。
+:::
 
 usePageData 的action回调  
 

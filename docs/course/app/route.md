@@ -15,7 +15,7 @@ sidebar_position: 4
  * subPackage:是否将其设置为分包
  * home: 是否是主页 是主页的页面将会被排在前面
  */
-const config = {
+export default {
   path: 'pages',
   pages: {
     'modeName/index': {
@@ -25,8 +25,6 @@ const config = {
     },
   }
 }
-
-module.exports = config
 ```
 
 :::info
@@ -45,6 +43,89 @@ module.exports = config
 - 配置 `path` 后，也不需要在路径中填写这个 `path`
 - 使用 `route` 导航路由时，也可以省略这个 `path`, `route.push('modename/index/index')`
 
+## alias
+
+配置路由别名，配置后在跳转路由的时候可以使用别名跳转，在H5端真实跳转的地址会变成别名地址
+
+有三个层级可以配置别名
+
+- 1、最里层
+```js
+export default {
+  path: 'pages',
+  pages: {
+    'modeName/index': {
+      pages: {
+        index: {
+          alias: 'home'
+        },
+      },
+    },
+  }
+}
+```
+这个配置是字符串，直接指定当前页面的别名
+
+跳转示例：
+
+```js
+route.nav('home')
+```
+
+- 2、在分组层
+
+```js
+export default {
+  path: 'pages',
+  pages: {
+    'modeName/index': {
+      alias: name => `modeName/${name}`,
+      pages: {
+        index: {},
+        page2: {},
+      },
+    },
+  }
+}
+```
+这里配置需要是个函数，接收这个分组里面的每个页面的名称作为参数，返回一个别名
+
+跳转示例：
+
+```js
+route.nav('modeName/index')
+route.nav('modeName/page2')
+```
+
+- 3、在最外层
+
+```js
+export default {
+  path: 'pages',
+  alias: page => {
+    // modeName/pages/index/index
+    // 传入完整页面路径，自行处理返回别名
+    return page.replace('pages/index', '')
+  },
+  pages: {
+    'modeName/index': {
+      pages: {
+        index: {},
+        page2: {},
+      },
+    },
+  }
+}
+```
+这里配置需要是个函数，传入完整页面路径，自行处理返回别名
+
+跳转示例：
+
+```js
+route.nav('modeName/index')
+route.nav('modeName/page2')
+```
+
 ## pages
 
 页面路由配置，这个配置与原生的Taro路由配置不一样，经过了一层封装，将一个文件夹作为一个对象进行处理，文件夹中的页面就是这个对象`pages`中的键名
@@ -62,7 +143,7 @@ module.exports = config
     },
     // 其他配置
   }
-},
+}
 ```
 
 这样做是为了方便对路由进行一些配置，下面介绍这些配置的用法

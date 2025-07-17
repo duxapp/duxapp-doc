@@ -46,6 +46,15 @@ import { route } from '@/duxapp'
 const { path, params } = route.useRoute()
 ```
 
+## 使用相对路径跳转
+
+使用相对路径，是基于当前用户可见的页面路径，计算相对位置的，需要在合适的地方调用
+
+```js
+route.nav('./page')
+route.push('../group/page')
+```
+
 ## 监听路由跳转
 
 ```js

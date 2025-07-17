@@ -38,7 +38,7 @@ option参数
 
 | 名称 | 类型 | 说明 |
 | ---- | ---- | ------- |
-| upload | (type: enum('image', 'video'), option: [UploadOption](#uploadoption)) => [UploadTask](#uploadtask) | 上传图片或者视频 |
+| upload | (type: enum('image', 'video', 'all'), option: [UploadOption](#uploadoption)) => [UploadTask](#uploadtask) | 上传图片或者视频 |
 | uploadTempFile | (files: [Upload.File](#uploadfile)[], option: [UploadOption](#uploadoption)) => [UploadTask](#uploadtask) | 上传临时文件 |
 | middle | [UploadMiddle](#uploadmiddle) | 添加中间件 |
 
