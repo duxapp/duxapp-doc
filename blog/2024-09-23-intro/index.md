@@ -187,7 +187,7 @@ npx duxapp-cli create projectName
  * subPackage:是否将其设置为分包
  * home: 是否是主页 是主页的页面将会被排在前面
  */
-const config = {
+export default {
   pages: {
     'duxuiExample/index': {
       pages: {
@@ -208,8 +208,6 @@ const config = {
     }
   }
 }
-
-module.exports = config
 ```
 
 路由的定义也是经过封装的，配置的时候是将一个文件夹作为一个对象来处理，这样我们能很方便的将某个文件夹进行分包等操作

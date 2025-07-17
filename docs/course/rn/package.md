@@ -59,10 +59,10 @@ ios：
 其他：
 - 通过patch修复当前版本的一个bug  
 
-下面将一步一步的来实现这些修改，要实现这些修改，需要通过cli提供的模块处理功能，首先在模块新建一个文件夹 `update`，在文件夹下新建 `index.js`, 使用 `module.exports` 导出一个空对象
+下面将一步一步的来实现这些修改，要实现这些修改，需要通过cli提供的模块处理功能，首先在模块新建一个文件夹 `update`，在文件夹下新建 `index.js`, 使用 `export default` 导出一个空对象
 
 ```js
-module.exports = {
+export default {
 
 }
 ```
@@ -78,7 +78,7 @@ module.exports = {
 - 修改 `AppDelegate.mm` 文件进行一些处理
 
 ```js
-module.exports = {
+export default {
   insert: {
     'android/app/proguard-rules.pro': {
         'content': `
@@ -135,7 +135,7 @@ module.exports = {
 
 因为按照要求，需要用到当前app的包名，所以需要将导出的内容修改为一个函数，函数传入的参数中，能获取到当前项目 `duxapp.rn.js` 中的配置，config字段就是这个配置，从中获取到appid，添加到文件对应位置
 ```js
-module.exports = ({ config }) => {
+export default ({ config }) => {
   const { android } = config
   return {
     // ...
@@ -186,7 +186,7 @@ public class WXPayEntryActivity extends Activity {
 - 添加 `.wxapi.WXPayEntryActivity`
 
 ```js
-module.exports = ({ config }) => {
+export default ({ config }) => {
   const { android } = config
   return {
     // ...
@@ -232,7 +232,7 @@ module.exports = ({ config }) => {
 - 在 `Info.plist` 添加 Schemes 和 BundleURLTypes 和 applinks
 
 ```js
-module.exports = ({ config }) => {
+export default ({ config }) => {
   const { android } = config
   return {
     // ...

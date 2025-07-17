@@ -38,7 +38,7 @@ yarn start --app=duxuiExample
 这个配置文件的内容就像下面这样，可以清晰的看到，对安卓配置了包名、名称、版本号等信息，IOS同样如此
 
 ```js
-const config = {
+export default {
   android: {
     appid: 'cn.duxapp.duxui',
     appName: 'duxUI库',
@@ -71,8 +71,6 @@ const config = {
     }
   }
 }
-
-module.exports = config
 ```
 
 ## 内容复制
@@ -164,7 +162,7 @@ ios：
 
 ```js
 // eslint-disable-next-line import/no-commonjs
-module.exports = ({ config }) => {
+export default ({ config }) => {
   const { android, option } = config
   return {
     // 描点插入

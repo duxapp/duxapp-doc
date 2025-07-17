@@ -6,10 +6,10 @@ sidebar_position: 5
 
 模块处理用来处理三方插件，很多三方插件需要对原生模块代码或者配置进行修改才能使用，如微信、支付宝、codepush、高德地图等，这个文档将详细介绍模块处理的功能  
 
-每个模块都可用拥有自己的三方模块处理，模块下 `update/rn.js`，就是当前模块的处理文件，这个文件是node模块文件，需要用`module.exports`进行导出
+每个模块都可用拥有自己的三方模块处理，模块下 `update/rn.js`，就是当前模块的处理文件
 
 ```js
-module.exports = {
+export default {
   
 }
 ```
@@ -17,7 +17,7 @@ module.exports = {
 当你需要用到当前的配置、或者打包的模块列表时，可以导出一个函数，从参数中获取到
 
 ```js
-module.exports = ({ config, apps, configName }) => {
+export default ({ config, apps, configName }) => {
   return {
 
   }
@@ -40,7 +40,7 @@ module.exports = ({ config, apps, configName }) => {
 例如要给安卓添加一个实现gif图显示的依赖
 
 ```js
-module.exports = () => {
+export default () => {
   return {
     insert: {
       'android/app/build.gradle': {
@@ -58,7 +58,7 @@ module.exports = () => {
 用于创建当前不存在的文件，之前原生模块中有用到，给微信创建了两个文件
 
 ```js
-module.exports = () => {
+export default () => {
   return {
     create: {
       '文件路径': '文件内容'
@@ -70,7 +70,6 @@ module.exports = () => {
 ## replace 替换内容
 
 用于替换一些关键配置，这个项目一般使用不会很多，只有一些特殊第三方模块中需要使用
-```
 
 ## android 安卓端处理
 
@@ -93,7 +92,7 @@ module.exports = () => {
 详细使用方法请查看这个示例
 
 ```js
-module.exports = () => {
+export default () => {
   return {
     android: {
       xml: {
@@ -153,7 +152,7 @@ plist的处理比较简单，plist可以和JSON互相转换，只需要合并即
 plist 现在仅支持配置 `duxapp/Info.plist` 和 `duxapp/duxapp.entitlements`，这两个文件的内容需要自行查看ios相关文档或者文件
 
 ```js
-module.exports = () => {
+export default () => {
   return {
     ios: {
       plist: {

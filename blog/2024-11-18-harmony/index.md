@@ -136,7 +136,7 @@ webview方案，将 H5 运行在 webview 上，和小程序类似
 // eslint-disable-next-line import/no-commonjs
 const commonjs = require('vite-plugin-commonjs').default
 
-module.exports = {
+export default {
   // 鸿蒙编译插件
   plugins: [
     '@tarojs/plugin-platform-harmony-ets'

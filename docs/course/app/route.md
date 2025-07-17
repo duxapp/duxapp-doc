@@ -27,10 +27,6 @@ export default {
 }
 ```
 
-:::info
-这是一个node模块，需要用 `module.exports` 导出一个默认对象
-:::
-
 下面来详细介绍，这些配置的用途
 
 ## path

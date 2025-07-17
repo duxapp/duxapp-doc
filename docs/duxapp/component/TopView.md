@@ -255,7 +255,7 @@ TopView.addContainer(({ children }) => {
 在模块中使用 [`taro.config.js`](/docs/course/app/directory#taroconfigjs) 创建这样的内容
 
 ```js
-module.exports = {
+export default {
   mini: {
     postcss: {
       pxtransform: {

@@ -7,17 +7,13 @@ sidebar_position: 2
 配置文件用来配置包名、版本号、证书等信息，配置文件和配置一样都放在`configs`文件夹下对应的配置中，其名称为`duxapp.harmony.js`
 
 ```js
-module.exports = {
+export default {
   appid: 'cn.duxapp',
   appName: 'duxapp',
   versionCode: 1,
   versionName: '1.0.0',
 }
 ```
-
-:::info
-这是一个node模块，需要使用`module.exports`导出一个配置对象
-:::
 
 下面将详细介绍此对象包含的内容
 

@@ -224,19 +224,13 @@ Taro编译配置文件，会合并到 `config/index.js` 中
  * subPackage:是否将其设置为分包
  * home: 是否是主页 是主页的页面将会被排在前面
  */
-const config = {
+export default {
   // 指定页面路径
   path: 'pages',
   // 跳转时打印跳转路径
   pages: {},
 }
-
-module.exports = config
 ```
-
-:::info
-这是一个node模块，需要使用 `module.exports` 导出
-:::
 
 ## config/theme.js
 

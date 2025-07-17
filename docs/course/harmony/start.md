@@ -81,15 +81,12 @@ yarn app --app=moduleName
 `configs/modeName/duxapp.harmony.js`
 
 ```js
-const config = {
+export default {
   appid: 'cn.duxapp.modulename',
   appName: 'APP名称',
   versionCode: 1,
   versionName: '1.0.0',
 }
-
-module.exports = config
-
 ```
 
 由于包名限制条件，你的包名只能由小写字母组成，并不能像模块名称那样，使用驼峰命名  

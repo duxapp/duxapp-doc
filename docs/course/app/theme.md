@@ -65,7 +65,7 @@ export default {
 编写一个脚本将用户传入的主题配置转换为全局scss变量，此处传入的theme，是用户配置的主题，不包含默认的主题配置，也就是说，这个内容他可能是空，因此，你需要写默认的全局变量
 
 ```js
-module.exports = theme => {
+export default theme => {
   return `
 $modeNamePriceColor: ${theme.priceColor || 'red'};
 `
@@ -75,7 +75,6 @@ $modeNamePriceColor: ${theme.priceColor || 'red'};
 然就需要重新启动编译，就可以在scss调用`$modeNamePriceColor` 这个全局变量了
 
 :::info
-- themeToScss.js是一个node模块需要使用 module.exports 导出
 - 如果修改了用户配置的主题，需要重启编译才会让全局scss变量生效
 :::
 

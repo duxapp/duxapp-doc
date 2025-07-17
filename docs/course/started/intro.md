@@ -73,7 +73,7 @@ yarn duxapp app create moduleName 模块介绍
 创建新模块之后，需要配置 `src\moduleName\config\route.js`，配置的目的是将index页面指定为首页，详细配置见[路由配置](/docs/course/app/route)
 
 ```js
-const config = {
+export default {
   path: 'pages',
   pages: {
     'moduleName/index': {
@@ -96,8 +96,6 @@ const config = {
    */
   transfer: {},
 }
-
-module.exports = config
 ```
 配置保存之后，使用命令启动新模块
 
@@ -168,7 +166,7 @@ export default function Mall() {
  * subPackage:是否将其设置为分包
  * home: 是否是主页 是主页的页面将会被排在前面
  */
-const config = {
+export default {
   path: 'pages',
   pages: {
     'moduleName/index': {
@@ -196,9 +194,6 @@ const config = {
    */
   transfer: {},
 }
-
-module.exports = config
-
 ```
 注意此处的index里面不需要指定 `home: true` ，一个项目只需要一个主页  
 

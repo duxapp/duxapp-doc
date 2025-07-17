@@ -53,7 +53,7 @@ duxapp 一个模块化的开发框架，你的Taro项目迁移到duxapp框架中
  * subPackage:是否将其设置为分包
  * home: 是否是主页 是主页的页面将会被排在前面
  */
-const config = {
+export default {
   path: 'pages', // 你的所有页面存放的公共路径
   pages: {
     'myproject/index': {
@@ -74,8 +74,6 @@ const config = {
     }
   }
 }
-
-module.exports = config
 ```
 
 之后重要的一个步骤，你需要将你代码中的所有路由跳转中的路径修改为新的路径，你可以使用批量查找替换的方法进行修改，例如查找`pages/` 修改为 `myproject/pages/`

@@ -6,10 +6,10 @@ sidebar_position: 4
 
 这个脚本可以用来合并一些鸿蒙相关的 JSON 配置文件，或者创建文件等功能 
 
-每个模块都可用拥有自己的处理脚本，模块下 `update/harmony.js`，就是当前模块的处理文件，这个文件是node模块文件，需要用`module.exports`进行导出
+每个模块都可用拥有自己的处理脚本，模块下 `update/harmony.js`，就是当前模块的处理文件
 
 ```js
-module.exports = {
+export default  {
   
 }
 ```
@@ -17,7 +17,7 @@ module.exports = {
 当你需要用到当前的配置、或者打包的模块列表时，可以导出一个函数，从参数中获取到
 
 ```js
-module.exports = ({ config, apps, configName }) => {
+export default ({ config, apps, configName }) => {
   return {
 
   }
@@ -38,7 +38,7 @@ module.exports = ({ config, apps, configName }) => {
 用于创建当前不存在的文件，之前原生模块中有用到，给微信创建了两个文件
 
 ```js
-module.exports = () => {
+export default  () => {
   return {
     create: {
       '文件路径': '文件内容'
@@ -54,7 +54,7 @@ module.exports = () => {
 例如要添加一个网络权限，仅示例，这个权限默认已经添加
 
 ```js
-module.exports = () => {
+export default () => {
   return {
     json: {
       'entry/src/main/module.json5': {

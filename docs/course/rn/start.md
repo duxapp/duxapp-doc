@@ -52,7 +52,7 @@ yarn app --app=moduleName
 `configs/modeName/duxapp.rn.js`
 
 ```js
-const config = {
+export default {
   android: {
     appid: 'cn.duxapp.modulename',
     appName: 'APP名称',
@@ -66,9 +66,6 @@ const config = {
     versionName: '1.0.0',
   }
 }
-
-module.exports = config
-
 ```
 
 :::info
@@ -100,7 +97,7 @@ yarn duxapp android keystore --config=moduleName
 根据这个提示将配置内容配置如下
 
 ```js
-const config = {
+export default {
   android: {
     appid: 'cn.duxapp.modulename',
     appName: 'APP名称',
@@ -121,9 +118,6 @@ const config = {
     versionName: '1.0.0',
   }
 }
-
-module.exports = config
-
 ```
 ## 开始打包
 
@@ -252,7 +246,7 @@ export default config
 
 在`configs/moduleName/duxapp.rn.js` 也有对应的打包配置，当然这个配置只使用于ios打包，如果仅限安卓可以不配置,新增 `option.wechat` 配置
 ```js
-const config = {
+export default {
   android: {
     appid: 'cn.duxapp.modulename',
     appName: 'APP名称',
@@ -277,9 +271,6 @@ const config = {
     }
   }
 }
-
-module.exports = config
-
 ```
 
 配置完上述配置之后，需要重新执行打包流程
