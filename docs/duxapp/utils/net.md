@@ -21,9 +21,9 @@ option参数
 
 | 名称 | 类型 | 说明 |
 | ---- | ---- | ------- |
-| request | (option: string \| [RequestOption](#requestoption)) => [RequestTask](#requesttask) | 请求函数 |
-| throttleRequest | (option: [RequestOption](#requestoption), mark?: string) => ThrottleRequestTask | 发起一个节流请求函数 |
-| middle | [RequestMiddle](#requestmiddle) | 添加中间件 |
+| request() | (option: string \| [RequestOption](#requestoption)) => [RequestTask](#requesttask) | 请求函数 |
+| throttleRequest() | (option: [RequestOption](#requestoption), mark?: string) => ThrottleRequestTask | 发起一个节流请求函数 |
+| middle() | [RequestMiddle](#requestmiddle) | 添加中间件 |
 
 ### createUpload(option)
 
@@ -38,9 +38,9 @@ option参数
 
 | 名称 | 类型 | 说明 |
 | ---- | ---- | ------- |
-| upload | (type: enum('image', 'video', 'all'), option: [UploadOption](#uploadoption)) => [UploadTask](#uploadtask) | 上传图片或者视频 |
-| uploadTempFile | (files: [Upload.File](#uploadfile)[], option: [UploadOption](#uploadoption)) => [UploadTask](#uploadtask) | 上传临时文件 |
-| middle | [UploadMiddle](#uploadmiddle) | 添加中间件 |
+| upload() | (type: enum('image', 'video', 'all'), option: [UploadOption](#uploadoption)) => [UploadTask](#uploadtask) | 上传图片或者视频 |
+| uploadTempFile() | (files: [Upload.File](#uploadfile)[], option: [UploadOption](#uploadoption)) => [UploadTask](#uploadtask) | 上传临时文件 |
+| middle() | [UploadMiddle](#uploadmiddle) | 添加中间件 |
 
 ## hooks
 

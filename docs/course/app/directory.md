@@ -78,6 +78,10 @@ sidebar_position: 2
 要使用的依赖，数组类型，其中每一项都是其他模块名称，处理模块依赖时请不要出现循环依赖的情况，例如:  
 module2 -> module1 -> module2
 
+### installRequire
+
+值是一个模块名称，当这个配置的模块不存在的情况下，cli不会安装这个模块
+
 ### npm
 
 此项配置的内容和 `package.json` 完全一致，会将多个模块的配置合并到 `package.json` 中  
