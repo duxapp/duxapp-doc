@@ -66,6 +66,14 @@ export default function DateExample() {
 | ---- | -------- | ------- |
 | string | 否 | YYYY-MM-DD |
 
+### timestamp
+
+传入的value是否已时间戳的形式存在，如果为false，将已 format 为准
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
 ### mode
 
 :::danger Deprecated
