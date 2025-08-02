@@ -443,6 +443,16 @@ checkAll 是否检查全部表单项目 默认 true，传入false可以在检查
 | ---- | -------- | ------- |
 | [SchemaRuleType[]](https://github.com/PengJiyuan/b-validate) | 否 |  |
 
+### hidden
+
+控制表单是否隐藏，如果是一个函数，函数传入的参数是当前表单的值
+
+例如要根据另外一个后者多个表单的值，控制当前表单是否显示，就很有用
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean \| ((values: Values) => boolean) | 否 |  |
+
 ### field
 
 :::danger Deprecated
