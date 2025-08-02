@@ -1,5 +1,5 @@
 # 开始
-对接后端 [Dux Next](https://next.dux.cn/guide/start) 框架的模块，提供了请求方法
+对接后端 [Dux Next](https://github.com/duxweb/dux-lite) 框架的模块，提供了请求方法
 
 ## 安装
 

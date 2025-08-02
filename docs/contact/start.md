@@ -22,7 +22,7 @@ sidebar_position: 0
 
 我们根据你的需求，快速将需求落地实现，前端采用duxapp快速开发小程、H5或者APP
 
-后端将使用[DuxCms框架](https://next.dux.cn/)快速实现
+后端将使用[DuxCms框架](https://https://github.com)快速实现
 
 关于定制项目的更多细节，请查看我们的[官网](https://www.dux.cn/page/custom)
 

@@ -132,7 +132,7 @@ const config = {
             label: '问题反馈',
           },
           {
-            href: 'https://www.dux.cn/page/apps',
+            href: 'https://cloud.dux.plus/apps',
             label: '模块中心',
             position: 'right'
           },
@@ -206,7 +206,7 @@ const config = {
               },
               {
                 label: '模块中心',
-                href: 'https://www.dux.cn/page/apps',
+                href: 'https://cloud.dux.plus/apps',
               }
             ],
           },

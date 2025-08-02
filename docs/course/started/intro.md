@@ -51,7 +51,7 @@ yarn duxapp app add duxuiExample
 安装后执行命令编译 `duxuiExample` 这个模块  
 
 :::info
-首次执行此命令会要求登录，如果你没有账号，请前往[duxcms](https://www.dux.cn/)注册，登录仅用作模块的安装和发布
+首次执行此命令会要求登录，如果你没有账号，请前往[duxcms](https://cloud.dux.plus/apps)注册，登录仅用作模块的安装和发布
 
 请用手机号注册账号，暂不支持邮箱
 :::

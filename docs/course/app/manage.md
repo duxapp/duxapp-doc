@@ -21,9 +21,9 @@ sidebar_position: 3
 如果你的项目中没有duxui，他将会安装模块，如果你的项目中存在duxui，他将会更新模块 
 
 :::info
-- 使用更新命令需要先前往 [https://www.dux.cn/](https://www.dux.cn/) 注册账号，更新时会要求登录账号
+- 使用更新命令需要先前往 [https://cloud.dux.plus/apps](https://cloud.dux.plus/apps) 注册账号，更新时会要求登录账号
 - 注册账号当前仅支持手机号注册，请勿使用邮箱注册
-- 查看有哪些模块发布请前往 [dux 应用商店](https://www.dux.cn/page/apps?type=2)
+- 查看有哪些模块发布请前往 [dux 应用商店](https://cloud.dux.plus/apps?system=duxapp&page=1)
 :::
 
 ## 发布模块
@@ -33,13 +33,13 @@ sidebar_position: 3
 `yarn duxapp app publish modeName`  
 
 使用这个命令就可以发布模块，发布模块后，你的模块并不会直接发布上架，如果你是第一次发布模块，请前往
-[https://www.dux.cn/page/package/push](https://www.dux.cn/page/package/push)发布模块  
+[https://cloud.dux.plus/member/apps](https://cloud.dux.plus/member/apps)发布模块  
 
 模块和上架的应用并不是同一个概念，应用商店中你可以将多个模块打包为一个应用上架，具体可以在发布流程中查看，可以根据自己需求确认是否收费，未收费的应用所包含的模块，将会开放安装  
 
 如果仅上传未发布的模块，那么这个模块就是私有的，只有你一个人可用
 
 :::info
-- 使用更新命令需要先前往 [https://www.dux.cn/](https://www.dux.cn/) 注册账号，发布时会要求登录账号
+- 使用更新命令需要先前往 [https://cloud.dux.plus/apps](https://cloud.dux.plus/apps) 注册账号，发布时会要求登录账号
 - 注册账号当前仅支持手机号注册，请勿使用邮箱注册
 :::

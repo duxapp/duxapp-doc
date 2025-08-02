@@ -42,7 +42,7 @@ duxapp app add duxui
 在安装`duxui`模块的同时会把`duxapp`模块也更新  
 
 :::info
-发布模块会需要在[https://www.dux.cn/](https://www.dux.cn/)注册账号，并登录
+发布模块会需要在[https://cloud.dux.plus/apps](https://cloud.dux.plus/apps)注册账号，并登录
 :::
 
 #### app update
@@ -67,8 +67,8 @@ duxapp app add 模块名称
 duxapp app add 模块名称 1
 ```
 :::info
-- 发布模块后需要前往[https://www.dux.cn/](https://www.dux.cn/)继续发布应用，提交上架，否则，发布的模块仅有自己能安装
-- 发布模块会需要在[https://www.dux.cn/](https://www.dux.cn/)注册账号，并登录
+- 发布模块后需要前往[https://cloud.dux.plus/apps](https://cloud.dux.plus/apps)继续发布应用，提交上架，否则，发布的模块仅有自己能安装
+- 发布模块会需要在[https://cloud.dux.plus/apps](https://cloud.dux.plus/apps)注册账号，并登录
 :::
 
 #### app create

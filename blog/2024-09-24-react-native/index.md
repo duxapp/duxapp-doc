@@ -330,7 +330,7 @@ yarn duxapp app add wechat
 }
 ```
 
-还有更多的模块，请前往应用商店查看 [https://www.dux.cn/page/apps](https://www.dux.cn/page/apps)
+还有更多的模块，请前往应用商店查看 [https://cloud.dux.plus/apps](https://cloud.dux.plus/apps)
 
 ## 总结
 
