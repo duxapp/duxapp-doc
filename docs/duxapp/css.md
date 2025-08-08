@@ -14,70 +14,6 @@ duxapp模块提供了全局样式，可以用于快速布局，如果你还不�
 下面是duxapp模块中的全局样式
 
 ```css
-/*  #ifdef h5  */
-taro-view-core,
-.swiper-wrapper .swiper-slide {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-style: solid;
-  border-width: 0;
-}
-
-input,
-textarea,
-taro-view-core,
-taro-swiper-item-core {
-  box-sizing: border-box;
-}
-
-taro-view-core,
-taro-text-core {
-  line-height: 1;
-}
-
-taro-image-core {
-  width: auto;
-  height: auto;
-}
-
-/*  #endif  */
-/*  #ifndef rn h5 harmony  */
-view,
-swiper-item {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-style: solid;
-  border-width: 0;
-}
-
-input,
-textarea,
-view,
-swiper-item {
-  box-sizing: border-box;
-}
-
-view,
-text {
-  line-height: 1;
-}
-
-/*  #endif  */
-
-/*  #ifdef h5  */
-taro-input-core {
-  position: relative;
-
-  input {
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-  }
-}
-
-/*  #endif  */
 
 /*  #ifdef weapp qq  */
 .button-clean {
@@ -648,8 +584,21 @@ taro-input-core {
   background-color: $duxappPageColor;
 }
 
+.bg-mask-1 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bg-mask-2 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bg-mask-3 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 // 其他
 .square {
   aspect-ratio: 1;
 }
+
 ```
