@@ -110,9 +110,11 @@ export default function FormExample() {
 
 表单改变事件
 
+第二个回调参数，传入一个key表示是哪个表单正在更改
+
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| `(values: object) => void` | 否 |  |
+| `(values: object, key: string | num) => void` | 否 |  |
 
 ### onSubmit
 
@@ -452,6 +454,14 @@ checkAll 是否检查全部表单项目 默认 true，传入false可以在检查
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | boolean \| ((values: Values) => boolean) | 否 |  |
+
+### number
+
+是否将输入的值转换为数字
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 |  |
 
 ### field
 

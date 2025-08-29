@@ -122,6 +122,15 @@ export default function CheckboxExample() {
 | ---- | -------- | ------- |
 | boolean | 否 | false |
 
+### onCheck
+
+可以作为单个表单组件使用，返回新的值
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| (checked: boolean) => void | 否 | false |
+
+
 ## CheckboxGroup Props
 
 将Checkbox选项放在 `CheckboxGroup` 中，将他们组成一个表单项
@@ -167,3 +176,11 @@ export default function CheckboxExample() {
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | boolean | 否 | false |
+
+### max
+
+最多允许选中的项目，默认不限制
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| number | 否 | |

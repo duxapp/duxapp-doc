@@ -149,3 +149,11 @@ export default function RadioExample() {
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | boolean | 否 | false |
+
+### cancel
+
+允许取消选择
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | |

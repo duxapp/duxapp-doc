@@ -236,6 +236,14 @@ export default function TabExample() {
 | ---- | -------- | ------- |
 | [SwiperProps](https://nervjs.github.io/taro-docs/docs/components/viewContainer/swiper#swiperprops) | 否 |  |
 
+### renderEnd
+
+要在Tab的右侧渲染的内容
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| ReactElement | 否 | |
+
 ### tabStyle
 
 tab的样式
