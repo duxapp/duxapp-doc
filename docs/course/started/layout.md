@@ -101,7 +101,7 @@ div span {
 
 ## 使用全局样式布局
 
-模块的 [app.scss](/docs/course/app/directory#appscss) 提供了编写全局样式的地方，我们在基础模块(duxapp)的全局样式中导出了很多用于布局使用的全局样式，你可以在这个文档末尾查询到，用这些全局样式书写起来就类似于[`tailwindcss`](https://www.tailwindcss.cn/)一样
+模块的 [app.scss](/docs/course/app/directory#appscss) 提供了编写全局样式的地方，我们在基础样式模块(duxappStyle)的全局样式中导出了很多用于布局使用的全局样式，你可以在这个文档末尾查询到，用这些全局样式书写起来就类似于[`tailwindcss`](https://www.tailwindcss.cn/)一样
 
 ```jsx
 import { View, Text } from '@tarojs/components'

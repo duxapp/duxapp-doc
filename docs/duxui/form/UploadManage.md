@@ -10,7 +10,7 @@ sidebar_position: 13
 
 ## 示例
 
-此元器件需要上传驱动，暂时无法提供演示
+此组件需要上传驱动，暂时无法提供演示
 
 ```jsx
 import { Header, ScrollView, TopView, Form, FormItem, Card, Divider, DividerGroup, UploadManage } from '@/duxuiExample'

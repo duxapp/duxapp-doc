@@ -110,6 +110,17 @@ export default function ConfirmExample() {
 | confirmText | string | 否 | 确认按钮文本 |
 | renderTop | ReactElement | 否 | 显示在整个弹框的上面 |
 | renderBottom | ReactElement | 否 | 显示在整个弹框的下面 |
+| extraMenu | ExtraMenu | 否 | 扩展菜单，通过配置可以显示3个按钮 |
+
+### ExtraMenu
+
+扩展菜单参数说明
+
+| 名称 | 类型 | 必填 | 说明 |
+| ---- | -------- | ------- | ------- |
+| name | string | 是 | 按钮名称 |
+| callback | () => void | 是 | 点击按钮时执行的回调函数 |
+| type | 'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger' \| 'custom1' \| 'custom2' \| 'custom3' | 否 | 按钮样式 |
 
 ## 返回值
 

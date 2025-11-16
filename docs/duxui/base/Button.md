@@ -14,7 +14,9 @@ import { Preview } from '@site/src/components/Preview'
 ```jsx
 import { Button, Header, ScrollView, TopView, GroupList, Space, duxappTheme } from '@/duxuiExample'
 
+
 export default function ButtonExample() {
+
   return <TopView>
     <Header title='Button' />
     <ScrollView>
@@ -24,6 +26,31 @@ export default function ButtonExample() {
         </GroupList.Item>
         <GroupList.Item title='镂空按钮'>
           <Button plain type='primary'>按钮</Button>
+        </GroupList.Item>
+        <GroupList.Item title='柔和填充（soft）'>
+          <Space row>
+            <Button soft type='primary'>主色 soft</Button>
+            <Button soft type='success'>成功 soft</Button>
+            <Button soft type='warning'>警告 soft</Button>
+          </Space>
+        </GroupList.Item>
+        <GroupList.Item title='柔和填充 + 自定义颜色'>
+          <Space row>
+            <Button soft color='#e91e63'>粉色 soft</Button>
+            <Button soft color='#333'>深灰 soft</Button>
+          </Space>
+        </GroupList.Item>
+        <GroupList.Item title='soft 与 plain 对比'>
+          <Space row>
+            <Button plain type='primary'>plain</Button>
+            <Button soft type='primary'>soft</Button>
+          </Space>
+        </GroupList.Item>
+        <GroupList.Item title='soft + plain 同时生效'>
+          <Space row>
+            <Button soft plain type='primary'>主色 soft+plain</Button>
+            <Button soft plain color='#e91e63'>自定义色 soft+plain</Button>
+          </Space>
         </GroupList.Item>
         <GroupList.Item title='使用渐变'>
           <Space>
@@ -121,6 +148,24 @@ export default function ButtonExample() {
 ### plain
 
 是否镂空效果，这个效果有边框和文本，背景透明，当为渐变是此属性不会生效
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
+### soft
+
+柔和填充效果：无边框，背景为当前文本颜色减淡后的颜色（约0.9）
+
+类似 plain，但带有浅色背景；可与 plain 同时使用（此时会显示边框）
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
+### bold
+
+是否加粗文字
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

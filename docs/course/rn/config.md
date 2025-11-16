@@ -101,7 +101,7 @@ cli提供了一个快捷命令用于创建证书`yarn duxapp android keystore --
 用于替换默认的 gradle 下载地址
 
 默认值为
-`https\://services.gradle.org/distributions/gradle-8.8-all.zip`
+`https://services.gradle.org/distributions/gradle-8.14.1-bin.zip`
 
 ### xml
 用于合并xml文件，他的配置和 [合并创建xml](package-update#xml-合并创建xml) 一致

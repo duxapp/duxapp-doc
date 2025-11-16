@@ -251,14 +251,6 @@ reloadForShow={{
 | ---- | -------- | ------- |
 | string | 否 | 暂无数据 |
 
-### onEmptyClick
-
-未指定renderEmpty时 空内容的点击事件
-
-| 类型 | 必填 | 默认值 |
-| ---- | -------- | ------- |
-| () => void | 否 |  |
-
 ### ref
 
 usePageData 的 action 回调  
