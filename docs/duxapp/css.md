@@ -381,6 +381,38 @@ duxapp模块提供了全局样式，可以用于快速布局，如果你还不�
   border-color: $duxappWarningColor;
 }
 
+.border-page {
+  border-color: $duxappPageColor;
+}
+
+.border-c1 {
+  border-color: $duxappTextColor1;
+}
+
+.border-c2 {
+  border-color: $duxappTextColor2;
+}
+
+.border-c3 {
+  border-color: $duxappTextColor3;
+}
+
+.border-c4 {
+  border-color: $duxappTextColor4;
+}
+
+.border-custom1 {
+  border-color: $duxappCustomColor1;
+}
+
+.border-custom2 {
+  border-color: $duxappCustomColor2;
+}
+
+.border-custom3 {
+  border-color: $duxappCustomColor3;
+}
+
 // 边框宽度
 .border-w1 {
   border-width: 2px;
@@ -406,6 +438,10 @@ duxapp模块提供了全局样式，可以用于快速布局，如果你还不�
 
 .p-3 {
   padding: 24px;
+}
+
+.p-4 {
+  padding: 32px;
 }
 
 .pv-1 {
@@ -584,6 +620,18 @@ duxapp模块提供了全局样式，可以用于快速布局，如果你还不�
   background-color: $duxappPageColor;
 }
 
+.bg-custom-1 {
+  background-color: $duxappCustomColor1;
+}
+
+.bg-custom-2 {
+  background-color: $duxappCustomColor2;
+}
+
+.bg-custom-3 {
+  background-color: $duxappCustomColor3;
+}
+
 .bg-mask-1 {
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -594,6 +642,14 @@ duxapp模块提供了全局样式，可以用于快速布局，如果你还不�
 
 .bg-mask-3 {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.shadow {
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-white {
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.1);
 }
 
 // 其他

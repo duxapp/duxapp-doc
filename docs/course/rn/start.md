@@ -178,11 +178,12 @@ yarn build:android --app=moduleName
 
 ## 使用其他原生模块
 
-当你需要使用第三方原生插件时，`duxapp` 框架也提供了较为简单的方式，以微信(wechat)插件为例  
-这个插件在rn上集成的是 `react-native-wechat-lib` ，可以实现登录、分享、支付等功能  
-在H5端集成的是 `wechat-jssdk` 实现jssdk相关的功能  
+当你需要使用第三方原生插件时，`duxapp` 框架也提供了较为简单的方式，以微信插件为例：
 
-只需要在模块配置文件中新增模块依赖，将 `wechat` 添加到 `dependencies` 中
+- RN 端集成的是 `expo-wechat`，可实现登录/支付/分享/跳转小程序等能力
+- 跨端分享封装使用 `duxappWechatShare`（H5 端内部集成 `wechat-jssdk`）
+
+只需要在模块配置文件中新增模块依赖，将 `expo-wechat`（必需）与 `duxappWechatShare`（可选）添加到 `dependencies` 中
 
 ```json
 {
@@ -193,12 +194,13 @@ yarn build:android --app=moduleName
     "duxapp",
     "duxui",
     "duxappReactNative",
-    "wechat"
+    "expo-wechat",
+    "duxappWechatShare"
   ]
 }
 ```
 
-微信模块还需要配置appid等参数，在`configs/moduleName/index.js` 文件中配置如下,新增 `option.wechat` 配置
+微信模块还需要配置 appid 等参数，在`configs/moduleName/index.js` 文件中配置如下，新增 `option['expo-wechat']` 配置
 
 ```js
 const config = {
@@ -229,14 +231,12 @@ const config = {
         }
       },
     },
-    // 新增此处的配置
-    wechat: {
-      app: {
-        appid: 'wxxxxxxxxxx',
-        // 此配置在ios上使用，安卓端无用
-        universalLink: 'https://www.duxapp.com/app/'
-      }
-    },
+    // 新增此处的配置（微信基础能力）
+    'expo-wechat': {
+      appid: 'wx1234567890',
+      // iOS 使用（用于微信回跳）
+      universalLink: 'https://www.duxapp.com/app/'
+    }
   }
 }
 
@@ -244,7 +244,7 @@ export default config
 
 ```
 
-在`configs/moduleName/duxapp.rn.js` 也有对应的打包配置，当然这个配置只使用于ios打包，如果仅限安卓可以不配置,新增 `option.wechat` 配置
+在`configs/moduleName/duxapp.rn.js` 也有对应的打包配置，当然这个配置只使用于ios打包，如果仅限安卓可以不配置，新增 `option['expo-wechat']` 配置
 ```js
 export default {
   android: {
@@ -266,8 +266,12 @@ export default {
     versionName: '1.0.0',
   },
   option: {
-    wechat: {
-      appid: 'wxxxxxxxxxx'
+    'expo-wechat': {
+      appid: 'wx1234567890',
+      // iOS Universal Link（用于微信回跳）
+      universalLink: 'https://example.com/app/',
+      // iOS associated domains 域名（不带 https://）
+      applinks: 'example.com',
     }
   }
 }
@@ -283,13 +287,11 @@ yarn android --app=moduleName
 
 官方还提供了一些常用的原生模块，一看参考文档使用
 
-- [alipay 支付宝](/docs/app/unionpay/start)
+- [alipay 支付宝](/docs/app/alipay/start)
 - [amap 高德地图](/docs/app/amap/start)
 - bootsplash app启动图
-- [codepush 热更新](/docs/app/codepush/start)
 - duxpush 厂商通道的消息推送
 - [echarts 百度图表](/docs/app/echarts/start)
-- [unionpay 云闪付](/docs/app/alipay/start)
 - [wechat 微信](/docs/app/wechat/start)
 
 ## 自己集成第三方插件

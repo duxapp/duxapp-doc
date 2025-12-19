@@ -83,9 +83,6 @@ app版本号
 ``` 
 cli提供了一个快捷命令用于创建证书`yarn duxapp android keystore --config=配置名称` 创建后，会在命令行输出这个配置的内容，复制这个内容设置到此配置
 
-### fabricEnabled
-是否开启新架构，默认是开启的，如果需要关闭，请配置为false
-
 ### enableProguardInReleaseBuilds
 开启`Proguard`打包，默认是开启的，请配置正确的`Proguard`，如需关闭请设置为`false`，关闭后app的体积会有所增大
 
@@ -122,9 +119,6 @@ app版本号
 
 ### team
 项目团队，配置后用于打包
-
-### fabricEnabled
-是否开启新架构，默认是开启的，如果需要关闭，请配置为false
 
 ### plist
 用于合并plist文件，他的配置和 [plist-配置合并](package-update#plist-配置合并) 一致

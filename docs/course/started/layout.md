@@ -522,6 +522,38 @@ px方法是 Taro.pxTransform 的简写，为了看起来更简洁一些，并且
   border-color: $duxappWarningColor;
 }
 
+.border-page {
+  border-color: $duxappPageColor;
+}
+
+.border-c1 {
+  border-color: $duxappTextColor1;
+}
+
+.border-c2 {
+  border-color: $duxappTextColor2;
+}
+
+.border-c3 {
+  border-color: $duxappTextColor3;
+}
+
+.border-c4 {
+  border-color: $duxappTextColor4;
+}
+
+.border-custom1 {
+  border-color: $duxappCustomColor1;
+}
+
+.border-custom2 {
+  border-color: $duxappCustomColor2;
+}
+
+.border-custom3 {
+  border-color: $duxappCustomColor3;
+}
+
 // 边框宽度
 .border-w1 {
   border-width: 2px;
@@ -547,6 +579,10 @@ px方法是 Taro.pxTransform 的简写，为了看起来更简洁一些，并且
 
 .p-3 {
   padding: 24px;
+}
+
+.p-4 {
+  padding: 32px;
 }
 
 .pv-1 {
@@ -725,6 +761,18 @@ px方法是 Taro.pxTransform 的简写，为了看起来更简洁一些，并且
   background-color: $duxappPageColor;
 }
 
+.bg-custom-1 {
+  background-color: $duxappCustomColor1;
+}
+
+.bg-custom-2 {
+  background-color: $duxappCustomColor2;
+}
+
+.bg-custom-3 {
+  background-color: $duxappCustomColor3;
+}
+
 .bg-mask-1 {
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -735,6 +783,14 @@ px方法是 Taro.pxTransform 的简写，为了看起来更简洁一些，并且
 
 .bg-mask-3 {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.shadow {
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-white {
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.1);
 }
 
 // 其他

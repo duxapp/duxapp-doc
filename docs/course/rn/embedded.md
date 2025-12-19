@@ -13,9 +13,6 @@ sidebar_position: 6
 - reactNativeArchitectures  
 需要打包哪些架构的apk 为了提成打包速速，默认为 arm64-v8a
 
-- fabricEnabled  
-true 或者 false，默认true，是否启用新架构，此项一般通过配置更新，请勿通过更新程序更新
-
 - hermesEnabled  
 true 或者 false，默认true，是否开启hermes，此项一般通过配置更新，请勿通过更新程序更新
 
@@ -66,9 +63,6 @@ gradle 下载地址，此项一般通过配置更新，请勿通过更新程序�
 ### ios/.xcode.env
 
 此文件是cli定制环境变量，其中添加的环境变量用于在pod安装时使用
-
-- fabricEnabled  
-开启新架构
 
 ### ios/duxapp.xcodeproj/project.pbxproj
 - versionCode  
@@ -203,14 +197,6 @@ post_install 的结束位置
 
 - content  
 添加env内容
-
-### ios/duxapp/BridgingHeader.h
-
-- import  
-依赖导入位置
-
-- content  
-放内容位置
 
 ### ios/duxapp/AppDelegate.swift
 
