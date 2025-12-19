@@ -103,6 +103,14 @@ export default function TextareaExample() {
 | ---- | -------- | ------- |
 | enum('left', 'center', 'right') | 否 | left |
 
+### white
+
+使用浅色背景样式，适合深色容器内保持对比度
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
 ### onChange
 
 值变化回调函数

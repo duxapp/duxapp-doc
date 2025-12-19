@@ -159,6 +159,8 @@ export default function ButtonExample() {
 
 类似 plain，但带有浅色背景；可与 plain 同时使用（此时会显示边框）
 
+在暗色主题下会自动调整为稍深的底色以保持对比度
+
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | boolean | 否 | false |

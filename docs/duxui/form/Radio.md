@@ -80,6 +80,14 @@ export default function RadioExample() {
 | ---- | -------- | ------- |
 | any | 否 |  |
 
+### type
+
+选中态的主题类型，默认主色，可选与 Button/Checkbox 一致的内置色系
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| enum('primary', 'secondary', 'success', 'warning', 'danger') | 否 | primary |
+
 ### checked
 
 如果单独使用 Radio 可以用这个属性控制是否选中

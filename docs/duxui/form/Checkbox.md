@@ -98,6 +98,14 @@ export default function CheckboxExample() {
 | ---- | -------- | ------- |
 | any[] | 否 |  |
 
+### type
+
+勾选图标和选中态的主题类型，默认主色，可与 `CheckboxGroup` 保持一致
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| enum('primary', 'secondary', 'success', 'warning', 'danger') | 否 | primary |
+
 ### checked
 
 如果单独使用 Checkbox 可以用这个属性控制是否选中

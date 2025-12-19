@@ -15,6 +15,28 @@ sidebar_position: 11
 npx duxapp-cli create 项目名称
 ```
 
+## 项目配置
+
+在项目根目录下创建可选的 `duxapp.config.js` 文件来自定义 CLI 行为，例如：
+
+```js
+export default {
+  install: {
+    // `install.allModuleDependencies`
+    // 将所有模块（包括未参与当前编译的模块）的 package.json 依赖写入根 package.json
+    allModuleDependencies: true
+  }
+}
+```
+
+### install.allModuleDependencies
+
+设为 `true` 后，任意命令在生成运行时文件并执行依赖安装时，都会聚合 `src` 目录下所有模块的依赖项。这样在不同命令之间切换时无需重复安装慢速依赖；默认情况下仅安装当前入口模块及其依赖模块所需的包。
+
+:::info
+如果是RN端，不太建议使用，因为某些插件被安装进来即便不使用，他也会产生副作用导致bug或者奇怪的问题
+:::
+
 ## 支持的命令列表
 
 ### create 项目初始化

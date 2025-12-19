@@ -418,3 +418,7 @@ const res = await backData()
 - **next** (`() => void`): 获取下一页数据
 - **reload** (`() => Promise<{}>`): 跳转到第一个页并重新加载数据
 - **setList** (`(value: any[] | ((oldState: any[]) => any[])) => void`): 设置列表数据，`useState` 返回的第二个值
+
+:::info
+从本次版本起，下拉刷新只在用户手势触发或你显式调用 `action.reload()` 时生效，不再在组件内部自动触发。
+:::
