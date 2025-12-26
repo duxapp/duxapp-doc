@@ -97,9 +97,14 @@ const Item = ({ item, index, action }) => {
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| string | 是 |  |
+| string | 否 |  |
 
 和request的url相同
+
+当 `url` 为空时：
+
+- 不会发起请求（`usePageData` 的 `ready` 会自动变为 `false`）
+- 不会触发下拉刷新与上拉加载（分页相关逻辑会自动关闭）
 
 ### renderItem
 
@@ -116,6 +121,14 @@ const Item = ({ item, index, action }) => {
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | object | 否 |  |
+
+### listData
+
+直接指定列表数据（优先级高于内部请求返回的列表），常用于“只渲染列表，不由 List 发起请求”的场景
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| any[] | 否 |  |
 
 ### requestOption
 

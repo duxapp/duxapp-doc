@@ -58,6 +58,12 @@ export default function ThemeExample() {
 
 你可以直接调用项目的 switch() 切换到当前主题
 
+### getMode(saveMode)
+
+获取当前正在使用的主题（非 Hook 版本）
+
+如果 `saveMode` 传入 `true`，是获取当前“保存的主题”（跟随系统时会返回 `null`）；如果不传这个参数，会返回“真实生效的主题”
+
 ### useMode(saveMode)
 
 获取当前使用的主题
@@ -67,6 +73,12 @@ export default function ThemeExample() {
 ### setMode(mode)
 
 切换主题 如果传入 `null` 则是切换为跟随系统 或者 自动选择
+
+### onChange(callback)
+
+监听“真实生效主题”变化（非保存的 `mode`）
+
+返回一个对象，调用 `remove()` 可取消监听
 
 ### isDark(mode)
 

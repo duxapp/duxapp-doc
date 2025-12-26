@@ -102,7 +102,7 @@ MyData.getInstance().merge({ test: 1 })
 | ---- | ---- | -------- | ------- | ------- |
 | cache | boolean | 否 | false | 是否开启缓存 |
 | cacheKey | string | 否 |  | 保存到本地缓存中用的key |
-| cacheSync | boolean | 否 |  | 同步获取本地缓存 仅小程序 H5支持（警告：请只把少量的重要数据使用同步获取，例如获取用户信息，不然会导致启动缓慢） |
+| cacheSync | boolean | 否 |  | 同步获取本地缓存（小程序 / H5 / RN 支持；警告：请只把少量的重要数据使用同步获取，例如获取用户信息，不然会导致启动缓慢） |
 | defaultData | object | 否 |  | 默认data, 如果要设置默认数据，特别是cacheSync为true的情况下，一定要通过 defaultData 指定默认数据 而不是在当前类直接指定data |
 
 ### set(data)
