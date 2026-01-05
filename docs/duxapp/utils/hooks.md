@@ -68,3 +68,19 @@ useEffect(() => {
 - 需要特别注意的是，如果你传入一个未使用 useCallback 包装的函数，那么这个hook将会失效，一般请不要传入函数，除非你知道你该怎么做
 - 对于一些复杂对象，存在循环引用的也不要传入
 :::
+
+### usePageShow()
+
+返回当前页面是否处于显示状态（`useDidShow` / `useDidHide`）
+
+| 返回值 | 类型 | 说明 |
+| ---- | ---- | ------- |
+| show | boolean | 是否显示 |
+
+### useWindowInfo()
+
+返回当前窗口信息，并在窗口大小变化时自动更新（页面隐藏时不监听）
+
+| 返回值 | 类型 | 说明 |
+| ---- | ---- | ------- |
+| info | object | window 信息（与 Taro 的 window/system info 结构一致） |

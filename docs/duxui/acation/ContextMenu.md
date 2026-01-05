@@ -85,7 +85,7 @@ showContextMenu(option) 的 `option` 参数内容如下
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
-| string[] \| \{ name: string, children?: list \}  | 是 |  |
+| string[] \| \{ name: string, props?: TextProps, callback?: () => any, children?: list \}[]  | 是 |  |
 
 支持显示子菜单
 
@@ -97,7 +97,7 @@ const { item } = await showContextMenu({
     { name: '菜单1', callback: () => console.log('点击菜单1') },
     {
       name: '菜单2', children: [
-        { name: '子菜单1', callback: () => console.log('点击子菜单1') },
+        { name: '子菜单1', props: { color: 2 }, callback: () => console.log('点击子菜单1') },
         { name: '子菜单2', callback: () => console.log('点击子菜单2') }
       ]
     }
@@ -106,6 +106,8 @@ const { item } = await showContextMenu({
 
 item.callback()
 ```
+
+其中 `props` 会透传给菜单文本（`TextProps`），可用于设置颜色、字体等样式。
 
 ### animation
 

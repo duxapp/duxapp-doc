@@ -92,6 +92,14 @@ export default TopView.page(function TopViewExample() {
 | ---- | -------- | ------- |
 | boolean | 否 | false |
 
+### pageMetaProps
+
+传递给小程序端专用组件 `page-meta` 的属性
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| PageMetaProps | 否 |  |
+
 ## 方法
 
 ### page(comp, option)

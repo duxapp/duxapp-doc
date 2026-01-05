@@ -110,6 +110,16 @@ export default function RadioExample() {
 
 继承自[SpaceProps](../layout/Space#props)
 
+### multiple
+
+是否多选
+
+开启后 `value` / `defaultValue` / `onChange` 将变成数组结构
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
 ### value
 
 选中值

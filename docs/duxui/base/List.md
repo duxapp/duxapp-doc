@@ -198,6 +198,17 @@ reloadForShow={{
 | ---- | -------- | ------- |
 | boolean 或 [ReloadForShow](#reloadforshow-1) | 否 | false |
 
+### reloadType
+
+控制列表刷新的行为（用于 `reloadForShow` 和下拉刷新）
+
+- `first`：刷新到第一页（默认）
+- `top`：仅当滚动接近顶部时才刷新（scrollTop < 100）
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| enum('first', 'top') | 否 | first |
+
 ### option
 
 传给 usePageData 的第二个参数

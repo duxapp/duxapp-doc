@@ -162,6 +162,32 @@ export default function TabBarExample() {
 | ---- | -------- | ------- |
 | (select: number) => void | 否 |  |
 
+### floating
+
+悬浮模式
+
+开启后，TabBar 会悬浮在底部（或左侧），建议手动给 TabBar 设置一个宽度
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| boolean | 否 | false |
+
+### position
+
+显示位置
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| enum('bottom', 'left') | 否 | bottom |
+
+### defaultIndex
+
+默认展示的页面 index
+
+| 类型 | 必填 | 默认值 |
+| ---- | -------- | ------- |
+| number | 否 | 0 |
+
 ### children
 
 子元素，这里面只能放入 `TabBar.Item` 的实例
@@ -195,6 +221,18 @@ export default function TabBarExample() {
 | name | 类型 | 说明 |
 | ---- | -------- | ------- |
 | index | number | 要切换到的index |
+
+### setVisible(visible)
+
+设置 TabBar 显示/隐藏（带动画）
+
+| name | 类型 | 说明 |
+| ---- | -------- | ------- |
+| visible | boolean | 是否显示 |
+
+### visible
+
+当前显示状态（只读）
 
 ### setNumber(index, number)
 
