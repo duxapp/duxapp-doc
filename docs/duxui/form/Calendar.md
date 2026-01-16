@@ -244,3 +244,21 @@ export default function ButtonExample() {
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |
 | CalendarSelect | 否 |  |
+
+## 静态方法
+
+### Calendar.getMonthWeekForDay(day)
+
+计算日期所在的年月周，返回 `[year, month, week]`
+
+### Calendar.getWeekScopeForDay(day)
+
+计算日期所在周的开始/结束日期，返回 `[start, end]`
+
+### Calendar.getMouthScopeForDay(day)
+
+计算日期所在月的开始/结束日期，返回 `[start, end]`
+
+### Calendar.checkDatesOverlap(range1, range2)
+
+检查两个日期范围是否重叠

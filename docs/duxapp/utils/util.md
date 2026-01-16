@@ -18,6 +18,25 @@ sidebar_position: 9
 
 判断是不是有下巴的设备
 
+### getBottomSafeAreaHeight()
+
+获取底部安全区域高度（屏幕底部不可用的那部分）
+
+返回值
+
+| 名称 | 类型 | 说明 |
+| ---- | ---- | ------- |
+| height | number | 底部安全区域高度 |
+
+### isDesktop(options)
+
+判断是否为桌面端
+
+| 名称 | 类型 | 说明 |
+| ---- | ---- | ------- |
+| options | object | 可选参数 |
+| options.includeIPad | boolean | 将 iPad 视为桌面端 |
+
 ### asyncTimeOut(time)
 
 对setTimeout的Promise封装

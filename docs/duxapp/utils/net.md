@@ -119,9 +119,15 @@ option参数
 - **config** ([`RequestConfig`](#requestconfig)): 请求配置，用于覆盖默认配置
 - **middle** (`middle`): 中间件，用于覆盖默认配置的中间件
 
+支持直接透传 `Taro.request` 的其他参数（如 `dataType`、`responseType`、`enableChunked` 等），内部会覆盖 `url`/`data`/`header`/`method`/`timeout`。
+
 ### RequestTask
 
 - **abort** (`() => void`): 取消请求
+- **onHeadersReceived** (`(callback: (res: any) => void) => void`): 监听响应头事件（仅小程序）
+- **offHeadersReceived** (`(callback?: (res: any) => void) => void`): 取消监听响应头事件（仅小程序）
+- **onChunkReceived** (`(callback: (res: any) => void) => void`): 监听分片数据事件（仅小程序）
+- **offChunkReceived** (`(callback?: (res: any) => void) => void`): 取消监听分片数据事件（仅小程序）
 
 ### RequestMiddle
 
@@ -143,6 +149,13 @@ option参数
   - **common**: 是否用在全局
   - **返回值**: 包含 `remove` 方法，用于移除中间件
 
+`middle` 支持的写法：
+
+- `callback`
+- `[callback, sort]`
+- `[callback, 'only']`（仅使用该中间件，忽略默认和全局）
+- 上述格式的数组
+
 ### UploadMiddles
 
 - **before** (`(((requestParams: { url: string, contentType: string, query: object, body: object | null, header: object, method: keyof Request.method, timeout: number }, params: Request.RequestOption) => object | Promise<object>) => void)[]`) 请求参数中间件，在发起请求之前将处理过的请求参数传入
@@ -150,6 +163,13 @@ option参数
 - **result** (`(((result: object, params: Request.RequestOption) => object | Promise<object>) => void)[]`) 处理请求结果的中间件
 
 - **error** (`(((error: { code: number, message: string } | object, params: Request.RequestOption) => object | Promise<object>) => void)[]`) 处理请求错误的中间件
+
+`middle` 支持的写法：
+
+- `callback`
+- `[callback, sort]`
+- `[callback, 'only']`（仅使用该中间件，忽略默认和全局）
+- 上述格式的数组
 
 ### UploadOption
 
