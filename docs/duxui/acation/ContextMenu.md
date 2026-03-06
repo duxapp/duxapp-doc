@@ -87,6 +87,8 @@ showContextMenu(option) 的 `option` 参数内容如下
 | ---- | -------- | ------- |
 | string[] \| \{ name: string, props?: TextProps, callback?: () => any, children?: list \}[]  | 是 |  |
 
+当菜单项较多时，菜单会自动限制在屏幕高度内并启用纵向滚动。
+
 支持显示子菜单
 
 ```js

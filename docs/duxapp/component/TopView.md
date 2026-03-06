@@ -94,7 +94,7 @@ export default TopView.page(function TopViewExample() {
 
 ### pageMetaProps
 
-传递给小程序端专用组件 `page-meta` 的属性
+传递给 `PageMeta` 的属性。小程序端完整透传 `page-meta` 属性；RN 端支持 `pageOrientation`（`portrait` \| `landscape`），横屏时会自动隐藏状态栏，并在页面卸载时恢复原有方向锁定。
 
 | 类型 | 必填 | 默认值 |
 | ---- | -------- | ------- |

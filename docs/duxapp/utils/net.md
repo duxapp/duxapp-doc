@@ -52,7 +52,7 @@ option参数
 
 | 名称 | 类型 | 说明 |
 | ---- | ---- | ------- |
-| option | [RequestOption](#requestoption) | 请求参数 |
+| option | string \| [RequestOption](#requestoption) | 请求参数 |
 | config | [UseRequestOption](#userequestoption) | hook配置 |
 
 返回值 [UseRequestResult](#userequestresult)
@@ -63,7 +63,7 @@ option参数
 
 | 名称 | 类型 | 说明 |
 | ---- | ---- | ------- |
-| option | [RequestOption](#requestoption) | 请求参数 |
+| option | string \| [RequestOption](#requestoption) | 请求参数 |
 | config | [UsePageDataOption](#usepagedataoption) | hook配置 |
 
 返回值 [UsePageDataResult](#usepagedataresult)
@@ -233,7 +233,7 @@ option参数
 ### UseRequestResult
 
 - **loading** (`boolean`): 是否正在请求数据
-- **reload** (`() => Promise<{ }>`): 重新加载数据
+- **reload** (`(option?: string | Omit<RequestOption, 'config' | 'middle'>) => Promise<{ }>`): 重新加载数据，可传入临时请求参数覆盖初始参数（`data`/`header` 为一层合并，其余字段为浅覆盖；不支持临时传入 `config`/`middle`）
 - **setData** (`(value: any | ((old: any) => any)) => void`): 同 `useState()` 返回的第二个参数
   - **value**: 要设置的数据或更新数据的函数
 
@@ -253,6 +253,6 @@ option参数
 - **loading** (`boolean`): 是否正在请求数据
 - **refresh** (`boolean`): 是否正在下拉刷新
 - **next** (`() => void`): 获取下一页数据
-- **reload** (`() => Promise<{}>`): 跳转到第一个页并重新加载数据
+- **reload** (`(option?: string | Omit<RequestOption, 'config' | 'middle'>) => Promise<{}>`): 跳转到第一个页并重新加载数据，可传入临时请求参数覆盖初始参数（`data`/`header` 为一层合并，其余字段为浅覆盖；不支持临时传入 `config`/`middle`）
 - **setList** (`(value: any[] | ((oldState: any[]) => any[])) => void`): 设置列表数据，`useState` 返回的第二个值
   - **value**: 要设置的列表数据或更新数据的函数

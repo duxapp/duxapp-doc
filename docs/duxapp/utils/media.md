@@ -65,3 +65,22 @@ chooseMediaMiddle((files, option) => {
 为什么新增了这个中间件？  
 这主要是为了给上传文件 upload 函数使用的，在用户选择文件后进行压缩处理，上面提到的 duxappCompress 模块就是用这个中间件实现压缩功能的
 :::
+
+## createInnerAudioContext(option)
+
+创建音频上下文对象（RN 端基于 `expo-audio` 兼容实现）。
+
+| 参数名称 | 类型 | 必填 | 默认值 | 说明 |
+| ---- | ---- | -------- | ------- | ------- |
+| option | `{ useWebAudioImplement?: boolean }` | 否 | `{}` | 创建参数 |
+
+`option` 参数说明
+
+| 属性名称 | 类型 | 必填 | 默认值 | 说明 |
+| ---- | ---- | -------- | ------- | ------- |
+| useWebAudioImplement | boolean | 否 | false | 是否优先使用下载优先的实现，适用于部分需要先缓存再播放的场景 |
+
+事件监听相关说明：
+
+- `onCanplay`、`onPlay`、`onPause`、`onStop`、`onEnded`、`onTimeUpdate`、`onWaiting`、`onSeeking`、`onSeeked` 支持同时注册多个回调。
+- 对应的 `offXxx(callback?)` 在不传参数时会移除该事件的全部回调；传入 `callback` 时仅移除指定回调。
